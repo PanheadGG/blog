@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.panheadgg.top</id>
+    <title>PanheadGG&apos;s Blog</title>
+    <updated>2024-12-08T07:41:02.327Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://blog.panheadgg.top"/>
+    <link rel="self" href="https://blog.panheadgg.top/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://blog.panheadgg.top/images/avatar.png</logo>
+    <icon>https://blog.panheadgg.top/favicon.ico</icon>
+    <rights>All rights reserved 2024, PanheadGG&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[使用Github Pages和Gridea免费搭建个人博客]]></title>
+        <id>https://blog.panheadgg.top/post/20241114/</id>
+        <link href="https://blog.panheadgg.top/post/20241114/">
+        </link>
+        <updated>2024-11-15T04:00:40.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="注册github账号">注册Github账号</h3>
+<p>注册方法较简单，此处不作赘述，具体请参考<a href="https://blog.csdn.net/m0_67906358/article/details/128808210">这篇文章（点击跳转）</a>。</p>
+<h3 id="创建仓库">创建仓库</h3>
+<p>注册完后进入仓库页面<code>Repositories</code>，点击绿色按钮<code>New</code>。<br>
+<code>Repository name</code>里填写<code>你的用户名.github.io</code>。<br>
+例如：我的用户名是PanheadGG，那么我就要填<code>panheadgg.github.io</code>。<br>
+隐私权限处要选择<code>Public</code>，否则别人无法访问你的网站，勾上<code>Add a README file</code>。<br>
+其他保持默认，点击绿色按钮<code>Create repository</code>。</p>
+<p>创建成功后在菜单栏中点击<code>Settings</code>，左侧选择<code>Pages</code>，然后选择使用<code>main</code>分支，点击<code>Save</code>保存。</p>
+<h3 id="获取github令牌">获取Github令牌</h3>
+<p>鼠标移到头像，在弹出的窗口中点击<code>Settings</code>。<br>
+在左边选择<code>Develop Settings</code>，点击<code>Personal access tokens</code>，点击<code>Tokens (classic)</code>。<br>
+右侧点击<code>Generate new token</code>，点击<code>Generate new token (classic)</code>。<br>
+<code>Note</code>进行备注，<code>Expiration</code>选择到期时间，点击<code>Generate token</code>创建token。<br>
+Token创建后复制保存备用。</p>
+<h3 id="下载并安装gridea博客软件">下载并安装Gridea博客软件</h3>
+<p>Gridea分为付费版和免费版，个人推荐免费版.</p>
+<p><a href="https://open.gridea.dev/">官网地址 (https://open.gridea.dev/)</a>。<br>
+<a href="https://github.com/getgridea/gridea/releases">程序下载地址(https://github.com/getgridea/gridea/releases)</a>。<br>
+根据系统自行选择版本下载。<br>
+下载完后进行正常安装即可。</p>
+<p>安装完成后先修改站点文件到方便查找管理的地方。<br>
+点击左下角设置图标，更改站点源文件路径。更改完记得点击保存！</p>
+<p>然后回到主页面点击<code>远程</code>，按要求填写。</p>
+<ul>
+<li>域名：https://你的用户名.github.io</li>
+<li>仓库：你的用户名.github.io</li>
+<li>分支：main</li>
+<li>用户名：你的 GitHub 账号的昵称</li>
+<li>邮箱：你的 GitHub 账号的邮箱</li>
+<li>Token: 即刚刚创建的Token</li>
+<li>CNAME: 可通过这个选项配置你自己的域名（可不填，本文不作描述）</li>
+</ul>
+<p>点击<code>检测远程连接</code>，若所有信息都正确，关闭加速器和代理再试试。<br>
+若连接成功即可点击<code>同步</code>按钮即可发布在github上，同步之前可以点击预览查看效果。<br>
+此外，你还可以通过 Gridea 来设置网站主题，网站名称，网站描述等。（具体方法本文不作描述）<br>
+等待几分钟你的网站就配置好，进入<code>https://你的用户名.github.io</code>查看。</p>
+<h3 id="注意事项">注意事项</h3>
+<p>Github的服务器位于美国，会存在网络卡顿的情况，且网速较慢，文章中尽量包含较少的图片。<br>
+Github的仓库容量为1G，超过容量后将无法上传。</p>
+]]></content>
+    </entry>
+</feed>
