@@ -1,0 +1,667 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Python123实验14非官方答案 | PanheadGG&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://blog.panheadgg.top/favicon.ico?v=1734368599446">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://blog.panheadgg.top/styles/main.css">
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            PanheadGG&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1734368599446" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Python123实验14非官方答案
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2024-12-12 ·
+                    </time>
+                    
+                        <a href="https://blog.panheadgg.top/tag/Python123/" class="post-tags">
+                            # Python123
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="单选题">单选题</h1>
+<p>1.<code>1200</code><br>
+2.<code>13200</code><br>
+3.<code>121430303</code><br>
+4.<code>*#@@</code><br>
+5.<code>121025252</code></p>
+<h1 id="1">1</h1>
+<pre><code class="language-cpp">/* 设计并测试一个矩形类（Rectangle），属性为矩形的左下与右上角的坐标，
+矩形水平放置。操作为计算矩形周长与面积。测试包括用成员函数和普通函数。
+解：这里的矩形的4边分别与x轴y轴平行，为最简单的情况。注意参数有缺省值
+的函数的声明和定义格式。
+*/
+
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+using namespace std;
+class Rectangle 
+{
+    double left,bottom ;
+    double right,top  ;
+        public:
+    Rectangle(double l=0, double b=0, double r=0, double t=0){
+        left = l;
+        bottom = b;
+        right = r;
+        top = t;
+    }
+    ~ Rectangle(){};  //析构函数，在此函数体为空
+    void Assign(double l,double b,double r,double t){
+        left = l;
+        bottom = b;
+        right = r;
+        top = t;
+    }
+    double getLeft(){ return left;} // 以下四个函数皆为内联成员函数，返回各个点的坐标信息
+    double getRight(){ return right;}
+    double getTop(){return top;}
+    double getBottom(){return bottom;}
+    void Show(){
+        cout&lt;&lt;&quot;left-bottom point is (&quot;&lt;&lt;left&lt;&lt;&quot;,&quot;&lt;&lt;bottom&lt;&lt;&quot;)\n&quot;;
+        cout&lt;&lt;&quot;right-top point is (&quot;&lt;&lt;right&lt;&lt;&quot;,&quot;&lt;&lt;top&lt;&lt;&quot;)\n&quot;;
+    }  //显示坐标信息
+    double Area(){
+        return abs((top-bottom)*(right-left));
+    } //计算面积
+    double Perimeter(){
+        return (abs(top-bottom)+abs(right-left))*2;
+    }  //计算周长
+};
+
+
+
+int main(){
+	double x1,y1,x2,y2;
+	cin&gt;&gt;x1&gt;&gt;y1&gt;&gt;x2&gt;&gt;y2;
+	Rectangle rect;
+	rect.Assign(x1,y1,x2,y2);
+	rect.Show();
+	cout&lt;&lt;&quot;面积&quot;&lt;&lt;rect.Area()&lt;&lt;'\t'&lt;&lt;&quot;周长&quot;&lt;&lt;rect.Perimeter()&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+<h1 id="2">2</h1>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+#include&lt;cmath&gt;
+#define PI 3.14159265
+
+using namespace std;
+
+class Circle
+{
+    int radius;
+    public:
+    Circle(){}
+    Circle(int r){
+        radius = r;
+    }
+    void SetR(int r){
+        radius = r;
+    }
+    int GetR(){
+        return radius;
+    }
+    double GetCircumference(){
+        return 2*PI*radius;
+    }
+    double GetAreaCircle(){
+        return PI*radius*radius;
+    }
+};
+
+
+int main(){
+    int r;
+    cin&gt;&gt;r;
+	Circle cl1(r),cl2,cl3=cl1;
+	cout&lt;&lt;&quot;圆半径:&quot;&lt;&lt;cl3.GetR()&lt;&lt;'\t'&lt;&lt;&quot;圆周长:&quot;&lt;&lt;cl3.GetCircumference()
+		&lt;&lt;'\t'&lt;&lt;&quot;圆面积:&quot;&lt;&lt;cl3.GetAreaCircle()&lt;&lt;endl;
+	cin&gt;&gt;r;
+	cl2.SetR(r);
+	cout&lt;&lt;&quot;圆半径:&quot;&lt;&lt;cl2.GetR()&lt;&lt;'\t'&lt;&lt;&quot;圆周长:&quot;&lt;&lt;cl2.GetCircumference()
+		&lt;&lt;'\t'&lt;&lt;&quot;圆面积:&quot;&lt;&lt;cl2.GetAreaCircle()&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+<h1 id="3">3</h1>
+<pre><code class="language-cpp">#include &lt;cstdlib&gt;
+#include&lt;iostream&gt;
+using namespace std;
+class dog
+
+{
+    int age,weight;
+    public:
+    dog(){
+        age = 1;
+        weight = 5;
+    }
+    dog(int a, int w){
+        age = a;
+        weight = w;
+    }
+    int getage(){
+        return age;
+    }
+    int getweight(){
+        return weight;
+    }
+};
+
+
+
+int main()
+{ dog d;
+  cout&lt;&lt;&quot;age=&quot;&lt;&lt;d.getage()&lt;&lt;&quot;,weight=&quot;&lt;&lt;d.getweight()&lt;&lt;endl;
+  int nage,nweight;
+  cin&gt;&gt;nage&gt;&gt;nweight;
+  dog dog2(nage,nweight);
+  cout&lt;&lt;&quot;age=&quot;&lt;&lt;dog2.getage()&lt;&lt;&quot;,weight=&quot;&lt;&lt;dog2.getweight()&lt;&lt;endl;
+return 0;
+}
+</code></pre>
+<h1 id="4">4</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+class DataType
+    
+{
+    int _type;
+    int _int;
+    char _char;
+    float _float;
+    double _double;
+    public:
+    DataType(){}
+    DataType(int i){
+        _int = i;
+        _type = 1;
+    }
+    DataType(char c){
+        _char = c;
+        _type = 2;
+    }
+    DataType(float f){
+        _float = f;
+        _type = 3;
+    }
+    DataType(double d){
+        _double = d;
+        _type = 4;
+    }
+    void Show(){
+        switch (_type)
+        {
+        case 1:
+            cout&lt;&lt;&quot;int &quot;&lt;&lt;_int;
+            break;
+        case 2:
+            cout&lt;&lt;&quot;char &quot;&lt;&lt;_char;
+            break;
+        case 3:
+            cout&lt;&lt;&quot;float &quot;&lt;&lt;_float;
+            break;
+        case 4:
+            cout&lt;&lt;&quot;double &quot;&lt;&lt;_double;
+            break;
+        }
+        cout&lt;&lt;&quot;\n&quot;;
+    }
+};
+    
+int main()
+    {   int i;
+        char c;
+        float f;
+        double d;
+        cin&gt;&gt;i;
+    	DataType a(i);
+    	a.Show();
+    	cin&gt;&gt;c;
+    	DataType b1(c);
+    	b1.Show();
+    	cin&gt;&gt;f;
+    	DataType b2(f);
+    	b2.Show();
+    	cin&gt;&gt;d;
+    	DataType b3(d);
+    	b3.Show();
+    	return 0;
+    }
+</code></pre>
+<h1 id="5">5</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+class Tree
+
+{
+    int _age;
+    public:
+    Tree(){
+        _age = 0;
+        cout&lt;&lt;&quot;creat a tree,age=0\n&quot;;
+    }
+    void age(){
+        cout&lt;&lt;&quot;age=&quot;&lt;&lt;_age&lt;&lt;&quot;\n&quot;;
+    }
+    void grow(int year){
+        _age += year;
+    }
+};
+
+
+int main()
+{
+  Tree t;
+  int year;
+  t.age();
+
+  cin&gt;&gt;year;
+  t.grow(year);
+  t.age();
+}
+</code></pre>
+<h1 id="6">6</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+enum MT{Jan=1,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec};
+typedef int YR;
+class Timedate{
+private:
+	YR year;
+	MT month;
+	int date;
+	int hh;
+	int mm;
+	int ss;
+public:
+	Timedate(){year=2000;month=Jan;date=1;hh=0;mm=0;ss=0;}
+	Timedate(YR a, MT b, int c){
+		year=a;
+		month=b;
+		date=c;
+		hh=12;mm=30;ss=0;
+	}
+	void getdate(YR &amp;,MT &amp;,int &amp;);//使用引用一次取得3个数值
+	void gettime(int &amp;,int &amp;,int &amp;);
+	void putdate(YR ,MT ,int );
+	void puttime(int ,int ,int );
+	void list();
+};
+
+//点击在此输入一行或多行代码
+void Timedate::putdate(YR y,MT m,int d){
+    year = y;
+    month = m;
+    date = d;
+}
+void Timedate::puttime(int h,int m,int s){
+    hh = h;
+    mm = m;
+    ss = s;
+}
+void Timedate::list(){
+    const char* monthArr[] = {&quot;&quot;,&quot;Jan&quot;,&quot;Feb&quot;,&quot;Mar&quot;,&quot;Apr&quot;,&quot;May&quot;,&quot;Jun&quot;,&quot;Jul&quot;,&quot;Aug&quot;,&quot;Sep&quot;,&quot;Oct&quot;,&quot;Nov&quot;,&quot;Dec&quot;};
+    cout&lt;&lt;&quot;year/month/date :&quot;&lt;&lt;year&lt;&lt;&quot;/&quot;&lt;&lt;monthArr[month]&lt;&lt;&quot;/&quot;&lt;&lt;date&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;hour:minite:second :&quot;&lt;&lt;hh&lt;&lt;&quot;:&quot;&lt;&lt;mm&lt;&lt;&quot;:&quot;&lt;&lt;ss&lt;&lt;&quot;\n&quot;;
+}
+
+
+int main(int argc, char* argv[]){
+    int y,d,month,h,m,s;
+	Timedate A(2004,Mar,3),B;
+	A.list();
+	B.list();
+
+	cin&gt;&gt;y&gt;&gt;month&gt;&gt;d; //输入年月日，设置日期
+	B.putdate(y,(MT)month,d);
+
+	cin&gt;&gt;h&gt;&gt;m&gt;&gt;s;        //输入时分秒，设置时间
+	B.puttime(h,m,s);
+	B.list();
+	return 0;
+}
+</code></pre>
+<h1 id="7">7</h1>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+
+using namespace std;
+
+class Dog
+//点击在此输入一行或多行代码
+{
+    int age,weight;
+    char sex;
+    public:
+    Dog(int a=1,int w=10,char s='M'){
+        age = a;
+        weight = w;
+        sex = s;
+    }
+    void grow(int year){
+        age += year;
+    }
+    void show(){
+        cout&lt;&lt;age&lt;&lt;&quot; &quot;&lt;&lt;weight&lt;&lt;&quot; &quot;&lt;&lt;sex&lt;&lt;&quot;\n&quot;;
+    }
+};
+
+
+
+int main()
+
+{
+    int age,weight;
+    char sex;
+    Dog d1;
+    cin&gt;&gt;age;
+    Dog d2(age);
+
+    cin&gt;&gt;age&gt;&gt;weight;
+    Dog d3(age,weight);
+
+    cin&gt;&gt;age&gt;&gt;weight&gt;&gt;sex;
+    Dog d4(age,weight,sex);
+
+    Dog d5(d2);// d5和当前d2一致
+
+    d2.grow(3);//d2增重3斤
+
+    d1.show();//输出：1,10,M
+
+    d2.show();
+    d3.show();
+    d4.show();
+    d5.show();
+
+
+    return 0;
+
+}
+</code></pre>
+<h1 id="8">8</h1>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+
+using namespace std;
+
+class Student
+//点击在此输入一行或多行代码
+{
+    int num;
+    double score;
+    char sex;
+    public:
+    Student(int n=0,char c='U',double s=0.0){
+        num = n;
+        sex = c;
+        score = s;
+    }
+    Student(const Student &amp;stu){
+        num = stu.num;
+        sex = stu.sex;
+        score = stu.score;
+    }
+    void setScore(double s){
+        score = s;
+    }
+    void show(){
+        cout&lt;&lt;num&lt;&lt;&quot; &quot;&lt;&lt;sex&lt;&lt;&quot; &quot;&lt;&lt;score&lt;&lt;&quot;\n&quot;;
+    }
+};
+
+
+int main()
+
+{
+    int num;
+    double score;
+    char sex;
+    cin&gt;&gt;num&gt;&gt;sex&gt;&gt;score;
+
+    Student t1;//t1:学号0、 性别‘U’、成绩 0.0
+
+    Student t2(num,sex,score);//t2:年龄 num岁、 性别sex、成绩score分
+
+    Student t3(t2);// 复制构造t3，t3和当前t2一致
+
+    t1.show();
+
+    t2.show();
+
+    t3.show();
+
+    t3.setScore(70.5);//t3重新设置成绩为70.5
+
+    t3.show();
+
+    return 0;
+
+}
+</code></pre>
+<h1 id="9">9</h1>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+
+using namespace std;
+
+
+
+class employee //定义employee类
+//点击在此输入一行或多行代码
+{
+    int EmpNo;
+    int grade;
+    int accumPay;
+    public:
+    employee(int e=1001,int g=1,int a=3000){
+        EmpNo = e;
+        grade = g;
+        accumPay = a;
+    }
+    employee(const employee &amp;emp){
+        EmpNo = emp.EmpNo+1;
+        grade = emp.grade;
+        accumPay = emp.accumPay;
+    }
+    void promote(int g){
+        grade+=g;
+        accumPay += 1500*g;
+    }
+    void print(){
+        cout&lt;&lt;EmpNo&lt;&lt;&quot; &quot;&lt;&lt;grade&lt;&lt;&quot; &quot;&lt;&lt;accumPay&lt;&lt;&quot;\n&quot;;
+    }
+};
+
+
+int main()
+
+{
+    int EmpNo;
+    int grade;
+    int accumPay;
+    cin&gt;&gt;EmpNo&gt;&gt;grade&gt;&gt;accumPay;
+    employee t1;         //t1:工号1000、 级别 1、工资 3000
+
+    employee t2(EmpNo,grade,accumPay);//t2:工号EmpNo、 级别 grade、工资 accumPay
+
+    employee t3(t2);// t3工号是t2工号加1，其他数据与当前t2一致
+
+    t1.print();
+    t2.print();
+    t3.print();
+    t3.promote(2);//t3升2级，工资共涨3000（每级涨1500）
+    t3.print();
+
+    return 0;
+
+}
+</code></pre>
+
+                </div>
+            </article>
+            
+        </div>
+
+        
+
+        
+
+        
+            <div class="post-detail">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <svg t="1733415937042" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="4360" width="32" height="32">
+            <path
+                d="M379.733333 913.066667h-8.533333c-21.333333-4.266667-38.4-17.066667-46.933333-34.133334l-29.866667-72.533333H226.133333c-76.8 0-140.8-64-140.8-140.8V251.733333C85.333333 170.666667 149.333333 110.933333 226.133333 110.933333h571.733334C874.666667 110.933333 938.666667 170.666667 938.666667 251.733333v413.866667c0 76.8-64 140.8-140.8 140.8h-307.2l-64 85.333333c-8.533333 12.8-25.6 21.333333-46.933334 21.333334zM226.133333 174.933333c-42.666667 0-76.8 34.133333-76.8 76.8v413.866667c0 42.666667 34.133333 76.8 76.8 76.8h110.933334l42.666666 102.4 76.8-102.4h337.066667c42.666667 0 76.8-34.133333 76.8-76.8V251.733333c0-42.666667-34.133333-76.8-76.8-76.8H226.133333z"
+                fill="#ffffff" p-id="4361"></path>
+            <path d="M285.866667 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4362"></path>
+            <path d="M512 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4363"></path>
+            <path d="M738.133333 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4364"></path>
+        </svg>
+    </button>
+    <nav class="navbar">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-nav mr-auto" style="text-align: center">
+                <div id="tcomment"></div>
+                <script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.40/dist/twikoo.min.js"></script>
+                <script>
+                    twikoo.init({
+                        envId: 'https://twikooapi.panheadgg.top/',
+                        el: '#tcomment',
+                        // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数
+                        // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+                    })
+                </script>
+            </div>
+        </div>
+    </nav>
+</div>
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">温故而知新</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Copyright © 2024 PanheadGG
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://blog.panheadgg.top/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

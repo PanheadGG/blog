@@ -1,0 +1,496 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Python123实验12非官方答案 | PanheadGG&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://blog.panheadgg.top/favicon.ico?v=1734368599446">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://blog.panheadgg.top/styles/main.css">
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            PanheadGG&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1734368599446" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Python123实验12非官方答案
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2024-12-05 ·
+                    </time>
+                    
+                        <a href="https://blog.panheadgg.top/tag/Python123/" class="post-tags">
+                            # Python123
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="第一题">第一题</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+bool isBlue(int a, int b){
+   return a&lt;b;
+}
+
+const int N=9;
+int a[]={1,3,5,7,9,11,13,15,17};
+
+int main()
+{
+    int l=-1,r=N,mid,numToSearch=7;
+    while(l+1!=r){
+        mid=(l+r)/2;
+        if(isBlue(a[mid],numToSearch)) l=mid;
+        else r=mid;
+    }
+    cout&lt;&lt;&quot;查找成功,其位置是(第一个为0开始计数):&quot;&lt;&lt;mid;
+    return 0;
+}
+</code></pre>
+<h1 id="第二题">第二题</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+int a[3][4]={{1,2,3,4}, {9,8,7,6}, {-10,10,-5,2}};
+
+int main()
+{
+    int max=a[0][0],row=0,col=0;
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;4;j++){
+            if(a[i][j]&gt;max){
+                max=a[i][j];
+                row=i;
+                col=j;
+            }
+        }
+    }
+    cout&lt;&lt;&quot;max=&quot;&lt;&lt;max&lt;&lt;&quot;, row =&quot;&lt;&lt;row&lt;&lt;&quot; , col =&quot;&lt;&lt;col;
+    return 0;
+}
+</code></pre>
+<h1 id="第三题">第三题</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+
+double score[100][100];
+
+int main()
+{
+    int n,m;
+    cin&gt;&gt;n&gt;&gt;m;
+    for(int i=0;i&lt;n;i++){
+        double sum=0;
+        int max=0,min=100;
+        for(int j=0;j&lt;m;j++){
+            cin&gt;&gt;score[i][j];
+            max=score[i][j]&gt;max?score[i][j]:max;
+            min=score[i][j]&lt;min?score[i][j]:min;
+            sum+=score[i][j];
+        }
+        score[i][m]=(sum-max-min)/(m-2);
+    }
+    cout&lt;&lt;&quot;每个选手的分数和平均得分如下：&quot;&lt;&lt;&quot;\n&quot;;
+    for(int i=0;i&lt;n;i++){
+        for(int j=0;j&lt;m;j++){
+            cout&lt;&lt;&quot; &quot;&lt;&lt;fixed&lt;&lt;setprecision(2)&lt;&lt;score[i][j];
+        }
+        cout&lt;&lt;&quot; &quot;&lt;&lt;score[i][m]&lt;&lt;&quot;\n&quot;;
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="第四题">第四题</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+int a[2][3] = { {1,2,3},{4,5,6} };
+int b[3][2];
+
+int main()
+{
+    for(int i=0;i&lt;2;i++){
+        for(int j=0;j&lt;3;j++){
+            b[j][i]=a[i][j];
+        }
+    }
+    for(int i=0;i&lt;3;i++){
+        for(int j=0;j&lt;2;j++){
+            cout&lt;&lt;b[i][j]&lt;&lt;&quot; &quot;;
+        }
+        cout&lt;&lt;&quot;\n&quot;;
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="第五题">第五题</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+bool cmp(int a,int b){
+    return a&lt;b;
+}
+
+int a[20];
+
+int main()
+{
+    int i=0;
+    cin&gt;&gt;a[i];
+    while(a[i]){
+        ++i;
+        cin&gt;&gt;a[i];
+    }
+    for(int j=0;j&lt;i;j++){
+        cout&lt;&lt;&quot;刚输入的值为：&quot;&lt;&lt;a[j]&lt;&lt;&quot;\n&quot;;
+    }
+    cout&lt;&lt;&quot;排序前的数为：&quot;;
+    for(int j=0;j&lt;i;j++){
+        cout&lt;&lt;a[j]&lt;&lt;&quot; &quot;;
+    }
+    cout&lt;&lt;&quot;\n排序后为：&quot;;
+    sort(a,a+i,cmp);
+    for(int j=0;j&lt;i;j++){
+        cout&lt;&lt;a[j]&lt;&lt;&quot; &quot;;
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="第六题">第六题</h1>
+<pre><code class="language-cpp">/*一场教学比赛，有num_players名参赛选手，num_judges个评委为其打分。选手的最后得分是去掉一个最高分和一个最低分后求到的平均分(小数点后保留2位)，请存储所有评分以及每个选手最后得分。*/
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+int main() {
+    int num_players, num_judges; // num_players表示选手数量, num_judges为评委数量
+    //cout &lt;&lt; &quot;请输入选手数量: &quot;; 
+    cin&gt;&gt;num_players;; 
+  //  cout &lt;&lt; &quot;请输入评委数量: &quot;;  
+    cin&gt;&gt;num_judges;;
+    // 二维数组存储评委打分，第一维表示选手，第二维表示评委
+    double scores[100][100];  // 假设最多100个选手和100个评委
+    // 输入每个选手的分数
+    for (int i = 0; i &lt; num_players; i++) {
+   //     cout &lt;&lt; &quot;请输入第 &quot; &lt;&lt; (i + 1) &lt;&lt; &quot; 个选手的 &quot; &lt;&lt; num_judges &lt;&lt; &quot; 个分数：&quot; &lt;&lt; endl;
+        double sum = 0;
+        for (int j = 0; j &lt; num_judges; j++) 
+        {
+            cin&gt;&gt;scores[i][j];  //依次输入评委的打分
+            sum+=scores[i][j];  //得分累计求和
+            }
+           scores[i][99]=scores[i][0]  ;  //假定最高分为第一个评委的分数
+           scores[i][98]=scores[i][0]   ;  //假定最低分为第一个评委的分数
+        // 比较大小，得到每个选手的最低分和最高分
+        for (   int j = 0; j &lt; num_judges; j++   ) {
+            if(scores[i][j]&gt;scores[i][99])
+                scores[i][99]=scores[i][j];
+            if(scores[i][j]&lt;scores[i][98])
+                scores[i][98]=scores[i][j];
+        }
+       scores[i][num_judges] = (sum-scores[i][99]-scores[i][98])/(num_judges-2);     // 计算平均得分并存入最后一列
+    }
+    // 输出每个选手的分数和平均得分
+    cout &lt;&lt; &quot;每个选手的分数和平均得分如下：&quot; &lt;&lt; endl;
+    for (int i = 0; i &lt; num_players; i++) {
+        for (int j = 0; j &lt; num_judges + 1; j++) {
+            cout &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; setw(6) &lt;&lt; scores[i][j];    
+        }
+        cout &lt;&lt; endl;  
+    }
+    return 0;
+}
+</code></pre>
+<p>第1空<code>cin&gt;&gt;num_players;</code><br>
+第2空<code>cin&gt;&gt;num_judges;</code><br>
+第3空<code>cin&gt;&gt;scores[i][j]</code><br>
+第4空<code>sum+=scores[i][j]</code><br>
+第5空<code>scores[i][99]=scores[i][0]</code><br>
+第6空<code>scores[i][98]=scores[i][0]</code><br>
+第7空<code>int j = 0; j &lt; num_judges; j++</code><br>
+第8空</p>
+<pre><code class="language-cpp">if(scores[i][j]&gt;scores[i][99])
+    scores[i][99]=scores[i][j];
+if(scores[i][j]&lt;scores[i][98])
+    scores[i][98]=scores[i][j];
+</code></pre>
+<p>第9空</p>
+<pre><code class="language-cpp">scores[i][num_judges] = 
+(sum-scores[i][99]-scores[i][98])/(num_judges-2);
+</code></pre>
+<h1 id="第七题">第七题</h1>
+<pre><code class="language-cpp">/*输入字符串，统计数字字符的个数*/
+#include &lt;iostream&gt;
+#include&lt;string.h&gt;
+using namespace std;
+int main() {
+     char password[10];
+    //gets_s(password);
+    cin&gt;&gt;password    ;//C++中，用最安全的读取字符串
+    int count = 0;
+    for (int i = 0; i &lt; 10; i++) {
+        if (     password[i]&gt;'0'&amp;&amp;password[i]&lt;'9'          ) {
+            count++;
+        }
+    }
+    cout &lt;&lt; &quot;数字字符的个数为: &quot; &lt;&lt; count &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<p>第1空<code>cin&gt;&gt;password</code><br>
+第2空<code>password[i]&gt;'0'&amp;&amp;password[i]&lt;'9' </code></p>
+<h1 id="第八题">第八题</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+
+int a[10][10];
+
+int main()
+{
+    int m, n, count = 0;
+    cin &gt;&gt; m &gt;&gt; n;
+    int u = 0, b = m - 1, l = 0, r = n - 1;
+    while (count != m * n) {
+        for(int i=u;i&lt;=b;i++){
+            a[i][r] = ++count;
+        }
+        r--;
+        for(int i=r;i&gt;=l;i--){
+            a[b][i] = ++count;
+        }
+        b--;
+        for(int i=b;i&gt;=u;i--){
+            a[i][l] = ++count;
+        }
+        l++;
+        for(int i=l;i&lt;=r;i++){
+            a[u][i] = ++count;
+        }
+        u++;
+    }
+    for (int i = 0; i &lt; m; i++) {
+        for (int j = 0; j &lt; n; j++) {
+            cout &lt;&lt; a[i][j] &lt;&lt; &quot;\t&quot;;
+        }
+        cout &lt;&lt; &quot;\n&quot;;
+    }
+
+    return 0;
+}
+</code></pre>
+<h1 id="第九题">第九题</h1>
+<pre><code class="language-cpp">// 递归计算整数各位数字之和
+#include &lt;iostream&gt;
+using namespace std;
+int sumOfDigits(int n)  //以下代码实现函数递归
+{
+    int sum;
+    while(n){
+        sum+=n%10;
+        n/=10;
+    }
+return sum;
+}
+int main() {
+    int num ;
+    cin &gt;&gt; num;
+   cout &lt;&lt; &quot;整数 &quot; &lt;&lt; num &lt;&lt; &quot; 的各位数字之和为: &quot; &lt;&lt; sumOfDigits(num) &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<p>第1空</p>
+<pre><code class="language-cpp">int sum;
+while(n){
+        sum+=n%10;
+        n/=10;
+    }
+return sum;
+</code></pre>
+<h1 id="第十题">第十题</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+// 递归函数计算第一天摘的桃子数
+int peachCount(int day)
+{
+    if (day == 10) {
+        return 1;
+    }
+return (peachCount(day + 1) + 1) * 2;
+}
+
+int main() {
+    int firstDayPeaches = peachCount(1);
+    cout &lt;&lt; &quot;第一天共摘了 &quot; &lt;&lt; firstDayPeaches &lt;&lt; &quot; 个桃子。&quot; &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<p>第1空</p>
+<pre><code class="language-cpp">if (day == 10) {
+        return 1;
+    }
+return (peachCount(day + 1) + 1) * 2;
+</code></pre>
+
+                </div>
+            </article>
+            
+        </div>
+
+        
+
+        
+
+        
+            <div class="post-detail">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <svg t="1733415937042" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="4360" width="32" height="32">
+            <path
+                d="M379.733333 913.066667h-8.533333c-21.333333-4.266667-38.4-17.066667-46.933333-34.133334l-29.866667-72.533333H226.133333c-76.8 0-140.8-64-140.8-140.8V251.733333C85.333333 170.666667 149.333333 110.933333 226.133333 110.933333h571.733334C874.666667 110.933333 938.666667 170.666667 938.666667 251.733333v413.866667c0 76.8-64 140.8-140.8 140.8h-307.2l-64 85.333333c-8.533333 12.8-25.6 21.333333-46.933334 21.333334zM226.133333 174.933333c-42.666667 0-76.8 34.133333-76.8 76.8v413.866667c0 42.666667 34.133333 76.8 76.8 76.8h110.933334l42.666666 102.4 76.8-102.4h337.066667c42.666667 0 76.8-34.133333 76.8-76.8V251.733333c0-42.666667-34.133333-76.8-76.8-76.8H226.133333z"
+                fill="#ffffff" p-id="4361"></path>
+            <path d="M285.866667 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4362"></path>
+            <path d="M512 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4363"></path>
+            <path d="M738.133333 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4364"></path>
+        </svg>
+    </button>
+    <nav class="navbar">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-nav mr-auto" style="text-align: center">
+                <div id="tcomment"></div>
+                <script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.40/dist/twikoo.min.js"></script>
+                <script>
+                    twikoo.init({
+                        envId: 'https://twikooapi.panheadgg.top/',
+                        el: '#tcomment',
+                        // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数
+                        // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+                    })
+                </script>
+            </div>
+        </div>
+    </nav>
+</div>
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">温故而知新</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Copyright © 2024 PanheadGG
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://blog.panheadgg.top/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
