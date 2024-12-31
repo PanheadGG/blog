@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.panheadgg.top</id>
+    <title>PanheadGG&apos;s Blog</title>
+    <updated>2024-12-31T10:40:54.605Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://blog.panheadgg.top"/>
+    <link rel="self" href="https://blog.panheadgg.top/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://blog.panheadgg.top/images/avatar.png</logo>
+    <icon>https://blog.panheadgg.top/favicon.ico</icon>
+    <rights>All rights reserved 2024, PanheadGG&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[OJ-NOI-1.6-12 计算2的N次方 题解]]></title>
+        <id>https://blog.panheadgg.top/post/20241209OJNOI1d6-12/</id>
+        <link href="https://blog.panheadgg.top/post/20241209OJNOI1d6-12/">
+        </link>
+        <updated>2024-12-09T13:55:36.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="题目">题目</h1>
+<h2 id="12计算2的n次方"><strong>12:计算2的N次方</strong></h2>
+<p>总时间限制: 1000ms 内存限制: 65536kB</p>
+<h3 id="描述"><strong>描述</strong></h3>
+<p>任意给定一个正整数N(N&lt;=100)，计算2的N次方的值。</p>
+<h3 id="输入"><strong>输入</strong></h3>
+<p>输入一个正整数N。</p>
+<h3 id="输出"><strong>输出</strong></h3>
+<p>输出2的N次方的值。</p>
+<h3 id="样例输入"><strong>样例输入</strong></h3>
+<pre><code>5
+</code></pre>
+<h3 id="样例输出"><strong>样例输出</strong></h3>
+<pre><code>32
+</code></pre>
+<h3 id="提示"><strong>提示</strong></h3>
+<p>高精度计算</p>
+<h1 id="分析">分析</h1>
+<p>题目结果限制为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mn>100</mn></msup><mo>≈</mo><mn>1.26765</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>30</mn></msup></mrow><annotation encoding="application/x-tex">2^{100}  ≈ 1.26765 × 10^{30}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span><span class="mord mtight">0</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">2</span><span class="mord">6</span><span class="mord">7</span><span class="mord">6</span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span></span>，很明显即使使用<code>unsigned long long</code>数据类型也无法表示这么大的数。<br>
+我们可以将结果进行拆分，存储至数组，最后遍历数组即可。<br>
+因此我们可以将每位上的数存储到数组中，每乘以一次2，就对数组上每一个元素进行进位处理。<br>
+则函数原型(C++版)为：</p>
+<pre><code class="language-cpp">void multiply(int num[],int &amp;len){    //len为当前所表达的数的位数
+    int bit = 0;    //bit表示要进位时所加的数
+    for(int i=0;i&lt;len;i++){
+        int tmp = num[i] * 2 + bit;
+        num[i] = tmp % 10;    //当前位数取个位存储
+        bit = tmp/10;    //将要进位的数存储至bit中
+    }
+    if(bit&gt;0){
+        num[len] += bit;    //如果最后一次循环bit大于0，则最高位前加上bit
+        len++;    //位数加1
+    }
+}
+</code></pre>
+<p>在这个函数中，<code>len</code>表示这个数现在的位数，然后对数组每个数乘以2，取个位，将进位时所加的数存储到<code>bit</code>中，在下一位数乘以2后加上<code>bit</code>，以此类推。<br>
+在最后一个循环后，如果进位数<code>bit</code>大于0，就在最高位前加上要进的位，并<code>len</code>自增。<br>
+在main函数中只需根据输入确定循环次数调用此函数，最后从后往前遍历数组。</p>
+<h1 id="完整代码">完整代码</h1>
+<h3 id="c版本">C++版本：</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+int arr[100];
+
+void multiply(int num[],int &amp;len){
+    int bit = 0;
+    for(int i=0;i&lt;len;i++){
+        int tmp = num[i] * 2 + bit;
+        num[i] = tmp % 10;
+        bit = tmp/10;
+    }
+    if(bit&gt;0){
+        num[len] += bit;
+        len++;
+    }
+}
+
+int main()
+{
+    int n;
+    cin&gt;&gt;n;
+    arr[0] = 1;
+    int len = 1;
+    for(int i=0;i&lt;n;i++){
+        multiply(arr,len);
+    }
+    for(int i=len-1;i&gt;=0;i--) cout&lt;&lt;arr[i];
+    return 0;
+}
+</code></pre>
+<h3 id="c版本-2">C版本：</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int arr[100];
+
+void multiply(int num[],int *len){
+    int bit = 0;
+    for(int i=0;i&lt;*len;i++){
+        int tmp = num[i] * 2 + bit;
+        num[i] = tmp % 10;
+        bit = tmp/10;
+    }
+    if(bit&gt;0){
+        num[*len] += bit;
+        (*len)++;
+    }
+}
+
+int main()
+{
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    arr[0] = 1;
+    int len = 1;
+    for(int i=0;i&lt;n;i++){
+        multiply(arr,&amp;len);
+    }
+    for(int i=len-1;i&gt;=0;i--) printf(&quot;%d&quot;,arr[i]);
+    return 0;
+}
+</code></pre>
+<h1 id="思考与拓展">思考与拓展</h1>
+<p>理论上使用这种方法可以计算2的N次方（N为数组容量所能接受的最大整数），但时间复杂度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>。<br>
+也可以进行拓展计算其他数的N次方，但需要注意进位的逻辑。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[使用Github Pages和Gridea免费搭建个人博客]]></title>
+        <id>https://blog.panheadgg.top/post/20241114/</id>
+        <link href="https://blog.panheadgg.top/post/20241114/">
+        </link>
+        <updated>2024-11-15T04:00:40.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="注册github账号">注册Github账号</h3>
+<p>注册方法较简单，此处不作赘述，具体请参考<a href="https://blog.csdn.net/m0_67906358/article/details/128808210">这篇文章（点击跳转）</a>。</p>
+<h3 id="创建仓库">创建仓库</h3>
+<p>注册完后进入仓库页面<code>Repositories</code>，点击绿色按钮<code>New</code>。<br>
+<code>Repository name</code>里填写<code>你的用户名.github.io</code>。<br>
+例如：我的用户名是PanheadGG，那么我就要填<code>panheadgg.github.io</code>。<br>
+隐私权限处要选择<code>Public</code>，否则别人无法访问你的网站，勾上<code>Add a README file</code>。<br>
+其他保持默认，点击绿色按钮<code>Create repository</code>。</p>
+<p>创建成功后在菜单栏中点击<code>Settings</code>，左侧选择<code>Pages</code>，然后选择使用<code>main</code>分支，点击<code>Save</code>保存。</p>
+<h3 id="获取github令牌">获取Github令牌</h3>
+<p>鼠标移到头像，在弹出的窗口中点击<code>Settings</code>。<br>
+在左边选择<code>Develop Settings</code>，点击<code>Personal access tokens</code>，点击<code>Tokens (classic)</code>。<br>
+右侧点击<code>Generate new token</code>，点击<code>Generate new token (classic)</code>。<br>
+<code>Note</code>进行备注，<code>Expiration</code>选择到期时间，点击<code>Generate token</code>创建token。<br>
+Token创建后复制保存备用。</p>
+<h3 id="下载并安装gridea博客软件">下载并安装Gridea博客软件</h3>
+<p>Gridea分为付费版和免费版，个人推荐免费版.</p>
+<p><a href="https://open.gridea.dev/">官网地址 (https://open.gridea.dev/)</a>。<br>
+<a href="https://github.com/getgridea/gridea/releases">程序下载地址(https://github.com/getgridea/gridea/releases)</a>。<br>
+根据系统自行选择版本下载。<br>
+下载完后进行正常安装即可。</p>
+<p>安装完成后先修改站点文件到方便查找管理的地方。<br>
+点击左下角设置图标，更改站点源文件路径。更改完记得点击保存！</p>
+<p>然后回到主页面点击<code>远程</code>，按要求填写。</p>
+<ul>
+<li>域名：https://你的用户名.github.io</li>
+<li>仓库：你的用户名.github.io</li>
+<li>分支：main</li>
+<li>用户名：你的 GitHub 账号的昵称</li>
+<li>邮箱：你的 GitHub 账号的邮箱</li>
+<li>Token: 即刚刚创建的Token</li>
+<li>CNAME: 可通过这个选项配置你自己的域名（可不填，本文不作描述）</li>
+</ul>
+<p>点击<code>检测远程连接</code>，若所有信息都正确，关闭加速器和代理再试试。<br>
+若连接成功即可点击<code>同步</code>按钮即可发布在github上，同步之前可以点击预览查看效果。<br>
+此外，你还可以通过 Gridea 来设置网站主题，网站名称，网站描述等。（具体方法本文不作描述）<br>
+等待几分钟你的网站就配置好，进入<code>https://你的用户名.github.io</code>查看。</p>
+<h3 id="注意事项">注意事项</h3>
+<p>Github的服务器位于美国，会存在网络卡顿的情况，且网速较慢，文章中尽量包含较少的图片。<br>
+Github的仓库容量为1G，超过容量后将无法上传。</p>
+]]></content>
+    </entry>
+</feed>

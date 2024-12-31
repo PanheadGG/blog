@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>生日快乐</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.js"></script>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="letter-wrapper" id="letter-wrapper" onclick="clickLetter()">
+            <div class="cover" id="cover"></div>
+            <div class="letter" id="letter">
+                <div class="letter-context">
+                    <p>曾杨阳:</p>
+                </div>
+                <p>19岁是一首青春的诗，愿你在这美好的年华里，
+                <p>如春日之花，绽放绚烂光彩；如夏夜之风，带来清爽宜人；</p>
+                <p>如秋霜之菊，拥有坚韧品格；如冬雪之梅，傲然挺立世间。</p>
+                <p>愿你的生活充满诗意，生日快乐！<a class="posi"
+                        onclick="javascript:var posi = document.querySelector('.posi').getBoundingClientRect();$id('iframe').style.clipPath = 'circle(1500px at ' + posi.x + 'px ' + posi.y +'px)';">🎂</a>
+                </p>
+                </p>
+                <span>From 吉</span>
+            </div>
+            <div class="envelope" id="envelope">
+                <small>曾杨阳</small>
+                <b>生日快乐</b>
+            </div>
+        </div>
+    </div>
+    <iframe src="./cake/" id="iframe"></iframe>
+</body>
+
+</html>

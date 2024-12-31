@@ -1,0 +1,462 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Python123实验16非官方答案 | PanheadGG&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://blog.panheadgg.top/favicon.ico?v=1735641651820">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://blog.panheadgg.top/styles/main.css">
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            PanheadGG&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1735641651820" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Python123实验16非官方答案
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2024-12-16 ·
+                    </time>
+                    
+                        <a href="https://blog.panheadgg.top/tag/Python123/" class="post-tags">
+                            # Python123
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="1">1</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+using namespace std;
+class Circle
+{
+    const float PI;
+    static int count;
+    double r;
+    double area;
+public:
+//点击在此输入代码    
+    Circle(double r);
+    void calArea();
+    void showCircle();
+    static int getCount(Circle c){return count;}
+    friend double aveArea(Circle a,Circle b);
+};
+//点击在此输入一行或多行代码
+int Circle::count = 0;
+Circle::Circle(double r) : PI(3.14159)
+{
+    this-&gt;r = r;
+    count++;
+}
+double aveArea(Circle a,Circle b){
+    return (a.area + b.area) / 2;
+}
+void Circle::calArea(){
+    area = PI * r * r;
+}
+void Circle::showCircle(){
+    cout&lt;&lt;r&lt;&lt;&quot; : &quot;&lt;&lt;area&lt;&lt;&quot;\n&quot;;
+}
+
+
+int main()
+{
+    double r1,r2;
+    cin&gt;&gt;r1&gt;&gt;r2;
+    Circle c1(r1),c2(r2);
+    c1.calArea();
+    c1.showCircle();
+    c2.calArea();
+    c2.showCircle();
+    cout&lt;&lt;Circle::getCount(c1)&lt;&lt;endl;
+
+    cout&lt;&lt;aveArea(c1,c2)&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
+<h1 id="2">2</h1>
+<pre><code class="language-cpp">//Lab5_3程序。在修改过程中，请注释原语句错误原因及改正方法。
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+
+class Student
+{
+    string name;
+    static int total;//用来统计学生总人数
+public:
+    ~Student(){}
+    Student(string p=&quot;wang&quot;);
+    static int GetTotal();
+};
+int Student::total=0;//无需再次声明static修饰词
+Student::Student(string p)//已声明过参数
+{
+    name=p;
+    total++;
+}
+int Student::GetTotal()//无需再次声明static修饰词
+{
+    return total;
+}
+int main()
+{
+    cout&lt;&lt;&quot;The number of all students: &quot;&lt;&lt;Student::GetTotal()&lt;&lt;endl;//total私有不能直接访问
+    Student a;
+    cout&lt;&lt;&quot;The number of all students: &quot;&lt;&lt;a.GetTotal()&lt;&lt;endl;//a不用::用.号,total私有不能直接访问
+    Student b(&quot;zhao&quot;);
+    cout&lt;&lt;&quot;The number of all students: &quot;&lt;&lt;b.GetTotal()&lt;&lt;endl;//total私有不能直接访问
+    return 0;
+}
+</code></pre>
+<h1 id="3">3</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+class Score
+{
+    int home_team;
+    int opponent;
+public:
+    Score(int,int);
+    int GetHomeTeam(){return home_team;}
+    int GetOpponent(){return opponent;}
+    void Display(){cout&lt;&lt;home_team&lt;&lt;&quot; : &quot;&lt;&lt;opponent&lt;&lt;&quot;\n&quot;;}
+    void Set(int,int);
+};
+Score::Score(int h,int o)
+{
+    home_team = h;
+    opponent = o;
+}
+void Score::Set(int h,int o)
+{
+    home_team = h;
+    opponent = o;
+}
+
+void input(Score score[]){
+    for(int i=0;i&lt;3;i++){
+        int h,o;
+        cin&gt;&gt;h&gt;&gt;o;
+        score[i].Set(h,o);
+    }
+}
+
+void edit(Score score[]){
+    while(1){
+        int i,h,o;
+        cin&gt;&gt;i;
+        if(i==0) return;
+        cin&gt;&gt;h&gt;&gt;o;
+        score[i-1].Set(h,o);
+    }
+}
+
+void search(Score score[]){
+    while(1){
+        int i;
+        cin&gt;&gt;i;
+        if(i==0) return;
+        score[i-1].Display();
+    }
+}
+
+bool result(Score t1, Score t2, Score t3){
+    int home=0,opp=0;
+    t1.GetHomeTeam() &gt; t1.GetOpponent() ? (home++) : (opp++);
+    t2.GetHomeTeam() &gt; t2.GetOpponent() ? (home++) : (opp++);
+    t3.GetHomeTeam() &gt; t3.GetOpponent() ? (home++) : (opp++);
+    return home&gt;opp;
+}
+
+int main()
+{
+    Score t1(98,67), t2(105,103), t3(88,96);
+    Score score[] = {t1, t2, t3};
+    while(1){
+        cout&lt;&lt;&quot;**********1.输入 3 场比赛得分**********\n&quot;;
+        cout&lt;&lt;&quot;**********2.修改某场比赛得分**********\n&quot;;
+        cout&lt;&lt;&quot;**********3.查询某场比赛得分**********\n&quot;;
+        cout&lt;&lt;&quot;**********4.输出冠军（主队or客队）**********\n&quot;;
+        cout&lt;&lt;&quot;**********0.返回主菜单**********\n&quot;;
+        int i;
+        cin&gt;&gt;i;
+        switch (i)
+        {
+        case 1:
+            input(score);
+            break;
+        case 2:
+            edit(score);
+            break;
+        case 3:
+            search(score);
+            break;
+        case 4:
+            cout&lt;&lt;(result(score[0],score[1],score[2]) ? &quot;主队胜！&quot; : &quot;客队胜！&quot;)&lt;&lt;&quot;\n&quot;;
+            break;
+        case 0:
+            return 0;
+        }
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="4">4</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+class Cat
+//点击在此输入一行或多行代码
+{
+    static int numOfCats;
+    public:
+    Cat(){numOfCats++;}
+    Cat(int){numOfCats++;}
+    Cat(const Cat&amp;){numOfCats++;}
+    static int getNumOfCats();
+};
+int Cat::numOfCats = 0;
+int Cat::getNumOfCats()
+{
+    return numOfCats;
+}
+
+
+int main()
+{
+   Cat c1,c2,c(5);
+   cout &lt;&lt; &quot;There are &quot; &lt;&lt; Cat::getNumOfCats() &lt;&lt; &quot; cats alive!\n&quot;;
+   Cat c5(c),c4(c5);
+   cout &lt;&lt; &quot;There are &quot; &lt;&lt; Cat::getNumOfCats() &lt;&lt; &quot; cats alive!\n&quot;;
+return 0;
+}
+</code></pre>
+<h1 id="5">5</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+void fn1()
+//点击在此输入一行或多行代码
+{
+    static int n = 0;
+    int k = 0;
+    n++;
+    k++;
+    cout&lt;&lt;&quot; static n = &quot;&lt;&lt;n&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot; auto k = &quot;&lt;&lt;k&lt;&lt;&quot;\n&quot;;
+}
+
+int main()
+{
+    int m;
+    cin&gt;&gt;m;
+    for(int i = 0; i &lt; m; i++)
+        fn1();
+}
+</code></pre>
+<h1 id="6">6</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+class Boat;
+class Car
+{
+private:
+    int weight;
+public:
+    Car(int j){weight = j;}
+    //点击在此输入代码
+    friend int totalWeight(Car &amp;aCar, Boat &amp;aBoat);
+};
+
+class Boat
+{
+private:
+    int weight;
+public:
+    Boat(int j){weight = j;}
+    //点击在此输入代码
+    friend int totalWeight(Car &amp;aCar, Boat &amp;aBoat);
+};
+
+int totalWeight(Car &amp;aCar, Boat &amp;aBoat)
+//点击在此输入一行或多行代码
+{
+    return aCar.weight + aBoat.weight;
+}
+
+int main()
+{   int w1,w2;
+    cin&gt;&gt;w1&gt;&gt;w2;
+
+    Car c1(w1);
+    Boat b1(w2);
+
+    cout &lt;&lt;&quot;totalWeight = &quot;&lt;&lt; totalWeight(c1, b1) &lt;&lt; endl;
+}
+</code></pre>
+
+                </div>
+            </article>
+            
+        </div>
+
+        
+
+        
+
+        
+            <div class="post-detail">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <svg t="1733415937042" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="4360" width="32" height="32">
+            <path
+                d="M379.733333 913.066667h-8.533333c-21.333333-4.266667-38.4-17.066667-46.933333-34.133334l-29.866667-72.533333H226.133333c-76.8 0-140.8-64-140.8-140.8V251.733333C85.333333 170.666667 149.333333 110.933333 226.133333 110.933333h571.733334C874.666667 110.933333 938.666667 170.666667 938.666667 251.733333v413.866667c0 76.8-64 140.8-140.8 140.8h-307.2l-64 85.333333c-8.533333 12.8-25.6 21.333333-46.933334 21.333334zM226.133333 174.933333c-42.666667 0-76.8 34.133333-76.8 76.8v413.866667c0 42.666667 34.133333 76.8 76.8 76.8h110.933334l42.666666 102.4 76.8-102.4h337.066667c42.666667 0 76.8-34.133333 76.8-76.8V251.733333c0-42.666667-34.133333-76.8-76.8-76.8H226.133333z"
+                fill="#ffffff" p-id="4361"></path>
+            <path d="M285.866667 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4362"></path>
+            <path d="M512 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4363"></path>
+            <path d="M738.133333 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4364"></path>
+        </svg>
+    </button>
+    <nav class="navbar">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-nav mr-auto" style="text-align: center">
+                <div id="tcomment"></div>
+                <script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.40/dist/twikoo.min.js"></script>
+                <script>
+                    twikoo.init({
+                        envId: 'https://twikooapi.panheadgg.top/',
+                        el: '#tcomment',
+                        // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数
+                        // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+                    })
+                </script>
+            </div>
+        </div>
+    </nav>
+</div>
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">温故而知新</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Copyright © 2024 PanheadGG
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://blog.panheadgg.top/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
