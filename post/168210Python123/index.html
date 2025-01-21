@@ -1,0 +1,1178 @@
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Python123期末复习练习 2024年秋 非官方答案 | PanheadGG&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://blog.panheadgg.top/favicon.ico?v=1737450369121">
+
+<link href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://fastly.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://fastly.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://blog.panheadgg.top/styles/main.css">
+<!-- DEMO JS -->
+<script src="https://blog.panheadgg.top/media/scripts/index.js"></script>
+
+
+
+        <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+
+<body>
+    <div class="main gt-bg-theme-color-first">
+        <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            PanheadGG&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1737450369121" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+            <div class="post-container">
+                <div class="post-detail gt-bg-theme-color-second">
+                    <article class="gt-post-content">
+                        <h2 class="post-title">
+                            Python123期末复习练习 2024年秋 非官方答案
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time gt-c-content-color-first">
+                                · 2025-01-05 ·
+                            </time>
+                            
+                                <a href="https://blog.panheadgg.top/tag/Python123/" class="post-tags">
+                                    # Python123
+                                </a>
+                                
+                        </div>
+                        
+                            <div class="post-content">
+                                <!-- <h1 id="1">1</h1>
+<pre><code class="language-cpp">/*定义学生类，包含姓名，和各科成绩，定义一个静态变量，累计求各科成绩之和，所有成绩之和，
+输入5个学生的三科成绩，求三科各自的平均分，三科一起的平均分*/
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Student {
+private:
+    string name;
+    float scores[3];  // 存放三科成绩
+    static float subjectTotalScores[3];  //静态数组subjectTotalScores，用于累计各科成绩总和
+    static float allTotalScore;  // 静态变量allTotalScore，用于累计所有成绩总和
+public:
+    void setData();  // 输入学生信息（姓名和三科成绩）
+    static void calculateAverages(int numStudents);  // 静态函数，用于计算各科平均分和所有成绩平均分
+};
+
+// 初始化静态数组和静态变量
+float Student::subjectTotalScores[3] = {0};
+float Student::allTotalScore = 0;
+
+
+// 输入学生信息（姓名和三科成绩）
+void Student::setData() {
+   // cout &lt;&lt; &quot;请输入学生姓名: &quot;;
+    cin &gt;&gt; name;
+   // cout &lt;&lt; &quot;请依次输入该学生的三科成绩: &quot;;
+    cin &gt;&gt; scores[0] &gt;&gt; scores[1] &gt;&gt; scores[2];
+
+    // 将该学生的各科成绩累加到静态变量中
+    for (int i = 0; i &lt; 3; ++i) {
+        subjectTotalScores[i] += scores[i];
+    }
+    allTotalScore += scores[0] + scores[1] + scores[2];
+}
+
+// 静态函数，用于计算各科平均分和所有成绩平均分
+void Student::calculateAverages(int numStudents) {
+    cout &lt;&lt; &quot;各科平均分如下: &quot; &lt;&lt; endl;
+    for (int i = 0; i &lt; 3; ++i) {
+        cout &lt;&lt; &quot;第 &quot; &lt;&lt; (i + 1) &lt;&lt; &quot; 科平均分: &quot; &lt;&lt; subjectTotalScores[i] / numStudents &lt;&lt; endl;
+    }
+    cout &lt;&lt; &quot;三科一起的平均分: &quot; &lt;&lt; allTotalScore / (numStudents * 3) &lt;&lt; endl;
+}
+
+int main() {
+    const int numStudents = 5;
+    Student students[numStudents];
+
+    // 循环输入5个学生的信息
+    for (int i = 0; i &lt; numStudents; ++i) {
+        students[i].setData();
+    }
+//用于计算各科平均分和所有成绩平均分
+    Student::calculateAverages(numStudents);
+
+    return 0;
+}
+</code></pre>
+<h1 id="2">2</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Employee
+{
+protected:
+    int id;
+    string name;
+public:
+    Employee(int,string);
+};
+Employee::Employee(int i,string n)
+{
+    id = i;
+    name = n;
+}
+
+class EmployeeManager:public Employee
+{
+    int teamSize;
+    string office;
+public:
+    EmployeeManager(int,string,int,string);
+    EmployeeManager(const EmployeeManager &amp; eml);
+    void show();
+};
+EmployeeManager::EmployeeManager(int i,string n,int t,string o):Employee(i,n)
+{
+    teamSize = t;
+    office = o;
+}
+EmployeeManager::EmployeeManager(const EmployeeManager &amp; eml):Employee(eml.id,eml.name)
+{
+    teamSize = eml.teamSize;
+    office = eml.office;
+}
+void EmployeeManager::show(){
+    cout&lt;&lt;&quot;em2's employeeId: &quot;&lt;&lt;id&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;em2's name: &quot;&lt;&lt;name&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;em2's teamSize: &quot;&lt;&lt;teamSize&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;em2's office location: &quot;&lt;&lt;office&lt;&lt;&quot;\n&quot;;
+}
+
+int main()
+{
+    EmployeeManager eml(1,&quot;Alice&quot;,5,&quot;Building A&quot;);
+    eml.show();
+    return 0;
+}
+</code></pre>
+<h1 id="3">3</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Notebook
+{
+    string brandName;
+    double screenSize;
+    int batteryCapacity;
+public:
+    Notebook(string,double,int);
+    void powerOn();
+    void powerOff();
+    void codingTime();
+};
+Notebook::Notebook(string n,double s,int c)
+{
+    brandName = n;
+    screenSize = s;
+    batteryCapacity = c;
+}
+void Notebook::powerOn()
+{
+    cout&lt;&lt;&quot;The &quot;&lt;&lt;brandName&lt;&lt;&quot; notebook is powering on...\n&quot;;
+}
+void Notebook::powerOff()
+{
+    cout&lt;&lt;&quot;The &quot;&lt;&lt;brandName&lt;&lt;&quot; notebook is powering off...\n&quot;;
+}
+void Notebook::codingTime()
+{
+    cout&lt;&lt;&quot;The student spent 2 hours writing C++ code on the &quot;&lt;&lt;brandName&lt;&lt;&quot; notebook.\n&quot;;
+}
+
+int main()
+{
+    Notebook myNotebook(&quot;Dell&quot;,15.6,5000);
+    myNotebook.powerOn();
+    myNotebook.codingTime();
+    myNotebook.powerOff();
+    return 0;
+}
+</code></pre>
+<h1 id="4">4</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class LabEquipment
+{    
+public:
+    LabEquipment(){}
+    void experiment();
+};
+void LabEquipment::experiment(){
+    cout&lt;&lt;&quot;Performing an experiment with the lab equipment.\n&quot;;
+}
+
+class Teacher
+{
+protected:
+    string name;
+    int age;
+    int teachingYear;
+public:
+    Teacher(){}
+    Teacher(string,int,int);
+    virtual void showDetails();
+    virtual void research();
+};
+Teacher::Teacher(string n,int a,int t){
+    name = n;
+    age = a;
+    teachingYear = t;
+}
+void Teacher::showDetails()
+{
+    cout&lt;&lt;&quot;Teacher: &quot;&lt;&lt;name&lt;&lt;&quot;, Age: &quot;&lt;&lt;age&lt;&lt;&quot;, Teaching Years: &quot;&lt;&lt;teachingYear&lt;&lt;&quot;\n&quot;;
+}
+void Teacher::research()
+{
+    cout&lt;&lt;&quot;Started experimental research.\n&quot;;
+}
+
+class TeacherResearcher:public Teacher
+{
+    int paperCount;
+    LabEquipment labEquipment;
+public:
+    TeacherResearcher(string,int,int,int);
+    void showDetails();
+    void research();
+    void research(int);
+};
+TeacherResearcher::TeacherResearcher(string n, int a, int t, int p):Teacher(n,a,t)
+{
+    paperCount = p;
+}
+void TeacherResearcher::showDetails()
+{
+    cout&lt;&lt;&quot;Teacher Researcher: &quot;&lt;&lt;name&lt;&lt;&quot;, Age: &quot;&lt;&lt;age&lt;&lt;&quot;, Teaching Years: &quot;&lt;&lt;teachingYear&lt;&lt;&quot;, Paper Count: &quot;&lt;&lt;paperCount&lt;&lt;&quot;\n&quot;;
+}
+void TeacherResearcher::research()
+{
+    labEquipment.experiment();
+    cout&lt;&lt;&quot;Started experimental research.\n&quot;;
+}
+void TeacherResearcher::research(int day)
+{
+    cout&lt;&lt;&quot;Spent &quot;&lt;&lt;day&lt;&lt;&quot; days doing experimental research.\n&quot;;
+}
+
+int main()
+{
+    TeacherResearcher tr(&quot;Dr. Smith&quot;,40,15,50);
+    tr.showDetails();
+    tr.research();
+    tr.research(7);
+    return 0;
+}
+</code></pre>
+<h1 id="5">5</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+class EmployeeManager
+{
+    int teamSize;
+public:
+    EmployeeManager(int);
+    void showTeamSize();
+    EmployeeManager operator+(int t);
+};
+EmployeeManager::EmployeeManager(int t)
+{
+    teamSize = t;
+}
+void EmployeeManager::showTeamSize(){
+    cout&lt;&lt;&quot;Team size: &quot;&lt;&lt;teamSize&lt;&lt;&quot;\n&quot;;
+}
+EmployeeManager EmployeeManager::operator+(int t)
+{
+    return teamSize + t;
+}
+
+int main()
+{
+    EmployeeManager eml(0);
+    eml.showTeamSize();
+    eml = eml + 3;
+    eml.showTeamSize();
+    return 0;
+}
+</code></pre>
+<h1 id="6">6</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Animal
+{
+protected:
+    string sound;
+public:
+    Animal(){}
+    Animal(string s){sound = s;}
+    void makeSound();
+};
+void Animal::makeSound()
+{
+    cout&lt;&lt;&quot;The animal makes a sound.\n&quot;;
+}
+
+class Dog:public Animal
+{
+public:
+    Dog():Animal(&quot;汪汪&quot;){}
+    void makeSound();
+};
+void Dog::makeSound()
+{
+    cout&lt;&lt;&quot;The dog  &quot;&lt;&lt;sound&lt;&lt;&quot;.\n&quot;;
+}
+
+class Cat:public Animal
+{
+public:
+    Cat():Animal(&quot;喵喵&quot;){}
+    void makeSound();
+};
+void Cat::makeSound()
+{
+    cout&lt;&lt;&quot;The cat &quot;&lt;&lt;sound&lt;&lt;&quot;.\n&quot;;
+}
+
+int main()
+{
+    Animal a;
+    Dog d;
+    Cat c;
+    a.makeSound();
+    d.makeSound();
+    c.makeSound();
+    return 0;
+}
+</code></pre>
+<h1 id="7">7</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+class Complex
+{
+    double real;
+    double imag;
+public:
+    Complex(){}
+    Complex(double,double);
+    Complex operator+(Complex);
+    void show();
+};
+Complex::Complex(double r,double i)
+{
+    real = r;
+    imag = i;
+}
+Complex Complex::operator+(Complex c)
+{
+    Complex cc(real,imag);
+    cc.real = real + c.real;
+    cc.imag = imag + c.imag;
+    return cc;
+}
+void Complex::show(){
+    cout&lt;&lt;&quot;(&quot;&lt;&lt;real&lt;&lt;&quot;+&quot;&lt;&lt;imag&lt;&lt;&quot;i)&quot;;
+}
+
+int main()
+{
+    Complex c1(1.1,2.2);
+    Complex c2(3.3,4.4);
+    Complex c3 = c1 + c2;
+    c3.show();
+    return 0;
+}
+</code></pre>
+<h1 id="8">8</h1>
+<pre><code class="language-cpp">/*定义了 “Goods” 类用于表示商品信息，通过构造函数重载实现不同方式初始化商品对象，
+并借助相应成员函数在主函数中循环输出数组中各商品对象的编号、名称及价格等信息。*/
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+class Goods {
+private:
+    string num, name;
+    float price;
+public:
+    // 构造函数，接受一个字符串参数，用于初始化商品编号，名称为空，价格为0
+        Goods(string s){
+        num = s;
+        name = &quot;默认名字1&quot;;
+        price = 0;
+    }
+    // 构造函数，接受商品编号、商品名称和商品价格三个参数，分别进行初始化
+    Goods(string number, string sname, float pricetag) {
+        num = number;
+        name = sname;
+        price = pricetag;
+    }
+    // 构造函数，接受一个整数参数，将其转换为浮点型后作为价格，商品编号和名称为空
+    Goods(int pricetag) {
+        num = &quot;默认编号3&quot;;
+        name = &quot;默认名字3&quot;;
+        price = (float)pricetag;
+    }
+    // 添加成员函数用于获取商品编号
+    string getNum() const {
+        return num;
+    }
+    // 添加成员函数用于获取商品名称
+    string getName() const {
+        return name;
+    }
+    // 添加成员函数用于获取商品价格
+    float getPrice() const {
+        return price;
+    }
+};
+int main() {
+    Goods ss[3]{ Goods(&quot;computer&quot;), Goods(&quot;10001&quot;, &quot;book&quot;, 35), Goods(12.5) };
+    // 循环遍历数组，输出每个Goods对象的相关信息
+    for (int i = 0; i &lt; 3; ++i) {
+        cout &lt;&lt; &quot;商品 &quot; &lt;&lt; (i + 1) &lt;&lt; &quot; 的信息如下：&quot; &lt;&lt; endl;
+        cout &lt;&lt; &quot;编号：&quot; &lt;&lt; ss[i].getNum() &lt;&lt; endl;  //输出对象数组元素的获取编号函数的值
+        cout &lt;&lt; &quot;名称：&quot; &lt;&lt; ss[i].getName() &lt;&lt; endl;//输出对象数组元素的获取商品名函数的值
+        cout &lt;&lt; &quot;价格：&quot; &lt;&lt; ss[i].getPrice() &lt;&lt; &quot; 元&quot; &lt;&lt; endl;//输出对象数组元素的获取商品价格函数的值
+        cout &lt;&lt; endl;
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="9">9</h1>
+<pre><code class="language-cpp">/*定义学生类class，类中有数据成员学号、姓名、3门课程成绩，实现学生类信息的输入、输出和求平均值*/
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+class Student     //类的声明/定义
+{
+private:
+    string name;    //姓名
+    string num;     //学号
+    float score[3];   //三门课程成绩
+public:
+    void setdate();    //输入学生信息
+    float stu_ave();    //三门课平均成绩
+    void print();       //显示学生数据信息   
+};
+//类的实现
+void Student::setdate()          //类的成员函数setdate()的实现
+{ cout &lt;&lt; &quot;请输入学生的学号：&quot;;
+    cin &gt;&gt; num;
+    cout &lt;&lt; &quot;请输入学生的姓名：&quot;;
+    cin &gt;&gt; name;
+    cout &lt;&lt; &quot;请输入学生三门课程的成绩：&quot;;
+    cin &gt;&gt; score[0] &gt;&gt; score[1] &gt;&gt; score[2];  }
+float Student::stu_ave()
+{ return (score[0] + score[1] + score[2]) / 3;  }
+void Student::print()
+{ cout &lt;&lt; &quot;学生的学号：&quot;;
+    cout &lt;&lt; num &lt;&lt; endl;
+    cout &lt;&lt; &quot;学生的姓名：&quot;;
+    cout &lt;&lt; name &lt;&lt; endl;
+    cout &lt;&lt; &quot;学生三门课程的成绩：&quot;;
+    cout &lt;&lt; score[0] &lt;&lt; &quot;   &quot; &lt;&lt; score[1] &lt;&lt; &quot;   &quot; &lt;&lt; score[2] &lt;&lt; endl;  }
+int main()
+{   Student s; // 创建一个Student类的对象s，用于存储和操作单个学生的相关信息
+    s.setdate();  // 对象s调用Student类中的setdate函数，通过用户输入来设置该学生对象s的学号、姓名以及三门课程成绩等信息
+    // 调用Student类中的stu_ave函数来计算该学生三门课程成绩的平均值，并将结果输出显示
+    cout &lt;&lt; &quot;该学生三门课程的平均成绩为：&quot; &lt;&lt; s.stu_ave() &lt;&lt; endl;  
+    s.print();  // 调用Student类中的print函数，将该学生对象s的学号、姓名以及三门课程成绩等信息输出显示
+    return 0;  // 表示程序正常结束，向操作系统返回值0
+}
+</code></pre>
+<h1 id="10">10</h1>
+<pre><code class="language-cpp">/*类与对象-带默认值的构造函数*/
+#include&lt;iostream&gt;
+using namespace std;
+class Date       //定义Date类 
+{
+private:
+	int year, month, day;
+public:
+	Date(int y = 2000, int m = 1, int d= 1)
+	{
+		year = y; month = m; day = d;
+	}
+	//定义一个show成员函数，输出年月日
+    //点击在此输入代码
+    void show(){
+        cout&lt;&lt;year&lt;&lt;&quot;.&quot;&lt;&lt;month&lt;&lt;&quot;.&quot;&lt;&lt;day&lt;&lt;&quot;\n&quot;;
+    }
+
+};
+int main()
+{
+	Date d1,d2(2024), d3(2024, 12), d4(2024, 12, 31);
+	d1.show();
+	d2.show();
+	d3.show();
+	d4.show();
+	return 1;
+}
+</code></pre>
+ -->
+                                <h1 id="1">1</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">/*定义学生类，包含姓名，和各科成绩，定义一个静态变量，累计求各科成绩之和，所有成绩之和，
+输入5个学生的三科成绩，求三科各自的平均分，三科一起的平均分*/
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Student {
+private:
+    string name;
+    float scores[3];  // 存放三科成绩
+    static float subjectTotalScores[3];  //静态数组subjectTotalScores，用于累计各科成绩总和
+    static float allTotalScore;  // 静态变量allTotalScore，用于累计所有成绩总和
+public:
+    void setData();  // 输入学生信息（姓名和三科成绩）
+    static void calculateAverages(int numStudents);  // 静态函数，用于计算各科平均分和所有成绩平均分
+};
+
+// 初始化静态数组和静态变量
+float Student::subjectTotalScores[3] = {0};
+float Student::allTotalScore = 0;
+
+
+// 输入学生信息（姓名和三科成绩）
+void Student::setData() {
+   // cout &lt;&lt; &quot;请输入学生姓名: &quot;;
+    cin &gt;&gt; name;
+   // cout &lt;&lt; &quot;请依次输入该学生的三科成绩: &quot;;
+    cin &gt;&gt; scores[0] &gt;&gt; scores[1] &gt;&gt; scores[2];
+
+    // 将该学生的各科成绩累加到静态变量中
+    for (int i = 0; i &lt; 3; ++i) {
+        subjectTotalScores[i] += scores[i];
+    }
+    allTotalScore += scores[0] + scores[1] + scores[2];
+}
+
+// 静态函数，用于计算各科平均分和所有成绩平均分
+void Student::calculateAverages(int numStudents) {
+    cout &lt;&lt; &quot;各科平均分如下: &quot; &lt;&lt; endl;
+    for (int i = 0; i &lt; 3; ++i) {
+        cout &lt;&lt; &quot;第 &quot; &lt;&lt; (i + 1) &lt;&lt; &quot; 科平均分: &quot; &lt;&lt; subjectTotalScores[i] / numStudents &lt;&lt; endl;
+    }
+    cout &lt;&lt; &quot;三科一起的平均分: &quot; &lt;&lt; allTotalScore / (numStudents * 3) &lt;&lt; endl;
+}
+
+int main() {
+    const int numStudents = 5;
+    Student students[numStudents];
+
+    // 循环输入5个学生的信息
+    for (int i = 0; i &lt; numStudents; ++i) {
+        students[i].setData();
+    }
+//用于计算各科平均分和所有成绩平均分
+    Student::calculateAverages(numStudents);
+
+    return 0;
+}
+</code></pre>
+<h1 id="2">2</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Employee
+{
+protected:
+    int id;
+    string name;
+public:
+    Employee(int,string);
+};
+Employee::Employee(int i,string n)
+{
+    id = i;
+    name = n;
+}
+
+class EmployeeManager:public Employee
+{
+    int teamSize;
+    string office;
+public:
+    EmployeeManager(int,string,int,string);
+    EmployeeManager(const EmployeeManager &amp; eml);
+    void show();
+};
+EmployeeManager::EmployeeManager(int i,string n,int t,string o):Employee(i,n)
+{
+    teamSize = t;
+    office = o;
+}
+EmployeeManager::EmployeeManager(const EmployeeManager &amp; eml):Employee(eml.id,eml.name)
+{
+    teamSize = eml.teamSize;
+    office = eml.office;
+}
+void EmployeeManager::show(){
+    cout&lt;&lt;&quot;em2's employeeId: &quot;&lt;&lt;id&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;em2's name: &quot;&lt;&lt;name&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;em2's teamSize: &quot;&lt;&lt;teamSize&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;em2's office location: &quot;&lt;&lt;office&lt;&lt;&quot;\n&quot;;
+}
+
+int main()
+{
+    EmployeeManager eml(1,&quot;Alice&quot;,5,&quot;Building A&quot;);
+    eml.show();
+    return 0;
+}
+</code></pre>
+<h1 id="3">3</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Notebook
+{
+    string brandName;
+    double screenSize;
+    int batteryCapacity;
+public:
+    Notebook(string,double,int);
+    void powerOn();
+    void powerOff();
+    void codingTime();
+};
+Notebook::Notebook(string n,double s,int c)
+{
+    brandName = n;
+    screenSize = s;
+    batteryCapacity = c;
+}
+void Notebook::powerOn()
+{
+    cout&lt;&lt;&quot;The &quot;&lt;&lt;brandName&lt;&lt;&quot; notebook is powering on...\n&quot;;
+}
+void Notebook::powerOff()
+{
+    cout&lt;&lt;&quot;The &quot;&lt;&lt;brandName&lt;&lt;&quot; notebook is powering off...\n&quot;;
+}
+void Notebook::codingTime()
+{
+    cout&lt;&lt;&quot;The student spent 2 hours writing C++ code on the &quot;&lt;&lt;brandName&lt;&lt;&quot; notebook.\n&quot;;
+}
+
+int main()
+{
+    Notebook myNotebook(&quot;Dell&quot;,15.6,5000);
+    myNotebook.powerOn();
+    myNotebook.codingTime();
+    myNotebook.powerOff();
+    return 0;
+}
+</code></pre>
+<h1 id="4">4</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class LabEquipment
+{    
+public:
+    LabEquipment(){}
+    void experiment();
+};
+void LabEquipment::experiment(){
+    cout&lt;&lt;&quot;Performing an experiment with the lab equipment.\n&quot;;
+}
+
+class Teacher
+{
+protected:
+    string name;
+    int age;
+    int teachingYear;
+public:
+    Teacher(){}
+    Teacher(string,int,int);
+    virtual void showDetails();
+    virtual void research();
+};
+Teacher::Teacher(string n,int a,int t){
+    name = n;
+    age = a;
+    teachingYear = t;
+}
+void Teacher::showDetails()
+{
+    cout&lt;&lt;&quot;Teacher: &quot;&lt;&lt;name&lt;&lt;&quot;, Age: &quot;&lt;&lt;age&lt;&lt;&quot;, Teaching Years: &quot;&lt;&lt;teachingYear&lt;&lt;&quot;\n&quot;;
+}
+void Teacher::research()
+{
+    cout&lt;&lt;&quot;Started experimental research.\n&quot;;
+}
+
+class TeacherResearcher:public Teacher
+{
+    int paperCount;
+    LabEquipment labEquipment;
+public:
+    TeacherResearcher(string,int,int,int);
+    void showDetails();
+    void research();
+    void research(int);
+};
+TeacherResearcher::TeacherResearcher(string n, int a, int t, int p):Teacher(n,a,t)
+{
+    paperCount = p;
+}
+void TeacherResearcher::showDetails()
+{
+    cout&lt;&lt;&quot;Teacher Researcher: &quot;&lt;&lt;name&lt;&lt;&quot;, Age: &quot;&lt;&lt;age&lt;&lt;&quot;, Teaching Years: &quot;&lt;&lt;teachingYear&lt;&lt;&quot;, Paper Count: &quot;&lt;&lt;paperCount&lt;&lt;&quot;\n&quot;;
+}
+void TeacherResearcher::research()
+{
+    labEquipment.experiment();
+    cout&lt;&lt;&quot;Started experimental research.\n&quot;;
+}
+void TeacherResearcher::research(int day)
+{
+    cout&lt;&lt;&quot;Spent &quot;&lt;&lt;day&lt;&lt;&quot; days doing experimental research.\n&quot;;
+}
+
+int main()
+{
+    TeacherResearcher tr(&quot;Dr. Smith&quot;,40,15,50);
+    tr.showDetails();
+    tr.research();
+    tr.research(7);
+    return 0;
+}
+</code></pre>
+<h1 id="5">5</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+class EmployeeManager
+{
+    int teamSize;
+public:
+    EmployeeManager(int);
+    void showTeamSize();
+    EmployeeManager operator+(int t);
+};
+EmployeeManager::EmployeeManager(int t)
+{
+    teamSize = t;
+}
+void EmployeeManager::showTeamSize(){
+    cout&lt;&lt;&quot;Team size: &quot;&lt;&lt;teamSize&lt;&lt;&quot;\n&quot;;
+}
+EmployeeManager EmployeeManager::operator+(int t)
+{
+    return teamSize + t;
+}
+
+int main()
+{
+    EmployeeManager eml(0);
+    eml.showTeamSize();
+    eml = eml + 3;
+    eml.showTeamSize();
+    return 0;
+}
+</code></pre>
+<h1 id="6">6</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Animal
+{
+protected:
+    string sound;
+public:
+    Animal(){}
+    Animal(string s){sound = s;}
+    void makeSound();
+};
+void Animal::makeSound()
+{
+    cout&lt;&lt;&quot;The animal makes a sound.\n&quot;;
+}
+
+class Dog:public Animal
+{
+public:
+    Dog():Animal(&quot;汪汪&quot;){}
+    void makeSound();
+};
+void Dog::makeSound()
+{
+    cout&lt;&lt;&quot;The dog  &quot;&lt;&lt;sound&lt;&lt;&quot;.\n&quot;;
+}
+
+class Cat:public Animal
+{
+public:
+    Cat():Animal(&quot;喵喵&quot;){}
+    void makeSound();
+};
+void Cat::makeSound()
+{
+    cout&lt;&lt;&quot;The cat &quot;&lt;&lt;sound&lt;&lt;&quot;.\n&quot;;
+}
+
+int main()
+{
+    Animal a;
+    Dog d;
+    Cat c;
+    a.makeSound();
+    d.makeSound();
+    c.makeSound();
+    return 0;
+}
+</code></pre>
+<h1 id="7">7</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+class Complex
+{
+    double real;
+    double imag;
+public:
+    Complex(){}
+    Complex(double,double);
+    Complex operator+(Complex);
+    void show();
+};
+Complex::Complex(double r,double i)
+{
+    real = r;
+    imag = i;
+}
+Complex Complex::operator+(Complex c)
+{
+    Complex cc(real,imag);
+    cc.real = real + c.real;
+    cc.imag = imag + c.imag;
+    return cc;
+}
+void Complex::show(){
+    cout&lt;&lt;&quot;(&quot;&lt;&lt;real&lt;&lt;&quot;+&quot;&lt;&lt;imag&lt;&lt;&quot;i)&quot;;
+}
+
+int main()
+{
+    Complex c1(1.1,2.2);
+    Complex c2(3.3,4.4);
+    Complex c3 = c1 + c2;
+    c3.show();
+    return 0;
+}
+</code></pre>
+<h1 id="8">8</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">/*定义了 “Goods” 类用于表示商品信息，通过构造函数重载实现不同方式初始化商品对象，
+并借助相应成员函数在主函数中循环输出数组中各商品对象的编号、名称及价格等信息。*/
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+class Goods {
+private:
+    string num, name;
+    float price;
+public:
+    // 构造函数，接受一个字符串参数，用于初始化商品编号，名称为空，价格为0
+        Goods(string s){
+        num = s;
+        name = &quot;默认名字1&quot;;
+        price = 0;
+    }
+    // 构造函数，接受商品编号、商品名称和商品价格三个参数，分别进行初始化
+    Goods(string number, string sname, float pricetag) {
+        num = number;
+        name = sname;
+        price = pricetag;
+    }
+    // 构造函数，接受一个整数参数，将其转换为浮点型后作为价格，商品编号和名称为空
+    Goods(int pricetag) {
+        num = &quot;默认编号3&quot;;
+        name = &quot;默认名字3&quot;;
+        price = (float)pricetag;
+    }
+    // 添加成员函数用于获取商品编号
+    string getNum() const {
+        return num;
+    }
+    // 添加成员函数用于获取商品名称
+    string getName() const {
+        return name;
+    }
+    // 添加成员函数用于获取商品价格
+    float getPrice() const {
+        return price;
+    }
+};
+int main() {
+    Goods ss[3]{ Goods(&quot;computer&quot;), Goods(&quot;10001&quot;, &quot;book&quot;, 35), Goods(12.5) };
+    // 循环遍历数组，输出每个Goods对象的相关信息
+    for (int i = 0; i &lt; 3; ++i) {
+        cout &lt;&lt; &quot;商品 &quot; &lt;&lt; (i + 1) &lt;&lt; &quot; 的信息如下：&quot; &lt;&lt; endl;
+        cout &lt;&lt; &quot;编号：&quot; &lt;&lt; ss[i].getNum() &lt;&lt; endl;  //输出对象数组元素的获取编号函数的值
+        cout &lt;&lt; &quot;名称：&quot; &lt;&lt; ss[i].getName() &lt;&lt; endl;//输出对象数组元素的获取商品名函数的值
+        cout &lt;&lt; &quot;价格：&quot; &lt;&lt; ss[i].getPrice() &lt;&lt; &quot; 元&quot; &lt;&lt; endl;//输出对象数组元素的获取商品价格函数的值
+        cout &lt;&lt; endl;
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="9">9</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">/*定义学生类class，类中有数据成员学号、姓名、3门课程成绩，实现学生类信息的输入、输出和求平均值*/
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+class Student     //类的声明/定义
+{
+private:
+    string name;    //姓名
+    string num;     //学号
+    float score[3];   //三门课程成绩
+public:
+    void setdate();    //输入学生信息
+    float stu_ave();    //三门课平均成绩
+    void print();       //显示学生数据信息   
+};
+//类的实现
+void Student::setdate()          //类的成员函数setdate()的实现
+{ cout &lt;&lt; &quot;请输入学生的学号：&quot;;
+    cin &gt;&gt; num;
+    cout &lt;&lt; &quot;请输入学生的姓名：&quot;;
+    cin &gt;&gt; name;
+    cout &lt;&lt; &quot;请输入学生三门课程的成绩：&quot;;
+    cin &gt;&gt; score[0] &gt;&gt; score[1] &gt;&gt; score[2];  }
+float Student::stu_ave()
+{ return (score[0] + score[1] + score[2]) / 3;  }
+void Student::print()
+{ cout &lt;&lt; &quot;学生的学号：&quot;;
+    cout &lt;&lt; num &lt;&lt; endl;
+    cout &lt;&lt; &quot;学生的姓名：&quot;;
+    cout &lt;&lt; name &lt;&lt; endl;
+    cout &lt;&lt; &quot;学生三门课程的成绩：&quot;;
+    cout &lt;&lt; score[0] &lt;&lt; &quot;   &quot; &lt;&lt; score[1] &lt;&lt; &quot;   &quot; &lt;&lt; score[2] &lt;&lt; endl;  }
+int main()
+{   Student s; // 创建一个Student类的对象s，用于存储和操作单个学生的相关信息
+    s.setdate();  // 对象s调用Student类中的setdate函数，通过用户输入来设置该学生对象s的学号、姓名以及三门课程成绩等信息
+    // 调用Student类中的stu_ave函数来计算该学生三门课程成绩的平均值，并将结果输出显示
+    cout &lt;&lt; &quot;该学生三门课程的平均成绩为：&quot; &lt;&lt; s.stu_ave() &lt;&lt; endl;  
+    s.print();  // 调用Student类中的print函数，将该学生对象s的学号、姓名以及三门课程成绩等信息输出显示
+    return 0;  // 表示程序正常结束，向操作系统返回值0
+}
+</code></pre>
+<h1 id="10">10</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">/*类与对象-带默认值的构造函数*/
+#include&lt;iostream&gt;
+using namespace std;
+class Date       //定义Date类 
+{
+private:
+	int year, month, day;
+public:
+	Date(int y = 2000, int m = 1, int d= 1)
+	{
+		year = y; month = m; day = d;
+	}
+	//定义一个show成员函数，输出年月日
+    //点击在此输入代码
+    void show(){
+        cout&lt;&lt;year&lt;&lt;&quot;.&quot;&lt;&lt;month&lt;&lt;&quot;.&quot;&lt;&lt;day&lt;&lt;&quot;\n&quot;;
+    }
+
+};
+int main()
+{
+	Date d1,d2(2024), d3(2024, 12), d4(2024, 12, 31);
+	d1.show();
+	d2.show();
+	d3.show();
+	d4.show();
+	return 1;
+}
+</code></pre>
+
+                                
+                                    <div>
+    <button style="background-color: transparent;border: 0px solid transparent;" type="button" data-toggle="collapse" data-target="#navbarTComent" aria-expanded="false">
+        <svg t="1733415937042" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="4360" width="32" height="32">
+            <path
+                d="M379.733333 913.066667h-8.533333c-21.333333-4.266667-38.4-17.066667-46.933333-34.133334l-29.866667-72.533333H226.133333c-76.8 0-140.8-64-140.8-140.8V251.733333C85.333333 170.666667 149.333333 110.933333 226.133333 110.933333h571.733334C874.666667 110.933333 938.666667 170.666667 938.666667 251.733333v413.866667c0 76.8-64 140.8-140.8 140.8h-307.2l-64 85.333333c-8.533333 12.8-25.6 21.333333-46.933334 21.333334zM226.133333 174.933333c-42.666667 0-76.8 34.133333-76.8 76.8v413.866667c0 42.666667 34.133333 76.8 76.8 76.8h110.933334l42.666666 102.4 76.8-102.4h337.066667c42.666667 0 76.8-34.133333 76.8-76.8V251.733333c0-42.666667-34.133333-76.8-76.8-76.8H226.133333z"
+                fill="#ffffff" p-id="4361"></path>
+            <path d="M285.866667 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4362"></path>
+            <path d="M512 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4363"></path>
+            <path d="M738.133333 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4364"></path>
+        </svg>
+    </button>
+    <nav style="padding: 5px;">
+        <div class="collapse" id="navbarTComent">
+            <div class="navbar-nav mr-auto" style="text-align: center">
+                <div id="tcomment"></div>
+                <script src="https://fastly.jsdelivr.net/npm/twikoo@1.6.40/dist/twikoo.min.js"></script>
+                <script>
+                    twikoo.init({
+                        envId: 'https://twikooapi.panheadgg.top/',
+                        el: '#tcomment',
+                        // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数
+                        // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+                    })
+                </script>
+            </div>
+        </div>
+    </nav>
+</div>
+                                
+                            </div>
+                    </article>
+
+                </div>
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">温故而知新</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/PanheadGG" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        © 2024-2025 PanheadGG. All rights reserved. 
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Edited by <a href="https://blog.panheadgg.top/" target="_blank">PanheadGG</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a href="https://blog.panheadgg.top/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+            </div>
+    </div>
+</body>
+
+</html>

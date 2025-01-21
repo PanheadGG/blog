@@ -1,0 +1,788 @@
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Python123实验13 指针2 非官方答案 | PanheadGG&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://blog.panheadgg.top/favicon.ico?v=1737450369121">
+
+<link href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://fastly.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://fastly.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://blog.panheadgg.top/styles/main.css">
+<!-- DEMO JS -->
+<script src="https://blog.panheadgg.top/media/scripts/index.js"></script>
+
+
+
+        <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+
+<body>
+    <div class="main gt-bg-theme-color-first">
+        <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            PanheadGG&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1737450369121" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+            <div class="post-container">
+                <div class="post-detail gt-bg-theme-color-second">
+                    <article class="gt-post-content">
+                        <h2 class="post-title">
+                            Python123实验13 指针2 非官方答案
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time gt-c-content-color-first">
+                                · 2024-12-08 ·
+                            </time>
+                            
+                                <a href="https://blog.panheadgg.top/tag/Python123/" class="post-tags">
+                                    # Python123
+                                </a>
+                                
+                        </div>
+                        
+                            <div class="post-content">
+                                <!-- <h1 id="1">1</h1>
+<pre><code class="language-cpp">/*编写一个函数，使用指针交换两个整数的值。*/
+#include &lt;iostream&gt;
+using namespace std;
+void swap(int *a, int *b) 
+{  //利用中间变量交换地址中的值
+
+   int tmp=*a;
+   *a=*b;
+   *b=tmp;
+   
+}
+int main() {
+    int num1 = 5, num2 = 10;
+    cout &lt;&lt; &quot;Before swap: num1 = &quot; &lt;&lt; num1 &lt;&lt; &quot;, num2 = &quot; &lt;&lt; num2 &lt;&lt; endl;
+    swap(&amp;num1,&amp;num2);     //调用函数，实参传递地址
+    cout &lt;&lt; &quot;After swap: num1 = &quot; &lt;&lt; num1 &lt;&lt; &quot;, num2 = &quot; &lt;&lt; num2 &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<h1 id="2">2</h1>
+<pre><code class="language-cpp">/*编写一个函数，使用指针遍历数组，计算数组中所有元素的和。*/
+#include &lt;iostream&gt;
+using namespace std;
+int sumArray(int* arr, int size) {
+    int sum = 0;
+    for(int i=0;i&lt;size;i++){
+        sum+=arr[i];
+    }
+    return sum;
+}
+int main() {
+    int arr[] = { 1, 2, 3, 4, 5 };
+    int size = sizeof(arr) / sizeof(arr[0]);
+    cout &lt;&lt; &quot;Sum of array elements: &quot; &lt;&lt;   sumArray(arr,size)   &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<h1 id="3">3</h1>
+<pre><code class="language-cpp">/*编写一个函数，使用指针操作字符串,在给定的字符串中查找特定字符首次出现的位置。*/
+#include &lt;iostream&gt;
+using namespace std;
+int findChar(const char* str, char target) {
+    int i = 0;
+    while (*str != '\0') {
+        if (   *str==target      ) // 依次判断指针指向的字符是否为目标字符,相等返回i的值，不相等则指针后移，下标加1
+        {
+            return i;
+        }
+        str++;
+        i++;
+    }
+    return -1;
+}
+int main() {
+    const char* myStr = &quot;Hello, World!&quot;;
+    char target = 'o';
+    int position = findChar(myStr,target)  ;//调用函数，传递数组常量的首地址和目标字符
+    if (position != -1) {
+        cout &lt;&lt; &quot;Character '&quot; &lt;&lt; target &lt;&lt; &quot;' found at position &quot; &lt;&lt; position &lt;&lt; endl;
+    }
+    else {
+        cout &lt;&lt; &quot;Character not found.&quot; &lt;&lt; endl;
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="4">4</h1>
+<pre><code class="language-cpp">/*编写一个函数，返回给定数组中的最大元素，使用指针操作数组。*/
+#include &lt;iostream&gt;
+using namespace std;
+int findMax(int* arr, int size) {
+    int max = *arr;  //将数组的第一个值赋给max，max的类型为int
+    for (int i = 1; i &lt; size; i++) 
+    { //依次比较大小，较大的值赋给max
+        max = arr[i] &gt; max ? arr[i] : max;
+       
+    }
+    return max;
+}
+int main() {
+    int arr[] = { 5, 9, 2, 7, 1 };
+    int size = sizeof(arr) / sizeof(arr[0]);
+    cout &lt;&lt; &quot;Max element in array: &quot; &lt;&lt; findMax(arr, size) &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<h1 id="5">5</h1>
+<pre><code class="language-cpp">/*编写一个函数，使用指针操作数组,将一个整数数组逆序排列。*/
+#include &lt;iostream&gt;
+using namespace std;
+void reverseArray(int* arr, int size) {
+    int start = 0, end = size - 1;
+    while (start &lt; end) { //下标start小于end时，说明元素交换未结束，下面的语句是进行交换，并改变start和end的值
+        int tmp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = tmp;
+        start++;
+        end--;
+        
+    }
+}
+
+int main() {
+    int arr[] = { 1, 2, 3, 4, 5 };
+    int size = sizeof(arr) / sizeof(arr[0]);
+    cout &lt;&lt; &quot;Original array: &quot;;
+    for (int i = 0; i &lt; size; i++) {
+        cout &lt;&lt; arr[i] &lt;&lt; &quot; &quot;;
+    }
+    reverseArray(arr,size); //函数调用
+    cout &lt;&lt; &quot;\nReversed array: &quot;;
+    for (int i = 0; i &lt; size; i++) {
+        cout &lt;&lt; arr[i] &lt;&lt; &quot; &quot;;
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="6">6</h1>
+<pre><code class="language-cpp">/*编写一个函数，使用指针操作数组,计算一个整数数组中偶数元素的个数。*/
+#include &lt;iostream&gt;
+using namespace std;
+int countEven(int* arr, int size) {
+    int count = 0;
+    for (int i = 0; i &lt; size; i++)  //判断数组中的元素是否为偶数，是偶数个数加1
+    {
+        if(arr[i]%2==0) count++;
+    }
+    return count;
+}
+
+int main() {
+    int arr[] = { 1, 2, 3, 4, 5, 6 };
+    int size = sizeof(arr) / sizeof(arr[0]);
+    cout &lt;&lt; &quot;Number of even elements: &quot; &lt;&lt; countEven(arr,size) &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<h1 id="7">7</h1>
+<pre><code class="language-cpp">/*编写一个函数，使用指针删除字符串中的指定字符。*/
+#include &lt;iostream&gt;
+using namespace std;
+void removeChar(char* str, char target) {
+    // 定义两个索引变量，i用于遍历原始字符串，j用于构建新的字符串（不包含目标字符）
+    int i = 0, j = 0;
+    // 开始遍历原始字符串，直到遇到字符串结束符'\0'
+    while  (  str[i]!='\0'  ) {
+        // 如果当前字符不等于目标字符
+        if  ( str[i]!=target ) {
+            // 将当前字符复制到新字符串的相应位置（由j指向）
+            str[j++]=str[i]  ;
+        }
+        // 无论当前字符是否等于目标字符，i都要向后移动一位，继续遍历下一个字符
+        i++;
+    }
+    // 在新构建的字符串末尾添加结束符'\0'，使其成为一个合法的字符串
+    str[j] = '\0';
+}
+int main() {
+    // 定义一个字符数组并初始化，这个数组存储了一个字符串&quot;banana&quot;，可以对其内容进行修改
+    char str[] = &quot;banana&quot;;
+    // 定义要从字符串中删除的目标字符，这里是字符'a'
+    char target = 'a';
+    // 输出原始字符串，展示在删除操作之前的字符串内容
+    cout &lt;&lt; &quot;Before removal: &quot; &lt;&lt; str &lt;&lt; endl;
+    // 调用removeChar函数，传入字符串和目标字符，执行删除操作
+    removeChar(str, target);
+    // 输出删除指定字符后的字符串内容
+    cout &lt;&lt; &quot;After removal: &quot; &lt;&lt; str &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<h1 id="8">8</h1>
+<pre><code class="language-cpp">/*编写一个函数，使用指针统计一个字符串中单词的个数。假设单词之间以空格分隔。*/
+#include &lt;iostream&gt;
+using namespace std;
+int countWords(char* str) {
+    int count = 0;
+    bool inWord = false;
+    while   (   *str!='\0'  )//遇到\0表示结束，未遇到循环进行
+    {
+        // 如果当前字符不是空格且之前不在单词中，说明进入新单词
+        if (*str != ' ' &amp;&amp; !inWord) {
+            inWord = true;
+            count++;
+        }
+        // 如果当前字符是空格，说明离开单词
+        else if (*str == ' ') {
+            inWord = false;
+        }
+        str++;
+    }
+    return count;
+}
+
+int main() {
+    char str[] = &quot;Hello World How are you&quot;;
+    cout &lt;&lt; &quot;Number of words: &quot; &lt;&lt; countWords(str) &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<h1 id="9">9</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+using namespace std;
+
+bool isPrime(int n){
+    for(int i=2;i&lt;=sqrt(n);i++)
+        if(n%i==0) return 0;
+    return 1;
+}
+
+bool isMirror(int n){
+    return n/100==n%10;
+}
+
+int main()
+{
+    for(int i=100;i&lt;=999;i++)
+        if(isPrime(i)&amp;&amp;isMirror(i))
+            cout&lt;&lt;i&lt;&lt;&quot;,&quot;;
+    return 0;
+}
+</code></pre>
+<h1 id="10">10</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+using namespace std;
+int n, q;
+bool P;// 标记当前数是否为素数
+int main() {
+    // 遍历 100 到 200 的所有数
+    for (n=100;n&lt;=200;n++) {
+       q = sqrt(n); // 计算当前数 n 的平方根,并强制类型转换为整型
+       P = 1; // 标记当前数是否为素数，初始化为 true
+        // 用小于等于 n 的平方根的数去尝试整除 n
+        for (int i=2;i&lt;=q;i++) {
+            if (n%i == 0) {
+               P = 0; // 如果能整除，说明不是素数，将标记设为 false
+               break; // 一旦发现能整除，就退出循环，因为已经确定不是素数
+            }
+        }
+        // 如果经过上面的循环，isPrime 仍然为 true，说明是素数，输出该数
+        if (P == 1) {
+            cout &lt;&lt; n &lt;&lt; &quot;,&quot;;
+        }
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="11">11</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int count=0;
+    for(int i=1;i&lt;=9;i++){
+        for(int j=1;j&lt;=17;j++){
+            int k=100-10*i-5*j;
+            if(k&gt;0&amp;&amp;k&lt;=85) {
+                cout&lt;&lt;&quot;10元: &quot;&lt;&lt;i&lt;&lt;&quot;, 5元: &quot;&lt;&lt;j&lt;&lt;&quot;, 1元: &quot;&lt;&lt;k&lt;&lt;'\n';
+                count++;
+            }
+        }
+    }
+    cout&lt;&lt;&quot;总兑换次数: &quot;&lt;&lt;count;
+    return 0;
+}
+</code></pre>
+<h1 id="12">12</h1>
+<pre><code class="language-cpp">
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+bool cmp(int a,int b){
+    return a&lt;b;
+}
+
+int main()
+{
+    int arr[6];
+    for(int i=0;i&lt;6;i++) cin&gt;&gt;arr[i];
+    sort(arr,arr+6,cmp);
+    for(int i=0;i&lt;6;i++) cout&lt;&lt;arr[i]&lt;&lt;&quot;   &quot;;
+    return 0;
+}
+</code></pre>
+ -->
+                                <h1 id="1">1</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">/*编写一个函数，使用指针交换两个整数的值。*/
+#include &lt;iostream&gt;
+using namespace std;
+void swap(int *a, int *b) 
+{  //利用中间变量交换地址中的值
+
+   int tmp=*a;
+   *a=*b;
+   *b=tmp;
+   
+}
+int main() {
+    int num1 = 5, num2 = 10;
+    cout &lt;&lt; &quot;Before swap: num1 = &quot; &lt;&lt; num1 &lt;&lt; &quot;, num2 = &quot; &lt;&lt; num2 &lt;&lt; endl;
+    swap(&amp;num1,&amp;num2);     //调用函数，实参传递地址
+    cout &lt;&lt; &quot;After swap: num1 = &quot; &lt;&lt; num1 &lt;&lt; &quot;, num2 = &quot; &lt;&lt; num2 &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<h1 id="2">2</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">/*编写一个函数，使用指针遍历数组，计算数组中所有元素的和。*/
+#include &lt;iostream&gt;
+using namespace std;
+int sumArray(int* arr, int size) {
+    int sum = 0;
+    for(int i=0;i&lt;size;i++){
+        sum+=arr[i];
+    }
+    return sum;
+}
+int main() {
+    int arr[] = { 1, 2, 3, 4, 5 };
+    int size = sizeof(arr) / sizeof(arr[0]);
+    cout &lt;&lt; &quot;Sum of array elements: &quot; &lt;&lt;   sumArray(arr,size)   &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<h1 id="3">3</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">/*编写一个函数，使用指针操作字符串,在给定的字符串中查找特定字符首次出现的位置。*/
+#include &lt;iostream&gt;
+using namespace std;
+int findChar(const char* str, char target) {
+    int i = 0;
+    while (*str != '\0') {
+        if (   *str==target      ) // 依次判断指针指向的字符是否为目标字符,相等返回i的值，不相等则指针后移，下标加1
+        {
+            return i;
+        }
+        str++;
+        i++;
+    }
+    return -1;
+}
+int main() {
+    const char* myStr = &quot;Hello, World!&quot;;
+    char target = 'o';
+    int position = findChar(myStr,target)  ;//调用函数，传递数组常量的首地址和目标字符
+    if (position != -1) {
+        cout &lt;&lt; &quot;Character '&quot; &lt;&lt; target &lt;&lt; &quot;' found at position &quot; &lt;&lt; position &lt;&lt; endl;
+    }
+    else {
+        cout &lt;&lt; &quot;Character not found.&quot; &lt;&lt; endl;
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="4">4</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">/*编写一个函数，返回给定数组中的最大元素，使用指针操作数组。*/
+#include &lt;iostream&gt;
+using namespace std;
+int findMax(int* arr, int size) {
+    int max = *arr;  //将数组的第一个值赋给max，max的类型为int
+    for (int i = 1; i &lt; size; i++) 
+    { //依次比较大小，较大的值赋给max
+        max = arr[i] &gt; max ? arr[i] : max;
+       
+    }
+    return max;
+}
+int main() {
+    int arr[] = { 5, 9, 2, 7, 1 };
+    int size = sizeof(arr) / sizeof(arr[0]);
+    cout &lt;&lt; &quot;Max element in array: &quot; &lt;&lt; findMax(arr, size) &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<h1 id="5">5</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">/*编写一个函数，使用指针操作数组,将一个整数数组逆序排列。*/
+#include &lt;iostream&gt;
+using namespace std;
+void reverseArray(int* arr, int size) {
+    int start = 0, end = size - 1;
+    while (start &lt; end) { //下标start小于end时，说明元素交换未结束，下面的语句是进行交换，并改变start和end的值
+        int tmp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = tmp;
+        start++;
+        end--;
+        
+    }
+}
+
+int main() {
+    int arr[] = { 1, 2, 3, 4, 5 };
+    int size = sizeof(arr) / sizeof(arr[0]);
+    cout &lt;&lt; &quot;Original array: &quot;;
+    for (int i = 0; i &lt; size; i++) {
+        cout &lt;&lt; arr[i] &lt;&lt; &quot; &quot;;
+    }
+    reverseArray(arr,size); //函数调用
+    cout &lt;&lt; &quot;\nReversed array: &quot;;
+    for (int i = 0; i &lt; size; i++) {
+        cout &lt;&lt; arr[i] &lt;&lt; &quot; &quot;;
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="6">6</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">/*编写一个函数，使用指针操作数组,计算一个整数数组中偶数元素的个数。*/
+#include &lt;iostream&gt;
+using namespace std;
+int countEven(int* arr, int size) {
+    int count = 0;
+    for (int i = 0; i &lt; size; i++)  //判断数组中的元素是否为偶数，是偶数个数加1
+    {
+        if(arr[i]%2==0) count++;
+    }
+    return count;
+}
+
+int main() {
+    int arr[] = { 1, 2, 3, 4, 5, 6 };
+    int size = sizeof(arr) / sizeof(arr[0]);
+    cout &lt;&lt; &quot;Number of even elements: &quot; &lt;&lt; countEven(arr,size) &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<h1 id="7">7</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">/*编写一个函数，使用指针删除字符串中的指定字符。*/
+#include &lt;iostream&gt;
+using namespace std;
+void removeChar(char* str, char target) {
+    // 定义两个索引变量，i用于遍历原始字符串，j用于构建新的字符串（不包含目标字符）
+    int i = 0, j = 0;
+    // 开始遍历原始字符串，直到遇到字符串结束符'\0'
+    while  (  str[i]!='\0'  ) {
+        // 如果当前字符不等于目标字符
+        if  ( str[i]!=target ) {
+            // 将当前字符复制到新字符串的相应位置（由j指向）
+            str[j++]=str[i]  ;
+        }
+        // 无论当前字符是否等于目标字符，i都要向后移动一位，继续遍历下一个字符
+        i++;
+    }
+    // 在新构建的字符串末尾添加结束符'\0'，使其成为一个合法的字符串
+    str[j] = '\0';
+}
+int main() {
+    // 定义一个字符数组并初始化，这个数组存储了一个字符串&quot;banana&quot;，可以对其内容进行修改
+    char str[] = &quot;banana&quot;;
+    // 定义要从字符串中删除的目标字符，这里是字符'a'
+    char target = 'a';
+    // 输出原始字符串，展示在删除操作之前的字符串内容
+    cout &lt;&lt; &quot;Before removal: &quot; &lt;&lt; str &lt;&lt; endl;
+    // 调用removeChar函数，传入字符串和目标字符，执行删除操作
+    removeChar(str, target);
+    // 输出删除指定字符后的字符串内容
+    cout &lt;&lt; &quot;After removal: &quot; &lt;&lt; str &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<h1 id="8">8</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">/*编写一个函数，使用指针统计一个字符串中单词的个数。假设单词之间以空格分隔。*/
+#include &lt;iostream&gt;
+using namespace std;
+int countWords(char* str) {
+    int count = 0;
+    bool inWord = false;
+    while   (   *str!='\0'  )//遇到\0表示结束，未遇到循环进行
+    {
+        // 如果当前字符不是空格且之前不在单词中，说明进入新单词
+        if (*str != ' ' &amp;&amp; !inWord) {
+            inWord = true;
+            count++;
+        }
+        // 如果当前字符是空格，说明离开单词
+        else if (*str == ' ') {
+            inWord = false;
+        }
+        str++;
+    }
+    return count;
+}
+
+int main() {
+    char str[] = &quot;Hello World How are you&quot;;
+    cout &lt;&lt; &quot;Number of words: &quot; &lt;&lt; countWords(str) &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<h1 id="9">9</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+using namespace std;
+
+bool isPrime(int n){
+    for(int i=2;i&lt;=sqrt(n);i++)
+        if(n%i==0) return 0;
+    return 1;
+}
+
+bool isMirror(int n){
+    return n/100==n%10;
+}
+
+int main()
+{
+    for(int i=100;i&lt;=999;i++)
+        if(isPrime(i)&amp;&amp;isMirror(i))
+            cout&lt;&lt;i&lt;&lt;&quot;,&quot;;
+    return 0;
+}
+</code></pre>
+<h1 id="10">10</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+using namespace std;
+int n, q;
+bool P;// 标记当前数是否为素数
+int main() {
+    // 遍历 100 到 200 的所有数
+    for (n=100;n&lt;=200;n++) {
+       q = sqrt(n); // 计算当前数 n 的平方根,并强制类型转换为整型
+       P = 1; // 标记当前数是否为素数，初始化为 true
+        // 用小于等于 n 的平方根的数去尝试整除 n
+        for (int i=2;i&lt;=q;i++) {
+            if (n%i == 0) {
+               P = 0; // 如果能整除，说明不是素数，将标记设为 false
+               break; // 一旦发现能整除，就退出循环，因为已经确定不是素数
+            }
+        }
+        // 如果经过上面的循环，isPrime 仍然为 true，说明是素数，输出该数
+        if (P == 1) {
+            cout &lt;&lt; n &lt;&lt; &quot;,&quot;;
+        }
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="11">11</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int count=0;
+    for(int i=1;i&lt;=9;i++){
+        for(int j=1;j&lt;=17;j++){
+            int k=100-10*i-5*j;
+            if(k&gt;0&amp;&amp;k&lt;=85) {
+                cout&lt;&lt;&quot;10元: &quot;&lt;&lt;i&lt;&lt;&quot;, 5元: &quot;&lt;&lt;j&lt;&lt;&quot;, 1元: &quot;&lt;&lt;k&lt;&lt;'\n';
+                count++;
+            }
+        }
+    }
+    cout&lt;&lt;&quot;总兑换次数: &quot;&lt;&lt;count;
+    return 0;
+}
+</code></pre>
+<h1 id="12">12</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+bool cmp(int a,int b){
+    return a&lt;b;
+}
+
+int main()
+{
+    int arr[6];
+    for(int i=0;i&lt;6;i++) cin&gt;&gt;arr[i];
+    sort(arr,arr+6,cmp);
+    for(int i=0;i&lt;6;i++) cout&lt;&lt;arr[i]&lt;&lt;&quot;   &quot;;
+    return 0;
+}
+</code></pre>
+
+                                
+                                    <div>
+    <button style="background-color: transparent;border: 0px solid transparent;" type="button" data-toggle="collapse" data-target="#navbarTComent" aria-expanded="false">
+        <svg t="1733415937042" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="4360" width="32" height="32">
+            <path
+                d="M379.733333 913.066667h-8.533333c-21.333333-4.266667-38.4-17.066667-46.933333-34.133334l-29.866667-72.533333H226.133333c-76.8 0-140.8-64-140.8-140.8V251.733333C85.333333 170.666667 149.333333 110.933333 226.133333 110.933333h571.733334C874.666667 110.933333 938.666667 170.666667 938.666667 251.733333v413.866667c0 76.8-64 140.8-140.8 140.8h-307.2l-64 85.333333c-8.533333 12.8-25.6 21.333333-46.933334 21.333334zM226.133333 174.933333c-42.666667 0-76.8 34.133333-76.8 76.8v413.866667c0 42.666667 34.133333 76.8 76.8 76.8h110.933334l42.666666 102.4 76.8-102.4h337.066667c42.666667 0 76.8-34.133333 76.8-76.8V251.733333c0-42.666667-34.133333-76.8-76.8-76.8H226.133333z"
+                fill="#ffffff" p-id="4361"></path>
+            <path d="M285.866667 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4362"></path>
+            <path d="M512 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4363"></path>
+            <path d="M738.133333 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4364"></path>
+        </svg>
+    </button>
+    <nav style="padding: 5px;">
+        <div class="collapse" id="navbarTComent">
+            <div class="navbar-nav mr-auto" style="text-align: center">
+                <div id="tcomment"></div>
+                <script src="https://fastly.jsdelivr.net/npm/twikoo@1.6.40/dist/twikoo.min.js"></script>
+                <script>
+                    twikoo.init({
+                        envId: 'https://twikooapi.panheadgg.top/',
+                        el: '#tcomment',
+                        // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数
+                        // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+                    })
+                </script>
+            </div>
+        </div>
+    </nav>
+</div>
+                                
+                            </div>
+                    </article>
+
+                </div>
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">温故而知新</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/PanheadGG" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        © 2024-2025 PanheadGG. All rights reserved. 
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Edited by <a href="https://blog.panheadgg.top/" target="_blank">PanheadGG</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a href="https://blog.panheadgg.top/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+            </div>
+    </div>
+</body>
+
+</html>
