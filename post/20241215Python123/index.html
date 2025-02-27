@@ -1,0 +1,800 @@
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Python123实验15 类和对象综合 非官方答案 | PanheadGG&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://blog.panheadgg.top/favicon.ico?v=1740634824029">
+
+<link href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://fastly.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://fastly.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://blog.panheadgg.top/styles/main.css">
+<!-- DEMO JS -->
+<script src="https://blog.panheadgg.top/media/scripts/index.js"></script>
+
+
+
+        <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+
+<body>
+    <div class="main gt-bg-theme-color-first">
+        <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            PanheadGG&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1740634824029" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+            <div class="post-container">
+                <div class="post-detail gt-bg-theme-color-second">
+                    <article class="gt-post-content">
+                        <h2 class="post-title">
+                            Python123实验15 类和对象综合 非官方答案
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time gt-c-content-color-first">
+                                · 2024-12-15 ·
+                            </time>
+                            
+                                <a href="https://blog.panheadgg.top/tag/Python123/" class="post-tags">
+                                    # Python123
+                                </a>
+                                
+                        </div>
+                        
+                            <div class="post-content">
+                                <h1 id="1">1</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+
+using namespace std;
+
+enum CPU_Rank {P1=1,P2,P3,P4,P5,P6,P7};
+
+class CPU
+{
+    //此处添加类的数据成员和成员函数的定义代码
+    const char* rankList[8] = {&quot;&quot;,&quot;P1&quot;,&quot;P2&quot;,&quot;P3&quot;,&quot;P4&quot;,&quot;P5&quot;,&quot;P6&quot;,&quot;P7&quot;};
+    CPU_Rank rank;
+    double frequency;
+    int voltage;
+    public:
+    CPU(CPU_Rank r,double f,int v){
+        rank = r;
+        frequency = f;
+        voltage = v;
+        cout&lt;&lt;&quot;CPU is constructed:  &quot;&lt;&lt;rankList[rank]&lt;&lt;&quot;, &quot;&lt;&lt;frequency&lt;&lt;&quot; GHz, &quot;&lt;&lt;voltage&lt;&lt;&quot; V.\n&quot;;
+    }
+    ~CPU(){cout&lt;&lt;&quot;CPU is destructed.\n&quot;;}
+    void run();
+    void stop();
+};
+//此处添加类的成员函数的实现代码
+void CPU::run(){cout&lt;&lt;&quot;CPU is running.\n&quot;;}
+void CPU::stop(){cout&lt;&lt;&quot;CPU is stopped.\n&quot;;}
+
+int main()
+{
+    //此处添加代码
+    int r,v;
+    double f;
+    cin&gt;&gt;r&gt;&gt;f&gt;&gt;v;
+    CPU c1((CPU_Rank)r,f,v);
+    c1.run();
+    c1.stop();
+
+    return 0;
+}
+</code></pre>
+<h1 id="2">2</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+
+using namespace std;
+
+enum CPU_Rank {P1=1,P2,P3,P4,P5,P6,P7};
+
+class CPU
+{
+    //此处添加类的数据成员和成员函数的定义代码
+    const char* rankList[8] = {&quot;&quot;,&quot;P1&quot;,&quot;P2&quot;,&quot;P3&quot;,&quot;P4&quot;,&quot;P5&quot;,&quot;P6&quot;,&quot;P7&quot;};
+    CPU_Rank rank;
+    double frequency;
+    int voltage;
+    public:
+    CPU(){}
+    CPU(CPU_Rank r,double f,int v){
+        rank = r;
+        frequency = f;
+        voltage = v;
+        cout&lt;&lt;&quot;CPU is constructed:  &quot;&lt;&lt;rankList[rank]&lt;&lt;&quot;, &quot;&lt;&lt;frequency&lt;&lt;&quot; GHz, &quot;&lt;&lt;voltage&lt;&lt;&quot; V.\n&quot;;
+    }
+    ~CPU(){cout&lt;&lt;&quot;CPU is destructed.\n&quot;;}
+    void construct(CPU_Rank r,double f,int v);
+    void run();
+    void stop();
+};
+//此处添加类的成员函数的实现代码
+void CPU::run(){cout&lt;&lt;&quot;CPU is running.\n&quot;;}
+void CPU::stop(){cout&lt;&lt;&quot;CPU is stopped.\n&quot;;}
+void CPU::construct(CPU_Rank r,double f,int v){
+    rank = r;
+    frequency = f;
+    voltage = v;
+    cout&lt;&lt;&quot;CPU is constructed:  &quot;&lt;&lt;rankList[rank]&lt;&lt;&quot;, &quot;&lt;&lt;frequency&lt;&lt;&quot; GHz, &quot;&lt;&lt;voltage&lt;&lt;&quot; V.\n&quot;;
+}
+
+
+class RAM
+{
+private:
+    int capacity;
+public:
+    RAM();
+    RAM(int c);
+    ~RAM();
+    void construct(int);
+};
+RAM::RAM(){}
+RAM::RAM(int c)
+{
+    capacity = c;
+    cout&lt;&lt;&quot;RAM is constructed, capacity = &quot;&lt;&lt;capacity&lt;&lt;&quot;\n&quot;;
+}
+RAM::~RAM()
+{
+    cout&lt;&lt;&quot;RAM is destructed.&quot;&lt;&lt;&quot;\n&quot;;
+}
+void RAM::construct(int c){
+    capacity = c;
+    cout&lt;&lt;&quot;RAM is constructed, capacity = &quot;&lt;&lt;capacity&lt;&lt;&quot;\n&quot;;
+}
+
+
+class CDROM
+{
+private:
+    int speed;
+public:
+    CDROM();
+    CDROM(int s);
+    ~CDROM();
+    void construct(int);
+};
+CDROM::CDROM(){}
+CDROM::CDROM(int s)
+{
+    speed = s;
+    cout&lt;&lt;&quot;CDROM is constructed, speed = &quot;&lt;&lt;speed&lt;&lt;&quot;\n&quot;;
+}
+CDROM::~CDROM(){
+    cout&lt;&lt;&quot;CDROM is destructed.&quot;&lt;&lt;&quot;\n&quot;;
+}
+void CDROM::construct(int s)
+{
+    speed = s;
+    cout&lt;&lt;&quot;CDROM is constructed, speed = &quot;&lt;&lt;speed&lt;&lt;&quot;\n&quot;;
+}
+
+
+class Computer
+{
+private:
+    CPU cpu;
+    RAM ram;
+    CDROM cdrom;
+public:
+    Computer(CPU_Rank r,double f,int v,int c,int s);
+    ~Computer();
+    void run();
+    void stop();
+};
+Computer::Computer(CPU_Rank r,double f,int v,int c,int s)
+{
+    cpu.construct(r,f,v);
+    ram.construct(c);
+    cdrom.construct(s);
+    cout&lt;&lt;&quot;Computer is constructed. \n&quot;;
+    cpu.~CPU();
+    ram.~RAM();
+    cdrom.~CDROM();
+}
+Computer::~Computer()
+{
+    cout&lt;&lt;&quot;Computer is destructed.\n&quot;;
+    cdrom.~CDROM();
+    ram.~RAM();
+    cpu.~CPU();
+}
+void Computer::run(){cout&lt;&lt;&quot;Computer is running.\n&quot;;}
+void Computer::stop(){cout&lt;&lt;&quot;Computer is stopped.\n&quot;;}
+
+
+int main()
+{
+    //此处添加代码
+    int r,v,c,s;
+    double f;
+    cin&gt;&gt;r&gt;&gt;f&gt;&gt;v&gt;&gt;c&gt;&gt;s;
+    Computer com((CPU_Rank)r,f,v,c,s);
+    com.run();
+    com.stop();
+
+    return 0;
+}
+</code></pre>
+<h1 id="3">3</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+struct Date
+{
+    int year;
+    int month;
+    int day;
+};
+
+
+class People
+{
+private:
+    int num;
+    char sex;
+    Date birthday;
+    string id;
+public:
+    People(int n,char s,Date d,string i);
+    ~People(){}
+    void list();
+};
+People::People(int n,char s,Date d,string i)
+{
+    num = n;
+    sex = s;
+    birthday = d;
+    id = i;
+}
+void People::list(){
+    cout&lt;&lt;&quot;编号：&quot;&lt;&lt;num&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;性别：&quot;;
+    if(sex=='m'||sex=='M') cout&lt;&lt;&quot;男\n&quot;;
+    if(sex=='f'||sex=='F') cout&lt;&lt;&quot;女\n&quot;;
+    cout&lt;&lt;&quot;出生日期：&quot;&lt;&lt;birthday.year&lt;&lt;&quot;年 &quot;&lt;&lt;birthday.month&lt;&lt;&quot;月 &quot;&lt;&lt;birthday.day&lt;&lt;&quot;日\n&quot;;\
+    cout&lt;&lt;&quot;身份证号：&quot;&lt;&lt;id&lt;&lt;&quot;\n&quot;;
+}
+
+
+int main()
+{
+    int num,yyyy,mm,dd;
+    char sex;
+    string id;
+    cin&gt;&gt;num&gt;&gt;sex&gt;&gt;yyyy&gt;&gt;mm&gt;&gt;dd&gt;&gt;id;
+    Date date;
+    date.year = yyyy;
+    date.month = mm;
+    date.day = dd;
+    People people(num,sex,date,id);
+    people.list();
+    return 0;
+}
+</code></pre>
+<h1 id="4">4</h1>
+<p>PanheadGG Version</p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;algorithm&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+bool cmp(double a,double b){
+    return a&lt;b;
+}
+
+class Person
+{
+protected:
+    string name;
+    char sex;
+    int age;
+public:
+    Person(){}
+    Person(string n,char s,int a);
+    ~Person(){}
+    void eat();
+    void sleep();
+    void work();
+    void printInfo();
+};
+Person::Person(string n,char s,int a)
+{
+    name = n;
+    sex = s;
+    age = a;
+}
+void Person::eat(){cout&lt;&lt;name&lt;&lt;&quot; is eating.\n&quot;;}
+void Person::sleep(){cout&lt;&lt;name&lt;&lt;&quot; is sleeping.\n&quot;;}
+void Person::work(){cout&lt;&lt;name&lt;&lt;&quot; is working.\n&quot;;}
+void Person::printInfo(){
+    cout&lt;&lt;&quot;Name: &quot;&lt;&lt;name&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Sex: &quot;&lt;&lt;sex&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Age: &quot;&lt;&lt;age&lt;&lt;&quot;\n&quot;;
+}
+
+
+class Student:public Person
+{
+private:
+    string school;
+    int num;
+    double totalScore;
+    double aveScore;
+    double scores[3] = {0,0,0};
+public:
+    Student(){}
+    Student(string n,char s,int a,string sch,int number,double _scores[]);
+    ~Student(){}
+    void work();
+    void printInfo();
+    int getNum(){ return num;}
+    string getName(){return name;}
+    double getAveScore(){return aveScore;}
+};
+Student::Student(string n,char s,int a,string sch,int number,double _scores[])
+{
+    name = n;
+    sex = s;
+    age = a;
+    school = sch;
+    num = number;
+    scores[0] = _scores[0];
+    scores[1] = _scores[1];
+    scores[2] = _scores[2];
+    totalScore = scores[0] + scores[1] +scores[2];
+    aveScore = totalScore / 3;
+}
+void Student::work(){cout&lt;&lt;&quot;Student &quot;&lt;&lt;name&lt;&lt;&quot; is studying.\n&quot;;}
+void Student::printInfo(){
+    Person::printInfo();
+    cout&lt;&lt;&quot;School: &quot;&lt;&lt;school&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Student Number: &quot;&lt;&lt;num&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Chinese Score: &quot;&lt;&lt;scores[0]&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Math Score: &quot;&lt;&lt;scores[1]&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;English Score: &quot;&lt;&lt;scores[2]&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Total Score: &quot;&lt;&lt;totalScore&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Average Score: &quot;&lt;&lt;aveScore&lt;&lt;&quot;\n&quot;;
+}
+
+class Worker:public Person
+{
+private:
+    string workPlace;
+    int workYear;
+public:
+    Worker(){}
+    Worker(string n,char s,int a,string wp,int wy);
+    ~Worker(){}
+    void work();
+    void printInfo();
+};
+Worker::Worker(string n,char s,int a,string wp,int wy)
+{
+    name = n;
+    sex = s;
+    age = a;
+    workPlace = wp;
+    workYear = wy;
+}
+void Worker::work(){cout&lt;&lt;&quot;Worker &quot;&lt;&lt;name&lt;&lt;&quot; is working.\n&quot;;}
+void Worker::printInfo(){
+    Person::printInfo();
+    cout&lt;&lt;&quot;Work Place: &quot;&lt;&lt;workPlace&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Work Year: &quot;&lt;&lt;workYear&lt;&lt;&quot;\n&quot;;
+}
+
+
+class DataOperation
+{
+public:
+    DataOperation(){}
+    ~DataOperation(){}
+    void sort(double arr[],int size);
+    double findMaxValue(double arr[],int size);
+    double findMinValue(double arr[],int size);
+    double ave(double arr[],int size);
+    void sortObject(Student arr[], int size, int sortflag);
+};
+void DataOperation::sort(double arr[],int size){
+    std::sort(arr,arr+size,cmp);
+}
+double DataOperation::findMaxValue(double arr[],int size){
+    double max = arr[0];
+    for(int i=1;i&lt;size;i++)
+        max = max &gt; arr[i] ? max : arr[i];
+    return max;
+}
+double DataOperation::findMinValue(double arr[],int size){
+    double min = arr[0];
+    for(int i=1;i&lt;size;i++)
+        min = min &lt; arr[i] ? min : arr[i];
+    return min;
+}
+double DataOperation::ave(double arr[],int size){
+    double sum = 0;
+    for(int i=0;i&lt;size;i++) sum += arr[i];
+    return sum / size;
+}
+void DataOperation::sortObject(Student arr[], int size, int sortflag){
+    for(int i=0;i&lt;size-1;i++){
+        for(int j=0;j&lt;size-1;j++){
+            switch (sortflag)
+            {
+            case 1:
+                if(arr[i].getName().compare(arr[i+1].getName())==-1){
+                    Student tmp = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = tmp;
+                }
+                break;
+            case 2:
+                if(arr[i].getNum()&gt;arr[i+1].getNum()){
+                    Student tmp = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = tmp;
+                }
+                break;
+            case 3:
+                if(arr[i].getAveScore()&lt;arr[i+1].getAveScore()){
+                    Student tmp = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = tmp;
+                }
+                break;
+            }
+        }
+    }
+}
+
+
+int main()
+{
+    string name,school,workPlace;
+    char sex;
+    int age,num,workYear;
+    double scores[3];
+    cout&lt;&lt;&quot;Input Person(name,sex,age):&quot;;
+    cin&gt;&gt;name&gt;&gt;sex&gt;&gt;age;
+    Person person(name,sex,age);
+    person.printInfo();
+    person.eat();
+    person.sleep();
+    person.work();
+    cout&lt;&lt;&quot;Input Worker(name,sex,age,WorkPlace,WorkYear):&quot;;
+    cin&gt;&gt;name&gt;&gt;sex&gt;&gt;age&gt;&gt;workPlace&gt;&gt;workYear;
+    Worker worker(name,sex,age,workPlace,workYear);
+    worker.printInfo();
+    worker.eat();
+    worker.sleep();
+    worker.work();
+    cout&lt;&lt;&quot;Input Student:\n&quot;;
+    cout&lt;&lt;&quot;Student 1(name,sex,age,school,num,ChineseScore,MathScore,EnglishScore):&quot;;
+    cin&gt;&gt;name&gt;&gt;sex&gt;&gt;age&gt;&gt;school&gt;&gt;num&gt;&gt;scores[0]&gt;&gt;scores[1]&gt;&gt;scores[2];
+    Student stu1(name,sex,age,school,num,scores);
+    stu1.printInfo();
+    stu1.eat();
+    stu1.sleep();
+    stu1.work();
+    cout&lt;&lt;&quot;Student 2(name,sex,age,school,num,ChineseScore,MathScore,EnglishScore):&quot;;
+    cin&gt;&gt;name&gt;&gt;sex&gt;&gt;age&gt;&gt;school&gt;&gt;num&gt;&gt;scores[0]&gt;&gt;scores[1]&gt;&gt;scores[2];
+    Student stu2(name,sex,age,school,num,scores);
+    stu2.printInfo();
+    stu2.eat();
+    stu2.sleep();
+    stu2.work();
+    cout&lt;&lt;&quot;Student 3(name,sex,age,school,num,ChineseScore,MathScore,EnglishScore):&quot;;
+    cin&gt;&gt;name&gt;&gt;sex&gt;&gt;age&gt;&gt;school&gt;&gt;num&gt;&gt;scores[0]&gt;&gt;scores[1]&gt;&gt;scores[2];
+    Student stu3(name,sex,age,school,num,scores);
+    stu3.printInfo();
+    stu3.eat();
+    stu3.sleep();
+    stu3.work();
+    Student stuArr[3] = {stu1,stu2,stu3};
+    double scoreArr[3] = {stu1.getAveScore(),stu2.getAveScore(),stu3.getAveScore()};
+    DataOperation DO;
+    cout&lt;&lt;&quot;MaxValue: &quot;&lt;&lt;DO.findMaxValue(scoreArr,3)&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;MinValue: &quot;&lt;&lt;DO.findMinValue(scoreArr,3)&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Sort Scores: &quot;;
+    DO.sort(scoreArr,3);
+    for(int i=0;i&lt;3;i++) cout&lt;&lt;scoreArr[i]&lt;&lt;&quot; &quot;;
+    cout&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Average Score: &quot;&lt;&lt;DO.ave(scoreArr,3)&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Sort By Name:\n&quot;;
+    DO.sortObject(stuArr,3,1);
+    for(int i=0;i&lt;3;i++) stuArr[i].printInfo();
+    cout&lt;&lt;&quot;Sort By Num:\n&quot;;
+    DO.sortObject(stuArr,3,2);
+    for(int i=0;i&lt;3;i++) stuArr[i].printInfo();
+    cout&lt;&lt;&quot;Sort By Average Score:\n&quot;;
+    DO.sortObject(stuArr,3,3);
+    for(int i=0;i&lt;3;i++) stuArr[i].printInfo();
+    return 0;
+}
+</code></pre>
+<p>Wu Jiahui Version</p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+
+class Person {
+protected:
+    string name;
+    char sex;
+    int age;
+
+public:
+    Person(string n, char s, int a) : name(n), sex(s), age(a) {}
+
+    virtual void eat() {
+        cout &lt;&lt; name &lt;&lt; &quot; is eating.&quot; &lt;&lt; endl;
+    }
+
+    virtual void sleep() {
+        cout &lt;&lt; name &lt;&lt; &quot; is sleeping.&quot; &lt;&lt; endl;
+    }
+
+    virtual void work() {
+        cout &lt;&lt; name &lt;&lt; &quot; is working.&quot; &lt;&lt; endl;
+    }
+
+    virtual void printInfo() {
+        cout &lt;&lt; &quot;Name: &quot; &lt;&lt; name &lt;&lt; &quot;, Sex: &quot; &lt;&lt; sex &lt;&lt; &quot;, Age: &quot; &lt;&lt; age &lt;&lt; endl;
+    }
+
+    string getName() const {
+        return name;
+    }
+};
+
+class Student : public Person {
+private:
+    string school;
+    string s_number;
+    float totalScore;
+    float aveScore;
+    float scores[3]; // Assuming 3 subjects: Chinese, Math, English
+
+public:
+    Student(string n, char s, int a, string sch, string sn, float sc[])
+        : Person(n, s, a), school(sch), s_number(sn) {
+        totalScore = 0;
+        for (int i = 0; i &lt; 3; ++i) {
+            scores[i] = sc[i];
+            totalScore += sc[i];
+        }
+        aveScore = totalScore / 3;
+    }
+
+    void work() override {
+        cout &lt;&lt; name &lt;&lt; &quot; is studying.&quot; &lt;&lt; endl;
+    }
+
+    void printInfo() override {
+        Person::printInfo();
+        cout &lt;&lt; &quot;School: &quot; &lt;&lt; school &lt;&lt; &quot;, Student Number: &quot; &lt;&lt; s_number
+            &lt;&lt; &quot;, Total Score: &quot; &lt;&lt; totalScore &lt;&lt; &quot;, Average Score: &quot; &lt;&lt; aveScore &lt;&lt; endl;
+    }
+
+    string getStudentNumber() const {
+        return s_number;
+    }
+
+    float getAverageScore() const {
+        return aveScore;
+    }
+};
+
+class DataOperation {
+public:
+    static void sortObject(vector&lt;unique_ptr&lt;Student&gt;&gt;&amp; arr, int sortflag) {
+        switch (sortflag) {
+        case 0: // Sort by name
+            sort(arr.begin(), arr.end(), [](const unique_ptr&lt;Student&gt;&amp; a, const unique_ptr&lt;Student&gt;&amp; b) {
+                return a-&gt;getName() &lt; b-&gt;getName();
+                });
+            break;
+        case 1: // Sort by student number
+            sort(arr.begin(), arr.end(), [](const unique_ptr&lt;Student&gt;&amp; a, const unique_ptr&lt;Student&gt;&amp; b) {
+                return a-&gt;getStudentNumber() &lt; b-&gt;getStudentNumber();
+                });
+            break;
+        case 2: // Sort by average score
+            sort(arr.begin(), arr.end(), [](const unique_ptr&lt;Student&gt;&amp; a, const unique_ptr&lt;Student&gt;&amp; b) {
+                return a-&gt;getAverageScore() &gt; b-&gt;getAverageScore();
+                });
+            break;
+        }
+    }
+};
+
+int main() {
+    float scores1[] = { 85, 90, 78 };
+    float scores2[] = { 92, 88, 85 };
+
+    vector&lt;unique_ptr&lt;Student&gt;&gt; students = {
+        make_unique&lt;Student&gt;(&quot;Alice&quot;, 'F', 20, &quot;XYZ University&quot;, &quot;S001&quot;, scores1),
+        make_unique&lt;Student&gt;(&quot;Bob&quot;, 'M', 21, &quot;XYZ University&quot;, &quot;S002&quot;, scores2)
+    };
+
+    cout &lt;&lt; &quot;Before sorting:&quot; &lt;&lt; endl;
+    for (const auto&amp; student : students) {
+        student-&gt;printInfo();
+    }
+
+    DataOperation::sortObject(students, 2); // Sort by average score
+
+    cout &lt;&lt; &quot;\nAfter sorting by average score:&quot; &lt;&lt; endl;
+    for (const auto&amp; student : students) {
+        student-&gt;printInfo();
+    }
+    return 0;
+}
+</code></pre>
+
+                                
+                                    <div>
+    <button style="background-color: transparent;border: 0px solid transparent;" type="button" data-toggle="collapse" data-target="#navbarTComent" aria-expanded="false">
+        <svg t="1733415937042" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="4360" width="32" height="32">
+            <path
+                d="M379.733333 913.066667h-8.533333c-21.333333-4.266667-38.4-17.066667-46.933333-34.133334l-29.866667-72.533333H226.133333c-76.8 0-140.8-64-140.8-140.8V251.733333C85.333333 170.666667 149.333333 110.933333 226.133333 110.933333h571.733334C874.666667 110.933333 938.666667 170.666667 938.666667 251.733333v413.866667c0 76.8-64 140.8-140.8 140.8h-307.2l-64 85.333333c-8.533333 12.8-25.6 21.333333-46.933334 21.333334zM226.133333 174.933333c-42.666667 0-76.8 34.133333-76.8 76.8v413.866667c0 42.666667 34.133333 76.8 76.8 76.8h110.933334l42.666666 102.4 76.8-102.4h337.066667c42.666667 0 76.8-34.133333 76.8-76.8V251.733333c0-42.666667-34.133333-76.8-76.8-76.8H226.133333z"
+                fill="#ffffff" p-id="4361"></path>
+            <path d="M285.866667 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4362"></path>
+            <path d="M512 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4363"></path>
+            <path d="M738.133333 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4364"></path>
+        </svg>
+    </button>
+    <nav style="padding: 5px;">
+        <div class="collapse" id="navbarTComent">
+            <div class="navbar-nav mr-auto" style="text-align: center">
+                <div id="tcomment"></div>
+                <script src="https://fastly.jsdelivr.net/npm/twikoo@1.6.40/dist/twikoo.min.js"></script>
+                <script>
+                    twikoo.init({
+                        envId: 'https://twikooapi.panheadgg.top/',
+                        el: '#tcomment',
+                        // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数
+                        // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+                    })
+                </script>
+            </div>
+        </div>
+    </nav>
+</div>
+                                
+                            </div>
+                    </article>
+
+                </div>
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">温故而知新</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/PanheadGG" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        © 2024-2025 PanheadGG. All rights reserved. 
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Edited by <a href="https://blog.panheadgg.top/" target="_blank">PanheadGG</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a href="https://blog.panheadgg.top/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+            </div>
+    </div>
+</body>
+
+</html>

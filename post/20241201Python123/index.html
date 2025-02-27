@@ -1,0 +1,608 @@
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Python123实验11 指针 字符串1 非官方答案 | PanheadGG&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://blog.panheadgg.top/favicon.ico?v=1740634824029">
+
+<link href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://fastly.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://fastly.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://blog.panheadgg.top/styles/main.css">
+<!-- DEMO JS -->
+<script src="https://blog.panheadgg.top/media/scripts/index.js"></script>
+
+
+
+        <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+
+<body>
+    <div class="main gt-bg-theme-color-first">
+        <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            PanheadGG&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1740634824029" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+            <div class="post-container">
+                <div class="post-detail gt-bg-theme-color-second">
+                    <article class="gt-post-content">
+                        <h2 class="post-title">
+                            Python123实验11 指针 字符串1 非官方答案
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time gt-c-content-color-first">
+                                · 2024-12-01 ·
+                            </time>
+                            
+                                <a href="https://blog.panheadgg.top/tag/Python123/" class="post-tags">
+                                    # Python123
+                                </a>
+                                
+                        </div>
+                        
+                            <div class="post-content">
+                                <h1 id="1">1</h1>
+<h3 id="代码1">代码1</h3>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+char * trim(char * str);
+int main()
+{
+    char s[1024];     // 定义存储字符串的一维字符数组
+    // 输入一行字符，可以包含空格
+    // 输入的字符串存入s中，最多读取个字符，后面自动加上'\0'
+    cin.getline(s,1024);
+    cout &lt;&lt; trim(s) &lt;&lt; endl;     // 输出去掉首尾空格后的字符串
+    return 0;
+}
+
+//请在此添加函数trim()的实现
+char * trim(char *str) {
+    int start = 0;
+    int end = 0;
+    while (str[end] != '\0') end++;
+    end--;
+    while (str[start] == ' ' &amp;&amp; str[start] != '\0') start++;
+    while (end &gt;= start &amp;&amp; str[end] == ' ') end--;
+    int index = 0;
+    for (int i = start; i &lt;= end; i++) {
+        str[index++] = str[i];
+    }
+    str[index] = '\0';
+    return str;
+}
+</code></pre>
+<h3 id="代码2">代码2</h3>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+char * trim(char * str);
+int main()
+{
+    char s[1024];     // 定义存储字符串的一维字符数组
+    // 输入一行字符，可以包含空格
+    // 输入的字符串存入s中，最多读取个字符，后面自动加上'\0'
+    cin.getline(s,1024);
+    cout &lt;&lt; trim(s) &lt;&lt; endl;     // 输出去掉首尾空格后的字符串
+    return 0;
+}
+
+//请在此添加函数trim()的实现
+char * trim(char *str) {
+    int startPtr=0,endPtr=1023;
+    bool foundStart=0;
+    for(int i=0;i&lt;1024;i++){
+        if(str[i]==' '&amp;&amp;foundStart==0) startPtr++;
+        else foundStart=1;
+        if(str[i]=='\0'){
+            endPtr=i;
+            break;
+        }
+    }
+    for(int i=endPtr-1;i&gt;=0;i--){
+        if(str[i]==' ') endPtr--;
+        else break;
+    }
+    for(int i=0;i&lt;=endPtr-startPtr;i++){
+        str[i] = str[i+startPtr];
+    }
+    str[endPtr-startPtr+1] = '\0';
+    return str;
+}
+</code></pre>
+<h1 id="2">2</h1>
+<h3 id="代码1-2">代码1</h3>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+void extractNum(char * str);
+
+int main()
+{
+    char s[1024];
+    cin.getline(s,1024);     // 输入一行字符
+    extractNum(s);     // 调用extractNum函数，选出数字
+    cout&lt;&lt;s&lt;&lt;endl;     // 输出选出的数字
+    return 0;
+}
+
+// 函数extractNum：选出str指向的字符串中的数字，并写回str
+// 参数：str-指向字符串
+void extractNum(char * str)
+{
+    // 请在此添加代码，实现函数extractNum
+    /********** Begin *********/
+    char result[1024];
+    int index = 0;
+    bool hasNegative = false;
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] == '-' &amp;&amp; !hasNegative) {
+            hasNegative = true;
+            result[index++] = '-';
+        } else if (str[i] &gt;= '0' &amp;&amp; str[i] &lt;= '9') {
+            result[index++] = str[i];
+        }
+    }
+    result[index] = '\0';
+    for (int i = 0; result[i] != '\0'; i++) {
+        str[i] = result[i];
+    }
+    str[index] = '\0';
+    
+    /********** End **********/
+}
+</code></pre>
+<h3 id="代码2-2">代码2</h3>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+void extractNum(char * str);
+
+int main()
+{
+    char s[1024];
+    cin.getline(s,1024);     // 输入一行字符
+    extractNum(s);     // 调用extractNum函数，选出数字
+    cout&lt;&lt;s&lt;&lt;endl;     // 输出选出的数字
+    return 0;
+}
+
+// 函数extractNum：选出str指向的字符串中的数字，并写回str
+// 参数：str-指向字符串
+void extractNum(char * str)
+{
+    // 请在此添加代码，实现函数extractNum
+    /********** Begin *********/
+    bool foundFuHao=0,hasFuHao=0;
+    for(int i=0;i&lt;1024;i++){
+        if(str[i]=='-'&amp;&amp;foundFuHao==0){
+            foundFuHao=1;
+        }
+        if(str[i]&gt;='0'&amp;&amp;str[i]&lt;='9'){
+            if(foundFuHao) hasFuHao=1;
+            else hasFuHao=0;
+            break;
+        }
+    }
+    if(hasFuHao) str[0]='-';
+    int ptr = (int)hasFuHao;
+    for(int i=(int)hasFuHao;i&lt;1024;i++){
+        if(str[i]&gt;='0'&amp;&amp;str[i]&lt;='9'){
+            str[ptr]=str[i];
+            ptr++;
+        }
+        if(str[i]=='\0') break;
+    }
+    str[ptr]='\0';
+    
+    /********** End **********/
+}
+</code></pre>
+<h1 id="3">3</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+void toUp(char * str);
+
+int main()
+{
+    char s[1024];
+    cin.getline(s,1024);     // 输入一行字符
+    toUp(s);     // 调用toUp函数，转换成大写字母
+    cout&lt;&lt;s&lt;&lt;endl;     // 输出变更后的新字符串
+    return 0;
+}
+
+// 函数toUp：将str指向的字符串中的小写字母变成对应的大写字母
+// 参数：str-指向字符串
+void toUp(char * str)
+{
+    // 请在此添加代码，实现函数toUp
+    /********** Begin *********/
+    for(int i=0;i&lt;1024;i++){
+        if(str[i]&gt;='a'&amp;&amp;str[i]&lt;='z')
+            str[i]-=32;
+    }
+    
+    /********** End **********/
+}
+</code></pre>
+<h1 id="4">4</h1>
+<h3 id="代码1-3">代码1</h3>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">// 包含字符串函数库
+#include &lt;string.h&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+int frequency(char * substr, char * str);
+
+int main()
+{
+    char sub[128],str[1024];
+    cin.getline(str,1024);   // 输入长串
+    cin.getline(sub,128);     // 输入子串
+
+    int n = frequency(sub,str);     // 调用frequency函数，计算子串在长串中出现的次数
+    cout&lt;&lt;n&lt;&lt;endl;     // 输出次数
+    return 0;
+}
+
+// 函数frequency：计算子串在长串中出现的次数
+// 参数：substr-指向子串，str-指向长串
+// 返回值：出现的次数
+int frequency(char *substr, char *str)
+{
+    int count = 0;
+    char *ptr = str;
+
+    while ((ptr = strstr(ptr, substr))!= NULL) {
+        count++;
+        ptr += strlen(substr);
+    }
+    return count;
+}
+</code></pre>
+<h3 id="代码2-3">代码2</h3>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">// 包含字符串函数库
+#include &lt;string.h&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+int frequency(char * substr, char * str);
+
+int main()
+{
+    char sub[128],str[1024];
+    cin.getline(str,1024);   // 输入长串
+    cin.getline(sub,128);     // 输入子串
+
+    int n = frequency(sub,str);     // 调用frequency函数，计算子串在长串中出现的次数
+    cout&lt;&lt;n&lt;&lt;endl;     // 输出次数
+    return 0;
+}
+
+// 函数frequency：计算子串在长串中出现的次数
+// 参数：substr-指向子串，str-指向长串
+// 返回值：出现的次数
+int frequency(char *substr, char *str)
+{
+    int count = 0, matchTime=0;
+    int substrlen = strlen(substr);
+    for(int i=0;i&lt;=strlen(str)-substrlen;i++){
+        matchTime=0;
+        for(int j=0,k=i;j&lt;substrlen;j++,k++){
+            if(substr[j]==str[k]) matchTime++;
+        }
+        if(matchTime==substrlen) count++;
+    }
+    return count;
+}
+</code></pre>
+<h1 id="5">5</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+void strmncpy(char *s, int m, int n, char *t);
+
+int main()
+{
+    char s[128],t[128];
+    int m,n;
+    cin&gt;&gt;s;     // 输入源串
+    cin&gt;&gt;m&gt;&gt;n;     // 输入m和n
+    strmncpy(s, m, n, t);     // 字符串复制
+    cout &lt;&lt; t &lt;&lt;endl;     // 输出复制结果
+    return 0;
+}
+
+// 函数strmncpy：字符串的部分复制，将s指向字符串从第m个字符开始的n个字符复制的t中
+// 参数：s-指向源字符串，t-指向目标字符串，m-起始位置，n-字符个数
+// 返回值：无
+void strmncpy(char *s, int m, int n, char *t)
+{
+    // 请在此添加代码，实现函数strmncpy
+    /********** Begin *********/
+    for(int i=0;i&lt;n;i++){
+        t[i] = s[i+m];
+    }
+    t[n] = '\0';
+    
+    /********** End **********/
+}
+</code></pre>
+<h1 id="6">6</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+void Sum(const int *arr,int len);
+int main()
+{
+    int ary[20],i,n;
+    cin&gt;&gt;n;
+    for(i=0;i&lt;n;i++)
+    cin&gt;&gt;ary[i];
+    //请在此处添加Sum函数的调用语句
+    Sum(ary,n);
+}
+
+
+
+void Sum(const int *arr,int len)
+{   //请在此处添加函数功能的实现代码
+	int max=0,sum=0;
+    for(int i=0;i&lt;len;i++){
+        max = arr[i]&gt;max?arr[i]:max;
+    }
+    for(int i=0;i&lt;len;i++){
+        if(arr[i]==max) continue;;
+        sum+=arr[i];
+    }
+    cout&lt;&lt;sum;
+}
+</code></pre>
+<h1 id="7">7</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+int arr[10];
+int* Read(int *len);
+void print_arry(int *p,int n);
+int main()
+{
+    int n;
+
+    int *p_ary;
+    p_ary=Read(&amp;n);
+
+    print_arry(p_ary,n);
+}
+//请在下面写出两个函数的实现代码
+int* Read(int *len){
+    cin&gt;&gt;*len;
+    for(int i=0;i&lt;*len;i++) cin&gt;&gt;arr[i];
+    return arr;
+}
+
+void print_arry(int *p,int n){
+    for(int i=0;i&lt;n;i++){
+        cout&lt;&lt;p[i]&lt;&lt;&quot; &quot;;
+    }
+}
+</code></pre>
+<h1 id="8">8</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+// 函数rotateLeft：矩阵循环左移
+// 参数：a-100*100的二维数组，用来存储n行n列的数组（n&lt;100)，存储在其~n-1行和~n-1列，
+// m-循环左移的位数(0&lt;m&lt;n)
+// 返回值：无，循环左移的结果写入原二维数组中
+// 说明：传递多维数组时，形式参数中，除了第一维外，其它维的大小必须给出
+// 方便编译器计算每个数组元素的地址
+void rotateLeft(int a[][100],int n,int m);
+
+int main()
+{
+    int a[100][100];     // 定义存储二维数组的空间
+    int n, m;
+    cin &gt;&gt; n &gt;&gt; m;     // 输入n和m
+
+    // 输入n*n的矩阵，存储在数组a的~n-1行和~n-1列
+    int i, j;
+    for(i = 0; i &lt; n; i++)
+        for(j = 0; j &lt; n; j++)
+            cin &gt;&gt; a[i][j];
+
+    // 循环左移
+    // 说明：传递多维数组时，实在参数只需要给出数组名就可以了
+    rotateLeft(a,n,m);
+
+    // 输出循环右移的结果
+    for(i = 0; i &lt; n; i++)
+    {
+        for(j = 0; j &lt; n; j++)
+            cout &lt;&lt; &quot; &quot; &lt;&lt; a[i][j];
+        cout &lt;&lt; endl;
+    }
+    return 0;
+}
+
+void rotateLeft(int a[][100],int n,int m)
+{
+    // 请在此添加代码，实现函数rotateLeft
+    int tmp;
+    for(int i=0;i&lt;m;i++){
+        for(int j=0;j&lt;n;j++){
+            tmp=a[j][0];
+            for(int k=0;k&lt;n-1;k++){
+                a[j][k]=a[j][k+1];
+            }
+            a[j][n-1]=tmp;
+        }
+    }
+}
+</code></pre>
+
+                                
+                                    <div>
+    <button style="background-color: transparent;border: 0px solid transparent;" type="button" data-toggle="collapse" data-target="#navbarTComent" aria-expanded="false">
+        <svg t="1733415937042" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="4360" width="32" height="32">
+            <path
+                d="M379.733333 913.066667h-8.533333c-21.333333-4.266667-38.4-17.066667-46.933333-34.133334l-29.866667-72.533333H226.133333c-76.8 0-140.8-64-140.8-140.8V251.733333C85.333333 170.666667 149.333333 110.933333 226.133333 110.933333h571.733334C874.666667 110.933333 938.666667 170.666667 938.666667 251.733333v413.866667c0 76.8-64 140.8-140.8 140.8h-307.2l-64 85.333333c-8.533333 12.8-25.6 21.333333-46.933334 21.333334zM226.133333 174.933333c-42.666667 0-76.8 34.133333-76.8 76.8v413.866667c0 42.666667 34.133333 76.8 76.8 76.8h110.933334l42.666666 102.4 76.8-102.4h337.066667c42.666667 0 76.8-34.133333 76.8-76.8V251.733333c0-42.666667-34.133333-76.8-76.8-76.8H226.133333z"
+                fill="#ffffff" p-id="4361"></path>
+            <path d="M285.866667 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4362"></path>
+            <path d="M512 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4363"></path>
+            <path d="M738.133333 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4364"></path>
+        </svg>
+    </button>
+    <nav style="padding: 5px;">
+        <div class="collapse" id="navbarTComent">
+            <div class="navbar-nav mr-auto" style="text-align: center">
+                <div id="tcomment"></div>
+                <script src="https://fastly.jsdelivr.net/npm/twikoo@1.6.40/dist/twikoo.min.js"></script>
+                <script>
+                    twikoo.init({
+                        envId: 'https://twikooapi.panheadgg.top/',
+                        el: '#tcomment',
+                        // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数
+                        // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+                    })
+                </script>
+            </div>
+        </div>
+    </nav>
+</div>
+                                
+                            </div>
+                    </article>
+
+                </div>
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">温故而知新</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/PanheadGG" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        © 2024-2025 PanheadGG. All rights reserved. 
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Edited by <a href="https://blog.panheadgg.top/" target="_blank">PanheadGG</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a href="https://blog.panheadgg.top/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+            </div>
+    </div>
+</body>
+
+</html>
