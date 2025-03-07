@@ -1,0 +1,349 @@
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Java第二次实验任务 | PanheadGG&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://blog.panheadgg.top/favicon.ico?v=1741335469929">
+
+<link href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://fastly.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://fastly.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://blog.panheadgg.top/styles/main.css">
+<!-- DEMO JS -->
+<script src="https://blog.panheadgg.top/media/scripts/index.js"></script>
+
+
+
+        <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+
+<body>
+    <div class="main gt-bg-theme-color-first">
+        <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            PanheadGG&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1741335469929" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+            <div class="post-container">
+                <div class="post-detail gt-bg-theme-color-second">
+                    <article class="gt-post-content">
+                        <h2 class="post-title">
+                            Java第二次实验任务
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time gt-c-content-color-first">
+                                · 2025-03-07 ·
+                            </time>
+                            
+                                <a href="https://blog.panheadgg.top/tag/Java-Experiment/" class="post-tags">
+                                    # Java实验课
+                                </a>
+                                
+                        </div>
+                        
+                            <div class="post-content">
+                                <h1 id="1">1</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-java">class Student {
+    private String name;
+    private double score;
+    private static int num = 0;
+
+    public Student() {
+        num++;
+    }
+
+    public Student(String name, double score) {
+        this.name = name;
+        this.score = score;
+        num++;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public double getScore() {
+        return this.score;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setScore(double score) {
+        this.score = score;
+    }
+
+    public static int getNum(){
+        return num;
+    }
+}
+
+public class Test {
+    public static void main(String[] args){
+        Student stu1 = new Student();
+        stu1.setName(&quot;Li Hua&quot;);
+        stu1.setScore(66.6);
+        System.out.printf(&quot;Student name %s,score %f\n&quot;,stu1.getName(),stu1.getScore());
+        Student stu2 = new Student(&quot;Zhang San&quot;,99.9);
+        System.out.printf(&quot;Student name %s,score %f\n&quot;,stu2.getName(),stu2.getScore());
+        Student stu3 = new Student(&quot;Li Si&quot;,88.8);
+        System.out.printf(&quot;Student name %s,score %f\n&quot;,stu3.getName(),stu3.getScore());
+        Student stu4 = new Student(&quot;Wang Wu&quot;,77.7);
+        System.out.printf(&quot;Student name %s,score %f\n&quot;,stu4.getName(),stu4.getScore());
+        System.out.print(&quot;Num of Student: &quot;);
+        System.out.println(Student.getNum());
+    }
+}
+</code></pre>
+<h1 id="2">2</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-java">public class YangHuiSanJiao {
+    public static void main(String[] args){
+        int[][] yhsj = new int[8][8];
+        for(int i=0;i&lt;8;i++){
+            for(int j=0;j&lt;=i;j++){
+                if(j==0||j==i){
+                    yhsj[i][j] = 1;
+                } else {
+                    yhsj[i][j] = yhsj[i-1][j-1] + yhsj[i-1][j];
+                }
+            }
+        }
+        for(int i=0;i&lt;8;i++){
+            for(int j=0;j&lt;=i;j++){
+                System.out.print(yhsj[i][j]+&quot;\t&quot;);
+            }
+            System.out.println();
+        }
+
+        //下面等腰三角形打印参考https://www.cnblogs.com/JumperMan/p/6759422.html
+        for(int i =0;i&lt;8;i++) {
+            //打印空格字符串
+            System.out.printf(&quot;%&quot;+(8-i)*2+&quot;s&quot;,&quot;&quot;);
+            for(int j=0;j&lt;=i;j++) {
+                System.out.printf(&quot;%4d&quot;,yhsj[i][j]);
+            }
+            System.out.println();
+        }
+    }
+}
+</code></pre>
+<h1 id="3">3</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-java">public class NineNineTimeTable {
+    public static void main(String[] args) {
+        for (int i = 1; i &lt;= 9; i++) {
+            for (int j = 1; j &lt;=i; j++) {
+                System.out.printf(&quot;%d*%d=%d\t&quot;,i,j,i*j);
+            }
+            System.out.println();
+        }
+    }
+}
+</code></pre>
+<h1 id="4">4</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-java">public class Work4 {
+    public static int jieCheng(int n){
+        if(n==0||n==1) return 1;
+        return n*jieCheng(n-1);
+    }
+
+    public static void main(String[] args) {
+        int result = 1;
+        for (int i = 2; i &lt;= 10; i++) {
+            result *= i;
+        }
+        System.out.println(&quot;使用循环: &quot;+result);
+        System.out.println(&quot;使用递归: &quot;+jieCheng(10));
+    }
+}
+</code></pre>
+<h1 id="5">5</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-java">import java.util.Scanner;
+
+public class Fibonacci {
+    public static int fibonacci(int n) {
+        if (n == 1 || n == 2) return 1;
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    public static void main(String[] args) {
+        int month = 1;
+        System.out.print(&quot;递归实现斐波那契数列，请输入n的值: &quot;);
+        Scanner scanner = new Scanner(System.in);
+        if (scanner.hasNextInt()) {
+            month = scanner.nextInt();
+        }
+        System.out.println(fibonacci(month));
+
+        //数组实现斐波那契数列
+        int[] fib = new int[20];
+        fib[0] = 1;
+        fib[1] = 1;
+        for (int i = 2; i &lt; 20; i++) {
+            fib[i] = fib[i - 1] + fib[i - 2];
+        }
+        System.out.println(&quot;数组实现斐波那契数列: &quot;);
+        for (int i = 0; i &lt; 20; i++) {
+            System.out.print(fib[i]+&quot; &quot;);
+        }
+    }
+}
+</code></pre>
+
+                                
+                                    <div>
+    <button style="background-color: transparent;border: 0px solid transparent;" type="button" data-toggle="collapse" data-target="#navbarTComent" aria-expanded="false">
+        <svg t="1733415937042" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="4360" width="32" height="32">
+            <path
+                d="M379.733333 913.066667h-8.533333c-21.333333-4.266667-38.4-17.066667-46.933333-34.133334l-29.866667-72.533333H226.133333c-76.8 0-140.8-64-140.8-140.8V251.733333C85.333333 170.666667 149.333333 110.933333 226.133333 110.933333h571.733334C874.666667 110.933333 938.666667 170.666667 938.666667 251.733333v413.866667c0 76.8-64 140.8-140.8 140.8h-307.2l-64 85.333333c-8.533333 12.8-25.6 21.333333-46.933334 21.333334zM226.133333 174.933333c-42.666667 0-76.8 34.133333-76.8 76.8v413.866667c0 42.666667 34.133333 76.8 76.8 76.8h110.933334l42.666666 102.4 76.8-102.4h337.066667c42.666667 0 76.8-34.133333 76.8-76.8V251.733333c0-42.666667-34.133333-76.8-76.8-76.8H226.133333z"
+                fill="#ffffff" p-id="4361"></path>
+            <path d="M285.866667 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4362"></path>
+            <path d="M512 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4363"></path>
+            <path d="M738.133333 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4364"></path>
+        </svg>
+    </button>
+    <nav style="padding: 5px;">
+        <div class="collapse" id="navbarTComent">
+            <div class="navbar-nav mr-auto" style="text-align: center">
+                <div id="tcomment"></div>
+                <script src="https://fastly.jsdelivr.net/npm/twikoo@1.6.40/dist/twikoo.min.js"></script>
+                <script>
+                    twikoo.init({
+                        envId: 'https://twikooapi.panheadgg.top/',
+                        el: '#tcomment',
+                        // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数
+                        // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+                    })
+                </script>
+            </div>
+        </div>
+    </nav>
+</div>
+                                
+                            </div>
+                    </article>
+
+                </div>
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">温故而知新</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/PanheadGG" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        © 2024-2025 PanheadGG. All rights reserved. 
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Edited by <a href="https://blog.panheadgg.top/" target="_blank">PanheadGG</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a href="https://blog.panheadgg.top/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+            </div>
+    </div>
+</body>
+
+</html>
