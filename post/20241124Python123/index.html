@@ -1,0 +1,509 @@
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Python123实验9 数组1 非官方答案 | PanheadGG&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://blog.panheadgg.top/favicon.ico?v=1744562503378">
+
+<link href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://fastly.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://fastly.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://blog.panheadgg.top/styles/main.css">
+<!-- DEMO JS -->
+<script src="https://blog.panheadgg.top/media/scripts/index.js"></script>
+
+
+
+        <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+
+<body>
+    <div class="main gt-bg-theme-color-first">
+        <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            PanheadGG&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1744562503378" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+            <div class="post-container">
+                <div class="post-detail gt-bg-theme-color-second">
+                    <article class="gt-post-content">
+                        <h2 class="post-title">
+                            Python123实验9 数组1 非官方答案
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time gt-c-content-color-first">
+                                · 2024-11-24 ·
+                            </time>
+                            
+                                <a href="https://blog.panheadgg.top/tag/Python123/" class="post-tags">
+                                    # Python123
+                                </a>
+                                
+                        </div>
+                        
+                            <div class="post-content">
+                                <h1 id="1">1</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include&lt;iostream&gt;
+using namespace std;
+void cal(int a[],int n,int &amp;max_a,int &amp;min_a)
+
+{
+    max_a=a[0];
+    min_a=a[0];
+    for(int i=1;i&lt;n;i++){
+        if(a[i]&gt;max_a) max_a=a[i];
+        if(a[i]&lt;min_a) min_a=a[i];
+    }
+}
+
+
+int main(){
+	int a[10],max_a,min_a;
+	cout&lt;&lt;&quot;输入10个整数：&quot;&lt;&lt;endl;
+	for(int i=0;i&lt;10;i++) cin&gt;&gt;a[i];
+	cal(a,10 ,max_a,min_a);
+    for(int i=0;i&lt;10;i++) cout&lt;&lt;a[i]&lt;&lt;&quot;  &quot;;
+	cout&lt;&lt;endl;
+	cout&lt;&lt;&quot;max=&quot;&lt;&lt;max_a&lt;&lt;&quot;,min=&quot;&lt;&lt;min_a&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+<h1 id="2">2</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main()
+{
+    string str;
+    int min;
+    cin&gt;&gt;str;
+    for(int i=str.length()-1;i&gt;0;i--)
+        if(str[i]=='#') min=i;
+    for(int i=min-1;i&gt;=0;i--) 
+        cout&lt;&lt;str[i];
+    return 0;
+}
+</code></pre>
+<h1 id="3">3</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">//求Fibonacci 数列的前n项
+
+#include &quot;iostream&quot;
+#include&lt;iomanip&gt;
+using namespace std;
+
+void Fibonacci(int f[],int n);
+void PrintFibonacci(int f[],int n);
+
+int main()
+{  int i,k;
+   int n;
+   int f [50] = {1,1}; //定义，初始化
+   cin&gt;&gt;n;
+   Fibonacci(f,n);
+   PrintFibonacci(f,n);
+}
+
+//此处添加函数实现
+void Fibonacci(int f[],int n){
+    if(n==1||n==2){f[n-1] = 1;return;}
+    for(int i=2;i&lt;n;i++){
+        f[i]=f[i-1]+f[i-2];
+    }
+}
+
+void PrintFibonacci(int f[],int n){
+    for(int i=1;i&lt;=n;i++){
+        cout&lt;&lt;setw(8)&lt;&lt;f[n-i];
+        if(i%5==0) cout&lt;&lt;&quot;\n&quot;;
+    }
+}
+</code></pre>
+<h1 id="4">4</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include&lt;iostream&gt;
+using namespace std;
+#include&lt;cmath&gt;
+void yh(int a[][50],int n);
+
+void PrintYH(int a[][50],int n);
+
+int main()
+    
+{
+    int a[50][50],n,i,j;
+    cin&gt;&gt;n;
+    yh(a,n);
+    PrintYH(a, n);
+    return 0;
+
+}
+
+//此处添加函数实现代码
+
+void yh(int a[][50],int n){
+    a[1][1]=1;
+    if(n==1) return;
+    for(int i=2;i&lt;=n;i++){
+        a[i][1]=1;
+        a[i][i]=1;
+        for(int j=2;j&lt;i;j++){
+            a[i][j]=a[i-1][j-1]+a[i-1][j];
+        }
+    }
+}
+
+void PrintYH(int a[][50],int n){
+    for(int i=1;i&lt;=n;i++){
+        for(int j=1;j&lt;=i;j++){
+            cout&lt;&lt;a[i][j]&lt;&lt;&quot; &quot;;
+        }
+        cout&lt;&lt;&quot;\n&quot;;
+    }
+}
+</code></pre>
+<h1 id="5">5</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include&lt;iostream&gt;
+#include&lt;cmath&gt;
+using namespace std;
+
+bool IsPrime(int n);
+
+int order(int a[],int b[],int n);  //素数存到b[],该函数返回b数组的大小
+
+
+int main()
+{
+    int a[40],b[40],n,i,q;
+    cin&gt;&gt;n;
+    for(i=0;i&lt;n;i++)
+    // 输入数组a[n]
+
+    cin&gt;&gt;a[i];
+
+
+    q=order(a,b,n);
+    //输出排序后的数组 b[]
+    
+    int tmp;
+    for(int j=0;j&lt;q;j++){
+        for(int m=0;m&lt;q-1;m++){
+            if(b[m]&gt;b[m+1]){
+                tmp = b[m];
+                b[m] = b[m+1];
+                b[m+1] = tmp;
+            }
+        }
+    }
+    for(int j=0;j&lt;q;j++){
+        cout&lt;&lt;b[j]&lt;&lt;&quot; &quot;;
+    }
+
+return 0;}
+
+//请添加函数实现代码
+bool IsPrime(int n){
+    if(n==1) return 0;
+    for(int i=2;i&lt;=sqrt(n);i++){
+        if(n%i==0) return 0;
+    }
+    return 1;
+}
+
+int order(int a[],int b[],int n){
+    int j=0;
+    for(int i=0;i&lt;n;i++){
+        if(IsPrime(a[i])){
+            b[j]=a[i];
+            j++;
+        }
+    }
+    return j;
+}
+</code></pre>
+<h1 id="6">6</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include&lt;iostream&gt;
+#include&lt;cmath&gt;
+using namespace std;
+
+int fun(int a[],int l)
+//函数实现
+{
+    int max=a[0];
+    int min=a[0];
+    int maxAddress=0,minAddress=0,sum=0;
+    for(int i=0;i&lt;l;i++){
+        if(a[i]&gt;max){max=a[i]; maxAddress=i;}
+        if(a[i]&lt;min){min=a[i]; minAddress=i;}
+    }
+    int tmp = a[maxAddress];
+    a[maxAddress] = a[minAddress];
+    a[minAddress] = tmp;
+    for(int i=0;i&lt;l;i++) sum+=a[i];
+    return sum;
+}
+
+
+int main()
+{int a[50],n,i,sum;
+    cin&gt;&gt;n;
+
+//输入n个元素的数组
+
+for(i=0;i&lt;n;i++) cin&gt;&gt;a[i];
+
+
+sum=fun(a,n);
+
+//输出数组
+
+for(i=0;i&lt;n;i++) cout&lt;&lt;a[i]&lt;&lt;&quot; &quot;;
+
+
+cout&lt;&lt;endl;
+cout&lt;&lt;&quot;sum=&quot;&lt;&lt;sum&lt;&lt;endl;
+
+return 0;}
+</code></pre>
+<h1 id="7">7</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">//	请编写程序，其功能把1，２，４，８，９，11，13，34，45，78
+//从小到大有序放在数组中，数组的值由从键盘读入，当插入一个整数后，数组中的数仍然有序。
+
+#include &lt;iostream&gt;
+using namespace std;
+void insert(double data, double arr[], int len);
+
+int main()
+{
+    double a[20]={1,2,4,8,9,11,13,34,45,78};
+    int x,i;
+    cin&gt;&gt;x;
+   insert(x, a, 10);
+   for (i=0;i&lt;11;i++)
+    cout&lt;&lt;a[i]&lt;&lt;&quot; &quot;;
+
+
+}
+//写出函数实现代码
+void insert(double data, double arr[], int len){
+    if(data&gt;arr[len-1]){
+        arr[len]=data;
+        return;
+    }
+    int l;
+    for(int i=0;i&lt;len;i++){
+        if(data&lt;arr[i]){
+            l=i;
+            break;
+        }
+    }
+    for(int i=len;i&gt;l;i--){
+        arr[i]=arr[i-1];
+    }
+    arr[l]=data;
+}
+</code></pre>
+<h1 id="8">8</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">/*	请编写下面的程序，它功能是：80到89分的学生成绩，存放在数组中，数组的值由键盘读入，统计80到89分各数的人数。
+例如：若输入：80 88 81 84 88 84 84 81 88 82 82 –1(注意：用-1结束输入)
+则输出应该是：80: 1  81 : 2
+82: 2  83: 0
+84: 3  85: 0
+86: 0  87: 0
+88: 3  89: 0*/
+
+#include &lt;iostream&gt;
+using namespace std;
+
+void score_sta(int a[]);
+void out_sta(int a[]);
+
+int main()
+{
+    int a[50]={0};
+    int i;
+    //统计成绩
+    score_sta(a);
+    //输出结果
+   out_sta(a);
+
+}
+
+//写出函数实现代码
+void score_sta(int a[]){
+    int score;
+    while (1)
+    {
+        cin&gt;&gt;score;
+        if(score==-1) return;
+        a[score%10]+=1;
+    }
+}
+
+void out_sta(int a[]){
+    for(int i=0;i&lt;=9;i++){
+        cout&lt;&lt;&quot;8&quot;&lt;&lt;i&lt;&lt;&quot;:&quot;&lt;&lt;a[i]&lt;&lt;&quot; &quot;;
+        if(i==4) cout&lt;&lt;&quot;\n&quot;;
+    }
+}
+</code></pre>
+
+                                
+                                    <div>
+    <button style="background-color: transparent;border: 0px solid transparent;" type="button" data-toggle="collapse" data-target="#navbarTComent" aria-expanded="false">
+        <svg t="1733415937042" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="4360" width="32" height="32">
+            <path
+                d="M379.733333 913.066667h-8.533333c-21.333333-4.266667-38.4-17.066667-46.933333-34.133334l-29.866667-72.533333H226.133333c-76.8 0-140.8-64-140.8-140.8V251.733333C85.333333 170.666667 149.333333 110.933333 226.133333 110.933333h571.733334C874.666667 110.933333 938.666667 170.666667 938.666667 251.733333v413.866667c0 76.8-64 140.8-140.8 140.8h-307.2l-64 85.333333c-8.533333 12.8-25.6 21.333333-46.933334 21.333334zM226.133333 174.933333c-42.666667 0-76.8 34.133333-76.8 76.8v413.866667c0 42.666667 34.133333 76.8 76.8 76.8h110.933334l42.666666 102.4 76.8-102.4h337.066667c42.666667 0 76.8-34.133333 76.8-76.8V251.733333c0-42.666667-34.133333-76.8-76.8-76.8H226.133333z"
+                fill="#ffffff" p-id="4361"></path>
+            <path d="M285.866667 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4362"></path>
+            <path d="M512 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4363"></path>
+            <path d="M738.133333 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4364"></path>
+        </svg>
+    </button>
+    <nav style="padding: 5px;">
+        <div class="collapse" id="navbarTComent">
+            <div class="navbar-nav mr-auto" style="text-align: center">
+                <div id="tcomment"></div>
+                <script src="https://fastly.jsdelivr.net/npm/twikoo@1.6.40/dist/twikoo.min.js"></script>
+                <script>
+                    twikoo.init({
+                        envId: 'https://twikooapi.panheadgg.top/',
+                        el: '#tcomment',
+                        // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数
+                        // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+                    })
+                </script>
+            </div>
+        </div>
+    </nav>
+</div>
+                                
+                            </div>
+                    </article>
+
+                </div>
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">温故而知新</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/PanheadGG" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        © 2024-2025 PanheadGG. All rights reserved. 
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Edited by <a href="https://blog.panheadgg.top/" target="_blank">PanheadGG</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a href="https://blog.panheadgg.top/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+            </div>
+    </div>
+</body>
+
+</html>
