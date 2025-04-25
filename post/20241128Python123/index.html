@@ -1,0 +1,376 @@
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="referrer" content="no-referrer"/>
+
+<title>Python123实验10 数组2 非官方答案 | PanheadGG&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://blog.panheadgg.top/favicon.ico?v=1745602815712">
+
+<link href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://fastly.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://fastly.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://blog.panheadgg.top/styles/main.css">
+<!-- DEMO JS -->
+<script src="https://blog.panheadgg.top/media/scripts/index.js"></script>
+
+
+
+        <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+
+<body>
+    <div class="main gt-bg-theme-color-first">
+        <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            PanheadGG&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1745602815712" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+            <div class="post-container">
+                <div class="post-detail gt-bg-theme-color-second">
+                    <article class="gt-post-content">
+                        <h2 class="post-title">
+                            Python123实验10 数组2 非官方答案
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time gt-c-content-color-first">
+                                · 2024-11-28 ·
+                            </time>
+                            
+                                <a href="https://blog.panheadgg.top/tag/Python123/" class="post-tags">
+                                    # Python123
+                                </a>
+                                
+                        </div>
+                        
+                            <div class="post-content">
+                                <h1 id="1">1</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+int a[10];
+
+int main()
+{
+    int x,i=9;
+    while (1)
+    {
+        cin&gt;&gt;x;
+        if(x&lt;0) break;
+        a[i] = x;
+        i--;
+    }
+    for(int j=0;j&lt;10;j++){
+        if(a[j]==0) continue;
+        cout&lt;&lt;a[j];
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="2">2</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+int a[100];
+
+int main()
+{
+    int n,m;
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++) cin&gt;&gt;a[i];
+    cin&gt;&gt;m;
+    for(int i=m-1;i&lt;n-1;i++){
+        a[i] = a[i+1];
+    }
+    for(int i = 0;i&lt;n-1;i++){
+        cout&lt;&lt;setw(5)&lt;&lt;a[i];
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="3">3</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+int a[100];
+
+int main()
+{
+    int n,m,x;
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++) cin&gt;&gt;a[i];
+    cin&gt;&gt;m&gt;&gt;x;
+    for(int i=n;i&gt;=m-1;i--){
+        a[i] = a[i-1];
+    }
+    a[m-1]=x;
+    for(int i = 0;i&lt;n+1;i++){
+        cout&lt;&lt;setw(5)&lt;&lt;a[i];
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="4">4</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+#include &lt;iomanip&gt;
+
+void sorting(int x[], int n,char orderFlag);
+
+int main(){
+
+    int a[20], i, c, n;
+
+    cin&gt;&gt;n;
+
+    for(i = 0; i &lt; n; i++)
+       cin&gt;&gt;a[i];
+
+    char orderflag;   //为1是从大到小排序，为0时从小到大排序
+    cin&gt;&gt;orderflag;
+
+    sorting(a, n, orderflag);  //调用排序函数排序
+
+    for(i = 0; i &lt;n; i++)
+         cout&lt;&lt;setw(5)&lt;&lt;a[i];
+
+
+}
+
+void sorting(int x[], int n,char orderFlag)
+{
+    if(orderFlag=='A'){
+        for(int i=0;i&lt;n-1;i++){
+            for(int j=0;j&lt;n-1-i;j++){
+                if(x[j]&gt;x[j+1]){
+                    int tmp = x[j];
+                    x[j] = x[j+1];
+                    x[j+1] = tmp;
+                }
+            }
+        }
+    }
+     if(orderFlag=='D'){
+        for(int i=0;i&lt;n-1;i++){
+            for(int j=0;j&lt;n-1-i;j++){
+                if(x[j]&lt;x[j+1]){
+                    int tmp = x[j];
+                    x[j] = x[j+1];
+                    x[j+1] = tmp;
+                }
+            }
+        }
+    }
+}
+</code></pre>
+<h1 id="5">5</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+int a[100];
+
+int main()
+{
+    int n;
+    double sum;
+    cin&gt;&gt;n;
+    int max = -1e8+1;
+    int min = 1e8-1;
+    for(int i=0;i&lt;n;i++) {
+        cin&gt;&gt;a[i];
+        max = a[i]&gt;max?a[i]:max;
+        min = a[i]&lt;min?a[i]:min;
+        sum+=(float)a[i]; 
+    }
+    cout&lt;&lt;&quot;max=&quot;&lt;&lt;max&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;min=&quot;&lt;&lt;min&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;ave=&quot;&lt;&lt;sum/n;
+
+    return 0;
+}
+</code></pre>
+<h1 id="6">6</h1>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+#include &lt;cstring&gt;
+using namespace std;
+int a[100],hashMap[99999];
+
+int main()
+{
+    memset(hashMap,0,sizeof(hashMap));
+    int n;
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++){
+        cin&gt;&gt;a[i];
+        hashMap[a[i]]++;
+        }
+    cout&lt;&lt;&quot;原来数组元素\n&quot;;
+    for(int i=0;i&lt;n;i++) cout&lt;&lt;setw(5)&lt;&lt;a[i];
+    cout&lt;&lt;&quot;\n新的数组元素: &quot;;
+    for(int i=0;i&lt;n;i++){
+        if(hashMap[a[i]]!=0){
+            cout&lt;&lt;setw(5)&lt;&lt;a[i];
+            hashMap[a[i]]=0;
+        }
+    }
+
+    return 0;
+}
+</code></pre>
+
+                                
+                                    <div>
+    <button style="background-color: transparent;border: 0px solid transparent;" type="button" data-toggle="collapse" data-target="#navbarTComent" aria-expanded="false">
+        <svg t="1733415937042" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="4360" width="32" height="32">
+            <path
+                d="M379.733333 913.066667h-8.533333c-21.333333-4.266667-38.4-17.066667-46.933333-34.133334l-29.866667-72.533333H226.133333c-76.8 0-140.8-64-140.8-140.8V251.733333C85.333333 170.666667 149.333333 110.933333 226.133333 110.933333h571.733334C874.666667 110.933333 938.666667 170.666667 938.666667 251.733333v413.866667c0 76.8-64 140.8-140.8 140.8h-307.2l-64 85.333333c-8.533333 12.8-25.6 21.333333-46.933334 21.333334zM226.133333 174.933333c-42.666667 0-76.8 34.133333-76.8 76.8v413.866667c0 42.666667 34.133333 76.8 76.8 76.8h110.933334l42.666666 102.4 76.8-102.4h337.066667c42.666667 0 76.8-34.133333 76.8-76.8V251.733333c0-42.666667-34.133333-76.8-76.8-76.8H226.133333z"
+                fill="#ffffff" p-id="4361"></path>
+            <path d="M285.866667 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4362"></path>
+            <path d="M512 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4363"></path>
+            <path d="M738.133333 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4364"></path>
+        </svg>
+    </button>
+    <nav style="padding: 5px;">
+        <div class="collapse" id="navbarTComent">
+            <div class="navbar-nav mr-auto" style="text-align: center">
+                <div id="tcomment"></div>
+                <script src="https://fastly.jsdelivr.net/npm/twikoo@1.6.40/dist/twikoo.min.js"></script>
+                <script>
+                    twikoo.init({
+                        envId: 'https://twikooapi.panheadgg.top/',
+                        el: '#tcomment',
+                        // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数
+                        // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+                    })
+                </script>
+            </div>
+        </div>
+    </nav>
+</div>
+                                
+                            </div>
+                    </article>
+
+                </div>
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">温故而知新</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/PanheadGG" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        © 2024-2025 PanheadGG. All rights reserved. 
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Edited by <a href="https://blog.panheadgg.top/" target="_blank">PanheadGG</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a href="https://blog.panheadgg.top/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+            </div>
+    </div>
+</body>
+
+</html>

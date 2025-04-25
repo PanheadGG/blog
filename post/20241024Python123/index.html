@@ -1,0 +1,429 @@
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="referrer" content="no-referrer"/>
+
+<title>实验2 运算符表达式1 | PanheadGG&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://blog.panheadgg.top/favicon.ico?v=1745602815712">
+
+<link href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://fastly.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://fastly.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://blog.panheadgg.top/styles/main.css">
+<!-- DEMO JS -->
+<script src="https://blog.panheadgg.top/media/scripts/index.js"></script>
+
+
+
+        <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+
+<body>
+    <div class="main gt-bg-theme-color-first">
+        <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            PanheadGG&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1745602815712" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+            <div class="post-container">
+                <div class="post-detail gt-bg-theme-color-second">
+                    <article class="gt-post-content">
+                        <h2 class="post-title">
+                            实验2 运算符表达式1
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time gt-c-content-color-first">
+                                · 2024-10-24 ·
+                            </time>
+                            
+                                <a href="https://blog.panheadgg.top/tag/Python123/" class="post-tags">
+                                    # Python123
+                                </a>
+                                
+                        </div>
+                        
+                            <div class="post-content">
+                                <h1 id="1">1</h1>
+<h2 id="顺序结构简单编程1">顺序结构简单编程1</h2>
+<p>将输入的分钟数转换为某某小时某某分钟。<br>
+运行样例：<br>
+输入</p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code>78
+</code></pre>
+<p>输出</p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code>1小时18分
+</code></pre>
+<p><a data-toggle="collapse" data-target="#q1" style="cursor: pointer;">展开/关闭答案</a><br>
+<div class="collapse" id="q1"></p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include&lt;iostream&gt;
+using namespace std;
+int main() {
+	int min;
+	cin &gt;&gt; min;
+	cout &lt;&lt; min / 60 &lt;&lt; &quot;小时&quot; &lt;&lt; min % 60 &lt;&lt; &quot;分钟&quot;;
+	return 0;
+}
+</code></pre>
+<p></div></p>
+<h1 id="2">2</h1>
+<h2 id="存款本利计算">存款本利计算</h2>
+<p>设银行定期存款的年利率为3.15%，存款年限和存款本金由键盘输入，试编程计算到期后的本利之和。<br>
+假设不考虑税率。<br>
+利息（年）=本金×年利率（百分数）×存期<br>
+运行样例：<br>
+输入</p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code>15000 3
+</code></pre>
+<p>输出</p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code>total=16417.5
+</code></pre>
+<p><a data-toggle="collapse" data-target="#q2" style="cursor: pointer;">展开/关闭答案</a><br>
+<div class="collapse" id="q2"></p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include&lt;iostream&gt;
+using namespace std;
+int main() {
+	float money;
+	int year;
+	cin &gt;&gt; money &gt;&gt; year;
+	cout &lt;&lt; &quot;total=&quot; &lt;&lt; money + money * 0.0315 * year;
+	return 0;
+}
+</code></pre>
+<p></div></p>
+<h1 id="3">3</h1>
+<h2 id="小写字母转换为大写字母">小写字母转换为大写字母</h2>
+<p>将输入的一个小写字符转换为大写形式输出。<br>
+运行样例：<br>
+输入</p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code>a
+</code></pre>
+<p>输出</p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code>A
+</code></pre>
+<p><a data-toggle="collapse" data-target="#q3" style="cursor: pointer;">展开/关闭答案</a><br>
+<div class="collapse" id="q3"></p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include&lt;iostream&gt;
+using namespace std;
+int main() {
+	char ch;
+	cin &gt;&gt; ch;
+	cout &lt;&lt; (char)(ch - 32);
+	return 0;
+}
+</code></pre>
+<p></div></p>
+<h1 id="4">4</h1>
+<h2 id="算术表达式">算术表达式</h2>
+<p>利用算术运算完成两个变量对象a, b值的交换。<br>
+输入</p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code>3 5
+</code></pre>
+<p>输出</p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code>5 3
+</code></pre>
+<p><a data-toggle="collapse" data-target="#q4" style="cursor: pointer;">展开/关闭答案</a><br>
+<div class="collapse" id="q4"></p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;      //标准输入输出函数库  我是注释
+#define PI 3.141592       //定义符号常量 PI
+using namespace std;    //使用标准命名空间    我是注释
+
+int main()                //主函数              我是注释
+{
+    int a,b;
+    cin&gt;&gt;a&gt;&gt;b;
+    a=a+b;
+b=a-b;
+a=a-b;
+    cout&lt;&lt;a&lt;&lt;&quot; &quot;&lt;&lt;b&lt;&lt;endl;
+    return 0;            
+}
+</code></pre>
+<p></div></p>
+<h1 id="5">5</h1>
+<h2 id="大小写字母转换">大小写字母转换</h2>
+<p>输入一个字符，判别它是否为大写字母，如果是，将它转换成小写字母；如果不是，不转换。输出最后得到的字符。<br>
+输入</p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code>B
+</code></pre>
+<p>输出</p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code>b
+</code></pre>
+<p><a data-toggle="collapse" data-target="#q5" style="cursor: pointer;">展开/关闭答案</a><br>
+<div class="collapse" id="q5"></p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+int main( ){
+    char ch;
+    
+    cin&gt;&gt;ch;
+    if(ch&gt;=65&amp;&amp;ch&lt;=90) ch +=32;
+    cout&lt;&lt;ch&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
+<p></div></p>
+<h1 id="6">6</h1>
+<h2 id="求-a-b">求  a + | b |</h2>
+<p>输入</p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code>1.3 -5.6
+</code></pre>
+<p>输出</p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code>1.3 + | -5.6 | = 6.9
+</code></pre>
+<p><a data-toggle="collapse" data-target="#q6" style="cursor: pointer;">展开/关闭答案</a><br>
+<div class="collapse" id="q6"></p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include&lt;iostream&gt;
+#include&lt;cmath&gt;
+using namespace std;
+int main() {
+	float a, b;
+	cin &gt;&gt; a &gt;&gt; b;
+	cout &lt;&lt; a &lt;&lt; &quot; + | &quot; &lt;&lt; b &lt;&lt; &quot; | = &quot; &lt;&lt; a + abs(b);
+	return 0;
+}
+</code></pre>
+<p></div></p>
+<h1 id="7">7</h1>
+<h2 id="编写程序求华氏温度-f-对应的摄氏温度c">编写程序求华氏温度 F 对应的摄氏温度C</h2>
+<p>编写程序求华氏温度 F 对应的摄氏温度C<br>
+摄氏温度 C=(5/9)(F-32)<br>
+输入</p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code>100
+</code></pre>
+<p>输出</p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code>37.7778
+</code></pre>
+<p><a data-toggle="collapse" data-target="#q7" style="cursor: pointer;">展开/关闭答案</a><br>
+<div class="collapse" id="q7"></p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include&lt;stdio.h&gt;
+int main() {
+	float f;
+	scanf(&quot;%f&quot;, &amp;f);
+	printf(&quot;%.4f&quot;, 5.0 / 9.0 * (f - 32.0));
+	return 0;
+}
+</code></pre>
+<p></div></p>
+<h1 id="8">8</h1>
+<h2 id="输入一个三位正整数分别取出该三位数各个数位上的数字并输出">输入一个三位正整数，分别取出该三位数各个数位上的数字，并输出</h2>
+<p>输入</p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code>198
+</code></pre>
+<p>输出</p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code>1, 9, 8
+</code></pre>
+<p><a data-toggle="collapse" data-target="#q8" style="cursor: pointer;">展开/关闭答案</a><br>
+<div class="collapse" id="q8"></p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include&lt;iostream&gt;
+using namespace std;
+int main() {
+	char ch[3];
+	cin &gt;&gt; ch;
+	cout &lt;&lt; ch[0] &lt;&lt; &quot;,&quot; &lt;&lt; ch[1] &lt;&lt; &quot;,&quot; &lt;&lt; ch[2];
+	return 0;
+}
+</code></pre>
+<p></div></p>
+<h1 id="9">9</h1>
+<h2 id="从键盘输入3个数-输出最大数">从键盘输入3个数, 输出最大数</h2>
+<p>输入</p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code>32 67 8
+</code></pre>
+<p>输出</p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code>max_number=67
+</code></pre>
+<p><a data-toggle="collapse" data-target="#q9" style="cursor: pointer;">展开/关闭答案</a><br>
+<div class="collapse" id="q9"></p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-cpp">#include&lt;iostream&gt;
+using namespace std;
+int main() {
+	int a, b, c, max;
+	cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+	max = a;
+	if (b &gt; max) max = b;
+	if (c &gt; max) max = c;
+	cout &lt;&lt; &quot;max_number=&quot; &lt;&lt; max;
+	return 0;
+}
+</code></pre>
+<p></div></p>
+
+                                
+                                    <div>
+    <button style="background-color: transparent;border: 0px solid transparent;" type="button" data-toggle="collapse" data-target="#navbarTComent" aria-expanded="false">
+        <svg t="1733415937042" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="4360" width="32" height="32">
+            <path
+                d="M379.733333 913.066667h-8.533333c-21.333333-4.266667-38.4-17.066667-46.933333-34.133334l-29.866667-72.533333H226.133333c-76.8 0-140.8-64-140.8-140.8V251.733333C85.333333 170.666667 149.333333 110.933333 226.133333 110.933333h571.733334C874.666667 110.933333 938.666667 170.666667 938.666667 251.733333v413.866667c0 76.8-64 140.8-140.8 140.8h-307.2l-64 85.333333c-8.533333 12.8-25.6 21.333333-46.933334 21.333334zM226.133333 174.933333c-42.666667 0-76.8 34.133333-76.8 76.8v413.866667c0 42.666667 34.133333 76.8 76.8 76.8h110.933334l42.666666 102.4 76.8-102.4h337.066667c42.666667 0 76.8-34.133333 76.8-76.8V251.733333c0-42.666667-34.133333-76.8-76.8-76.8H226.133333z"
+                fill="#ffffff" p-id="4361"></path>
+            <path d="M285.866667 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4362"></path>
+            <path d="M512 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4363"></path>
+            <path d="M738.133333 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4364"></path>
+        </svg>
+    </button>
+    <nav style="padding: 5px;">
+        <div class="collapse" id="navbarTComent">
+            <div class="navbar-nav mr-auto" style="text-align: center">
+                <div id="tcomment"></div>
+                <script src="https://fastly.jsdelivr.net/npm/twikoo@1.6.40/dist/twikoo.min.js"></script>
+                <script>
+                    twikoo.init({
+                        envId: 'https://twikooapi.panheadgg.top/',
+                        el: '#tcomment',
+                        // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数
+                        // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+                    })
+                </script>
+            </div>
+        </div>
+    </nav>
+</div>
+                                
+                            </div>
+                    </article>
+
+                </div>
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">温故而知新</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/PanheadGG" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        © 2024-2025 PanheadGG. All rights reserved. 
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Edited by <a href="https://blog.panheadgg.top/" target="_blank">PanheadGG</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a href="https://blog.panheadgg.top/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+            </div>
+    </div>
+</body>
+
+</html>

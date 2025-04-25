@@ -1,0 +1,1214 @@
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="referrer" content="no-referrer"/>
+
+<title>逻辑电路及其描述工具 - Logisim | PanheadGG&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://blog.panheadgg.top/favicon.ico?v=1745602815712">
+
+<link href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://fastly.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://fastly.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://blog.panheadgg.top/styles/main.css">
+<!-- DEMO JS -->
+<script src="https://blog.panheadgg.top/media/scripts/index.js"></script>
+
+
+
+        <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+
+<body>
+    <div class="main gt-bg-theme-color-first">
+        <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            PanheadGG&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1745602815712" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+            <div class="post-container">
+                <div class="post-detail gt-bg-theme-color-second">
+                    <article class="gt-post-content">
+                        <h2 class="post-title">
+                            逻辑电路及其描述工具 - Logisim
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time gt-c-content-color-first">
+                                · 2025-04-13 ·
+                            </time>
+                            
+                                <a href="https://blog.panheadgg.top/tag/Logisim/" class="post-tags">
+                                    # Logisim
+                                </a>
+                                
+                        </div>
+                        
+                            <div class="post-content">
+                                <p><a href="https://www.educoder.net/classrooms/uiahw36y/shixun_homework/2571004/detail?tabs=1">https://www.educoder.net/classrooms/uiahw36y/shixun_homework/2571004/detail?tabs=1</a></p>
+
+                            <pre class="code-block-container" data-hover="true"><button class="copy-code-btn" data-hover-target="true">复制代码</button><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
+&lt;project source=&quot;2.7.1&quot; version=&quot;1.0&quot;&gt;
+  This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
+
+  &lt;lib desc=&quot;#Wiring&quot; name=&quot;0&quot;&gt;
+    &lt;tool name=&quot;Splitter&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;north&quot;/&gt;
+      &lt;a name=&quot;fanout&quot; val=&quot;4&quot;/&gt;
+      &lt;a name=&quot;incoming&quot; val=&quot;4&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;north&quot;/&gt;
+      &lt;a name=&quot;labelloc&quot; val=&quot;north&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;Probe&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;west&quot;/&gt;
+      &lt;a name=&quot;radix&quot; val=&quot;10signed&quot;/&gt;
+      &lt;a name=&quot;labelloc&quot; val=&quot;north&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;east&quot;/&gt;
+      &lt;a name=&quot;width&quot; val=&quot;32&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;tunnel&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;Pull Resistor&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;north&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;Clock&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;north&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;Constant&quot;&gt;
+      &lt;a name=&quot;value&quot; val=&quot;0x0&quot;/&gt;
+    &lt;/tool&gt;
+  &lt;/lib&gt;
+  &lt;lib desc=&quot;#Gates&quot; name=&quot;1&quot;&gt;
+    &lt;tool name=&quot;NOT Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;20&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;AND Gate&quot;&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;3&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;OR Gate&quot;&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;2&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;NAND Gate&quot;&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;3&quot;/&gt;
+    &lt;/tool&gt;
+  &lt;/lib&gt;
+  &lt;lib desc=&quot;#Plexers&quot; name=&quot;2&quot;&gt;
+    &lt;tool name=&quot;Multiplexer&quot;&gt;
+      &lt;a name=&quot;enable&quot; val=&quot;false&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;Demultiplexer&quot;&gt;
+      &lt;a name=&quot;enable&quot; val=&quot;false&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;Decoder&quot;&gt;
+      &lt;a name=&quot;enable&quot; val=&quot;false&quot;/&gt;
+    &lt;/tool&gt;
+  &lt;/lib&gt;
+  &lt;lib desc=&quot;#Arithmetic&quot; name=&quot;3&quot;/&gt;
+  &lt;lib desc=&quot;#Memory&quot; name=&quot;4&quot;&gt;
+    &lt;tool name=&quot;D Flip-Flop&quot;&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;T Flip-Flop&quot;&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;J-K Flip-Flop&quot;&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;S-R Flip-Flop&quot;&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;Register&quot;&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;Counter&quot;&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;Shift Register&quot;&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;Random&quot;&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;ROM&quot;&gt;
+      &lt;a name=&quot;contents&quot;&gt;addr/data: 8 8
+0
+&lt;/a&gt;
+    &lt;/tool&gt;
+  &lt;/lib&gt;
+  &lt;lib desc=&quot;#I/O&quot; name=&quot;5&quot;&gt;
+    &lt;tool name=&quot;Button&quot;&gt;
+      &lt;a name=&quot;labelloc&quot; val=&quot;north&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;LED&quot;&gt;
+      &lt;a name=&quot;labelloc&quot; val=&quot;north&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;7-Segment Display&quot;&gt;
+      &lt;a name=&quot;bg&quot; val=&quot;#ffffff&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool name=&quot;Hex Digit Display&quot;&gt;
+      &lt;a name=&quot;bg&quot; val=&quot;#ffffff&quot;/&gt;
+    &lt;/tool&gt;
+  &lt;/lib&gt;
+  &lt;lib desc=&quot;#Base&quot; name=&quot;6&quot;&gt;
+    &lt;tool name=&quot;Text Tool&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+      &lt;a name=&quot;halign&quot; val=&quot;center&quot;/&gt;
+      &lt;a name=&quot;valign&quot; val=&quot;base&quot;/&gt;
+    &lt;/tool&gt;
+  &lt;/lib&gt;
+  &lt;main name=&quot;布尔表达式&quot;/&gt;
+  &lt;options&gt;
+    &lt;a name=&quot;gateUndefined&quot; val=&quot;ignore&quot;/&gt;
+    &lt;a name=&quot;simlimit&quot; val=&quot;1000&quot;/&gt;
+    &lt;a name=&quot;simrand&quot; val=&quot;0&quot;/&gt;
+  &lt;/options&gt;
+  &lt;mappings&gt;
+    &lt;tool lib=&quot;6&quot; map=&quot;Button2&quot; name=&quot;Poke Tool&quot;/&gt;
+    &lt;tool lib=&quot;6&quot; map=&quot;Button3&quot; name=&quot;Menu Tool&quot;/&gt;
+    &lt;tool lib=&quot;6&quot; map=&quot;Ctrl Button1&quot; name=&quot;Menu Tool&quot;/&gt;
+  &lt;/mappings&gt;
+  &lt;toolbar&gt;
+    &lt;tool lib=&quot;6&quot; name=&quot;Poke Tool&quot;/&gt;
+    &lt;tool lib=&quot;6&quot; name=&quot;Edit Tool&quot;/&gt;
+    &lt;sep/&gt;
+    &lt;tool lib=&quot;6&quot; name=&quot;Text Tool&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+      &lt;a name=&quot;halign&quot; val=&quot;center&quot;/&gt;
+      &lt;a name=&quot;valign&quot; val=&quot;base&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool lib=&quot;0&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;tristate&quot; val=&quot;false&quot;/&gt;
+      &lt;a name=&quot;labelloc&quot; val=&quot;north&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool lib=&quot;0&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;west&quot;/&gt;
+      &lt;a name=&quot;output&quot; val=&quot;true&quot;/&gt;
+      &lt;a name=&quot;labelloc&quot; val=&quot;north&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool lib=&quot;1&quot; name=&quot;NOT Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;20&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool lib=&quot;1&quot; name=&quot;AND Gate&quot;&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;2&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+    &lt;tool lib=&quot;1&quot; name=&quot;OR Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;30&quot;/&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;2&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/tool&gt;
+  &lt;/toolbar&gt;
+  &lt;circuit name=&quot;布尔表达式&quot;&gt;
+    &lt;a name=&quot;circuit&quot; val=&quot;布尔表达式&quot;/&gt;
+    &lt;a name=&quot;clabel&quot; val=&quot;Bool&quot;/&gt;
+    &lt;a name=&quot;clabelup&quot; val=&quot;east&quot;/&gt;
+    &lt;a name=&quot;clabelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;wire from=&quot;(160,350)&quot; to=&quot;(160,420)&quot;/&gt;
+    &lt;wire from=&quot;(160,300)&quot; to=&quot;(220,300)&quot;/&gt;
+    &lt;wire from=&quot;(160,350)&quot; to=&quot;(220,350)&quot;/&gt;
+    &lt;wire from=&quot;(100,230)&quot; to=&quot;(220,230)&quot;/&gt;
+    &lt;wire from=&quot;(100,280)&quot; to=&quot;(220,280)&quot;/&gt;
+    &lt;wire from=&quot;(100,220)&quot; to=&quot;(100,230)&quot;/&gt;
+    &lt;wire from=&quot;(100,280)&quot; to=&quot;(100,420)&quot;/&gt;
+    &lt;wire from=&quot;(570,50)&quot; to=&quot;(610,50)&quot;/&gt;
+    &lt;wire from=&quot;(730,10)&quot; to=&quot;(730,100)&quot;/&gt;
+    &lt;wire from=&quot;(430,100)&quot; to=&quot;(730,100)&quot;/&gt;
+    &lt;wire from=&quot;(430,10)&quot; to=&quot;(730,10)&quot;/&gt;
+    &lt;wire from=&quot;(160,220)&quot; to=&quot;(160,300)&quot;/&gt;
+    &lt;wire from=&quot;(130,250)&quot; to=&quot;(130,330)&quot;/&gt;
+    &lt;wire from=&quot;(480,290)&quot; to=&quot;(590,290)&quot;/&gt;
+    &lt;wire from=&quot;(130,330)&quot; to=&quot;(130,420)&quot;/&gt;
+    &lt;wire from=&quot;(10,10)&quot; to=&quot;(10,100)&quot;/&gt;
+    &lt;wire from=&quot;(430,10)&quot; to=&quot;(430,100)&quot;/&gt;
+    &lt;wire from=&quot;(10,100)&quot; to=&quot;(430,100)&quot;/&gt;
+    &lt;wire from=&quot;(10,10)&quot; to=&quot;(430,10)&quot;/&gt;
+    &lt;wire from=&quot;(130,220)&quot; to=&quot;(130,250)&quot;/&gt;
+    &lt;wire from=&quot;(730,100)&quot; to=&quot;(730,140)&quot;/&gt;
+    &lt;wire from=&quot;(130,250)&quot; to=&quot;(220,250)&quot;/&gt;
+    &lt;wire from=&quot;(130,330)&quot; to=&quot;(220,330)&quot;/&gt;
+    &lt;wire from=&quot;(10,100)&quot; to=&quot;(10,140)&quot;/&gt;
+    &lt;wire from=&quot;(350,50)&quot; to=&quot;(370,50)&quot;/&gt;
+    &lt;wire from=&quot;(90,50)&quot; to=&quot;(110,50)&quot;/&gt;
+    &lt;wire from=&quot;(450,300)&quot; to=&quot;(450,340)&quot;/&gt;
+    &lt;wire from=&quot;(450,240)&quot; to=&quot;(450,280)&quot;/&gt;
+    &lt;wire from=&quot;(220,50)&quot; to=&quot;(240,50)&quot;/&gt;
+    &lt;wire from=&quot;(10,140)&quot; to=&quot;(730,140)&quot;/&gt;
+    &lt;wire from=&quot;(160,300)&quot; to=&quot;(160,350)&quot;/&gt;
+    &lt;wire from=&quot;(100,230)&quot; to=&quot;(100,280)&quot;/&gt;
+    &lt;wire from=&quot;(250,240)&quot; to=&quot;(450,240)&quot;/&gt;
+    &lt;wire from=&quot;(250,340)&quot; to=&quot;(450,340)&quot;/&gt;
+    &lt;wire from=&quot;(250,290)&quot; to=&quot;(450,290)&quot;/&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(590,290)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;F&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(250,340)&quot; name=&quot;AND Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;30&quot;/&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;2&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(160,220)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;south&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;C&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(220,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;tristate&quot; val=&quot;false&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;B&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(110,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;A&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(610,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;west&quot;/&gt;
+      &lt;a name=&quot;output&quot; val=&quot;true&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;F&quot;/&gt;
+      &lt;a name=&quot;labelloc&quot; val=&quot;east&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(370,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;C&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(350,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;tristate&quot; val=&quot;false&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;C&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(130,220)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;south&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;B&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(630,126)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;武汉纺织大学数字逻辑课程组&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(90,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;tristate&quot; val=&quot;false&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;A&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(570,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;east&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;F&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(250,290)&quot; name=&quot;AND Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;30&quot;/&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;2&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(469,29)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;输出引脚&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(480,290)&quot; name=&quot;OR Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;30&quot;/&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;3&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(207,124)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;请勿更改电路封装外观&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(203,89)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;请勿增加、删除引脚，用隧道标签构建电路&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(240,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;B&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(250,240)&quot; name=&quot;AND Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;30&quot;/&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;2&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(46,29)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;输入引脚&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(100,220)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;south&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;A&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+  &lt;/circuit&gt;
+  &lt;circuit name=&quot;真值表&quot;&gt;
+    &lt;a name=&quot;circuit&quot; val=&quot;真值表&quot;/&gt;
+    &lt;a name=&quot;clabel&quot; val=&quot;Truth&quot;/&gt;
+    &lt;a name=&quot;clabelup&quot; val=&quot;east&quot;/&gt;
+    &lt;a name=&quot;clabelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;wire from=&quot;(100,270)&quot; to=&quot;(290,270)&quot;/&gt;
+    &lt;wire from=&quot;(160,220)&quot; to=&quot;(160,290)&quot;/&gt;
+    &lt;wire from=&quot;(100,350)&quot; to=&quot;(100,420)&quot;/&gt;
+    &lt;wire from=&quot;(570,50)&quot; to=&quot;(610,50)&quot;/&gt;
+    &lt;wire from=&quot;(730,10)&quot; to=&quot;(730,100)&quot;/&gt;
+    &lt;wire from=&quot;(100,270)&quot; to=&quot;(100,350)&quot;/&gt;
+    &lt;wire from=&quot;(430,100)&quot; to=&quot;(730,100)&quot;/&gt;
+    &lt;wire from=&quot;(430,10)&quot; to=&quot;(730,10)&quot;/&gt;
+    &lt;wire from=&quot;(160,290)&quot; to=&quot;(160,370)&quot;/&gt;
+    &lt;wire from=&quot;(220,310)&quot; to=&quot;(220,390)&quot;/&gt;
+    &lt;wire from=&quot;(470,350)&quot; to=&quot;(470,370)&quot;/&gt;
+    &lt;wire from=&quot;(470,290)&quot; to=&quot;(470,310)&quot;/&gt;
+    &lt;wire from=&quot;(220,220)&quot; to=&quot;(220,310)&quot;/&gt;
+    &lt;wire from=&quot;(10,10)&quot; to=&quot;(10,100)&quot;/&gt;
+    &lt;wire from=&quot;(430,10)&quot; to=&quot;(430,100)&quot;/&gt;
+    &lt;wire from=&quot;(10,100)&quot; to=&quot;(430,100)&quot;/&gt;
+    &lt;wire from=&quot;(10,10)&quot; to=&quot;(430,10)&quot;/&gt;
+    &lt;wire from=&quot;(220,390)&quot; to=&quot;(220,420)&quot;/&gt;
+    &lt;wire from=&quot;(220,390)&quot; to=&quot;(250,390)&quot;/&gt;
+    &lt;wire from=&quot;(730,100)&quot; to=&quot;(730,140)&quot;/&gt;
+    &lt;wire from=&quot;(160,370)&quot; to=&quot;(250,370)&quot;/&gt;
+    &lt;wire from=&quot;(10,100)&quot; to=&quot;(10,140)&quot;/&gt;
+    &lt;wire from=&quot;(270,350)&quot; to=&quot;(290,350)&quot;/&gt;
+    &lt;wire from=&quot;(270,370)&quot; to=&quot;(290,370)&quot;/&gt;
+    &lt;wire from=&quot;(270,390)&quot; to=&quot;(290,390)&quot;/&gt;
+    &lt;wire from=&quot;(350,50)&quot; to=&quot;(370,50)&quot;/&gt;
+    &lt;wire from=&quot;(100,350)&quot; to=&quot;(250,350)&quot;/&gt;
+    &lt;wire from=&quot;(90,50)&quot; to=&quot;(110,50)&quot;/&gt;
+    &lt;wire from=&quot;(220,50)&quot; to=&quot;(240,50)&quot;/&gt;
+    &lt;wire from=&quot;(10,140)&quot; to=&quot;(730,140)&quot;/&gt;
+    &lt;wire from=&quot;(160,370)&quot; to=&quot;(160,420)&quot;/&gt;
+    &lt;wire from=&quot;(100,220)&quot; to=&quot;(100,270)&quot;/&gt;
+    &lt;wire from=&quot;(520,330)&quot; to=&quot;(650,330)&quot;/&gt;
+    &lt;wire from=&quot;(220,310)&quot; to=&quot;(290,310)&quot;/&gt;
+    &lt;wire from=&quot;(340,370)&quot; to=&quot;(470,370)&quot;/&gt;
+    &lt;wire from=&quot;(340,290)&quot; to=&quot;(470,290)&quot;/&gt;
+    &lt;wire from=&quot;(160,290)&quot; to=&quot;(290,290)&quot;/&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(630,126)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;武汉纺织大学数字逻辑课程组&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(270,370)&quot; name=&quot;NOT Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;20&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(270,350)&quot; name=&quot;NOT Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;20&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(207,124)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;请勿更改电路封装外观&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(240,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;B&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(220,220)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;south&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;C&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(270,390)&quot; name=&quot;NOT Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;20&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(370,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;C&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(110,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;A&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(350,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;tristate&quot; val=&quot;false&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;C&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(90,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;tristate&quot; val=&quot;false&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;A&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(520,330)&quot; name=&quot;OR Gate&quot;&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;2&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(220,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;tristate&quot; val=&quot;false&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;B&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(469,29)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;输出引脚&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(100,220)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;south&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;A&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(203,89)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;请勿增加、删除引脚，用隧道标签构建电路&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(46,29)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;输入引脚&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(340,370)&quot; name=&quot;AND Gate&quot;&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;3&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(340,290)&quot; name=&quot;AND Gate&quot;&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;3&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(570,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;east&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;F&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(610,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;west&quot;/&gt;
+      &lt;a name=&quot;output&quot; val=&quot;true&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;F&quot;/&gt;
+      &lt;a name=&quot;labelloc&quot; val=&quot;east&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(160,220)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;south&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;B&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(650,330)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;F&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+  &lt;/circuit&gt;
+  &lt;circuit name=&quot;简化真值表&quot;&gt;
+    &lt;a name=&quot;circuit&quot; val=&quot;简化真值表&quot;/&gt;
+    &lt;a name=&quot;clabel&quot; val=&quot;sTruth&quot;/&gt;
+    &lt;a name=&quot;clabelup&quot; val=&quot;east&quot;/&gt;
+    &lt;a name=&quot;clabelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;wire from=&quot;(160,270)&quot; to=&quot;(350,270)&quot;/&gt;
+    &lt;wire from=&quot;(160,400)&quot; to=&quot;(350,400)&quot;/&gt;
+    &lt;wire from=&quot;(560,330)&quot; to=&quot;(680,330)&quot;/&gt;
+    &lt;wire from=&quot;(160,330)&quot; to=&quot;(160,400)&quot;/&gt;
+    &lt;wire from=&quot;(220,340)&quot; to=&quot;(220,410)&quot;/&gt;
+    &lt;wire from=&quot;(40,300)&quot; to=&quot;(40,370)&quot;/&gt;
+    &lt;wire from=&quot;(40,370)&quot; to=&quot;(40,440)&quot;/&gt;
+    &lt;wire from=&quot;(100,240)&quot; to=&quot;(100,310)&quot;/&gt;
+    &lt;wire from=&quot;(100,310)&quot; to=&quot;(100,380)&quot;/&gt;
+    &lt;wire from=&quot;(40,240)&quot; to=&quot;(40,250)&quot;/&gt;
+    &lt;wire from=&quot;(40,370)&quot; to=&quot;(350,370)&quot;/&gt;
+    &lt;wire from=&quot;(510,320)&quot; to=&quot;(510,330)&quot;/&gt;
+    &lt;wire from=&quot;(730,10)&quot; to=&quot;(730,100)&quot;/&gt;
+    &lt;wire from=&quot;(620,50)&quot; to=&quot;(660,50)&quot;/&gt;
+    &lt;wire from=&quot;(400,260)&quot; to=&quot;(510,260)&quot;/&gt;
+    &lt;wire from=&quot;(10,10)&quot; to=&quot;(500,10)&quot;/&gt;
+    &lt;wire from=&quot;(10,100)&quot; to=&quot;(500,100)&quot;/&gt;
+    &lt;wire from=&quot;(10,10)&quot; to=&quot;(10,100)&quot;/&gt;
+    &lt;wire from=&quot;(160,240)&quot; to=&quot;(160,270)&quot;/&gt;
+    &lt;wire from=&quot;(500,10)&quot; to=&quot;(500,100)&quot;/&gt;
+    &lt;wire from=&quot;(500,10)&quot; to=&quot;(730,10)&quot;/&gt;
+    &lt;wire from=&quot;(500,100)&quot; to=&quot;(730,100)&quot;/&gt;
+    &lt;wire from=&quot;(220,410)&quot; to=&quot;(220,440)&quot;/&gt;
+    &lt;wire from=&quot;(420,390)&quot; to=&quot;(510,390)&quot;/&gt;
+    &lt;wire from=&quot;(420,320)&quot; to=&quot;(510,320)&quot;/&gt;
+    &lt;wire from=&quot;(680,290)&quot; to=&quot;(680,330)&quot;/&gt;
+    &lt;wire from=&quot;(730,100)&quot; to=&quot;(730,140)&quot;/&gt;
+    &lt;wire from=&quot;(220,240)&quot; to=&quot;(220,340)&quot;/&gt;
+    &lt;wire from=&quot;(10,100)&quot; to=&quot;(10,140)&quot;/&gt;
+    &lt;wire from=&quot;(310,50)&quot; to=&quot;(330,50)&quot;/&gt;
+    &lt;wire from=&quot;(420,50)&quot; to=&quot;(440,50)&quot;/&gt;
+    &lt;wire from=&quot;(160,400)&quot; to=&quot;(160,440)&quot;/&gt;
+    &lt;wire from=&quot;(160,330)&quot; to=&quot;(370,330)&quot;/&gt;
+    &lt;wire from=&quot;(90,50)&quot; to=&quot;(110,50)&quot;/&gt;
+    &lt;wire from=&quot;(200,50)&quot; to=&quot;(220,50)&quot;/&gt;
+    &lt;wire from=&quot;(510,350)&quot; to=&quot;(510,390)&quot;/&gt;
+    &lt;wire from=&quot;(10,140)&quot; to=&quot;(730,140)&quot;/&gt;
+    &lt;wire from=&quot;(40,250)&quot; to=&quot;(40,300)&quot;/&gt;
+    &lt;wire from=&quot;(100,310)&quot; to=&quot;(370,310)&quot;/&gt;
+    &lt;wire from=&quot;(100,380)&quot; to=&quot;(370,380)&quot;/&gt;
+    &lt;wire from=&quot;(510,260)&quot; to=&quot;(510,310)&quot;/&gt;
+    &lt;wire from=&quot;(40,250)&quot; to=&quot;(370,250)&quot;/&gt;
+    &lt;wire from=&quot;(40,300)&quot; to=&quot;(370,300)&quot;/&gt;
+    &lt;wire from=&quot;(220,340)&quot; to=&quot;(350,340)&quot;/&gt;
+    &lt;wire from=&quot;(100,380)&quot; to=&quot;(100,440)&quot;/&gt;
+    &lt;wire from=&quot;(220,410)&quot; to=&quot;(350,410)&quot;/&gt;
+    &lt;wire from=&quot;(160,270)&quot; to=&quot;(160,330)&quot;/&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(440,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;Y0&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(400,260)&quot; name=&quot;AND Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;30&quot;/&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;2&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(630,126)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;武汉纺织大学数字逻辑课程组&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(370,400)&quot; name=&quot;NOT Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;20&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(90,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;tristate&quot; val=&quot;false&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;X1&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(370,340)&quot; name=&quot;NOT Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;20&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(160,240)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;south&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;Y1&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(420,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;tristate&quot; val=&quot;false&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;Y0&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(110,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;X1&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(660,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;west&quot;/&gt;
+      &lt;a name=&quot;output&quot; val=&quot;true&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;Gt&quot;/&gt;
+      &lt;a name=&quot;labelloc&quot; val=&quot;north&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(220,240)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;south&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;Y0&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(46,29)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;输入引脚&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(370,270)&quot; name=&quot;NOT Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;20&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(620,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;east&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;Gt&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(40,240)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;south&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;X1&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(330,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;Y1&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(200,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;tristate&quot; val=&quot;false&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;X0&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(370,370)&quot; name=&quot;NOT Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;20&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(310,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;tristate&quot; val=&quot;false&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;Y1&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(539,29)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;输出引脚&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(370,410)&quot; name=&quot;NOT Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;20&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(197,124)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;请勿更改电路封装外观&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(203,89)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;请勿增加、删除引脚，用隧道标签构建电路&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(100,240)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;south&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;X0&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(560,330)&quot; name=&quot;OR Gate&quot;&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;3&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(680,290)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;Gt&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(220,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;X0&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(420,390)&quot; name=&quot;AND Gate&quot;&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;4&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(420,320)&quot; name=&quot;AND Gate&quot;&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;4&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+  &lt;/circuit&gt;
+  &lt;circuit name=&quot;波形图&quot;&gt;
+    &lt;a name=&quot;circuit&quot; val=&quot;波形图&quot;/&gt;
+    &lt;a name=&quot;clabel&quot; val=&quot;Wave&quot;/&gt;
+    &lt;a name=&quot;clabelup&quot; val=&quot;east&quot;/&gt;
+    &lt;a name=&quot;clabelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;wire from=&quot;(180,560)&quot; to=&quot;(180,570)&quot;/&gt;
+    &lt;wire from=&quot;(430,100)&quot; to=&quot;(730,100)&quot;/&gt;
+    &lt;wire from=&quot;(480,480)&quot; to=&quot;(720,480)&quot;/&gt;
+    &lt;wire from=&quot;(410,510)&quot; to=&quot;(410,540)&quot;/&gt;
+    &lt;wire from=&quot;(110,240)&quot; to=&quot;(150,240)&quot;/&gt;
+    &lt;wire from=&quot;(70,260)&quot; to=&quot;(110,260)&quot;/&gt;
+    &lt;wire from=&quot;(70,300)&quot; to=&quot;(110,300)&quot;/&gt;
+    &lt;wire from=&quot;(150,260)&quot; to=&quot;(190,260)&quot;/&gt;
+    &lt;wire from=&quot;(230,260)&quot; to=&quot;(270,260)&quot;/&gt;
+    &lt;wire from=&quot;(190,240)&quot; to=&quot;(230,240)&quot;/&gt;
+    &lt;wire from=&quot;(10,100)&quot; to=&quot;(430,100)&quot;/&gt;
+    &lt;wire from=&quot;(270,240)&quot; to=&quot;(310,240)&quot;/&gt;
+    &lt;wire from=&quot;(310,260)&quot; to=&quot;(350,260)&quot;/&gt;
+    &lt;wire from=&quot;(120,540)&quot; to=&quot;(120,570)&quot;/&gt;
+    &lt;wire from=&quot;(350,240)&quot; to=&quot;(390,240)&quot;/&gt;
+    &lt;wire from=&quot;(350,280)&quot; to=&quot;(390,280)&quot;/&gt;
+    &lt;wire from=&quot;(120,420)&quot; to=&quot;(220,420)&quot;/&gt;
+    &lt;wire from=&quot;(120,540)&quot; to=&quot;(220,540)&quot;/&gt;
+    &lt;wire from=&quot;(180,500)&quot; to=&quot;(280,500)&quot;/&gt;
+    &lt;wire from=&quot;(110,280)&quot; to=&quot;(270,280)&quot;/&gt;
+    &lt;wire from=&quot;(70,180)&quot; to=&quot;(230,180)&quot;/&gt;
+    &lt;wire from=&quot;(230,160)&quot; to=&quot;(390,160)&quot;/&gt;
+    &lt;wire from=&quot;(60,460)&quot; to=&quot;(280,460)&quot;/&gt;
+    &lt;wire from=&quot;(60,520)&quot; to=&quot;(280,520)&quot;/&gt;
+    &lt;wire from=&quot;(220,50)&quot; to=&quot;(240,50)&quot;/&gt;
+    &lt;wire from=&quot;(60,520)&quot; to=&quot;(60,570)&quot;/&gt;
+    &lt;wire from=&quot;(250,430)&quot; to=&quot;(260,430)&quot;/&gt;
+    &lt;wire from=&quot;(60,400)&quot; to=&quot;(60,460)&quot;/&gt;
+    &lt;wire from=&quot;(60,460)&quot; to=&quot;(60,520)&quot;/&gt;
+    &lt;wire from=&quot;(120,420)&quot; to=&quot;(120,480)&quot;/&gt;
+    &lt;wire from=&quot;(180,440)&quot; to=&quot;(180,500)&quot;/&gt;
+    &lt;wire from=&quot;(120,480)&quot; to=&quot;(120,540)&quot;/&gt;
+    &lt;wire from=&quot;(180,500)&quot; to=&quot;(180,560)&quot;/&gt;
+    &lt;wire from=&quot;(60,390)&quot; to=&quot;(60,400)&quot;/&gt;
+    &lt;wire from=&quot;(260,430)&quot; to=&quot;(260,440)&quot;/&gt;
+    &lt;wire from=&quot;(570,50)&quot; to=&quot;(610,50)&quot;/&gt;
+    &lt;wire from=&quot;(310,200)&quot; to=&quot;(310,220)&quot;/&gt;
+    &lt;wire from=&quot;(270,240)&quot; to=&quot;(270,260)&quot;/&gt;
+    &lt;wire from=&quot;(310,240)&quot; to=&quot;(310,260)&quot;/&gt;
+    &lt;wire from=&quot;(270,280)&quot; to=&quot;(270,300)&quot;/&gt;
+    &lt;wire from=&quot;(730,10)&quot; to=&quot;(730,100)&quot;/&gt;
+    &lt;wire from=&quot;(350,240)&quot; to=&quot;(350,260)&quot;/&gt;
+    &lt;wire from=&quot;(350,280)&quot; to=&quot;(350,300)&quot;/&gt;
+    &lt;wire from=&quot;(430,10)&quot; to=&quot;(730,10)&quot;/&gt;
+    &lt;wire from=&quot;(110,240)&quot; to=&quot;(110,260)&quot;/&gt;
+    &lt;wire from=&quot;(110,280)&quot; to=&quot;(110,300)&quot;/&gt;
+    &lt;wire from=&quot;(150,200)&quot; to=&quot;(150,220)&quot;/&gt;
+    &lt;wire from=&quot;(150,240)&quot; to=&quot;(150,260)&quot;/&gt;
+    &lt;wire from=&quot;(190,240)&quot; to=&quot;(190,260)&quot;/&gt;
+    &lt;wire from=&quot;(230,160)&quot; to=&quot;(230,180)&quot;/&gt;
+    &lt;wire from=&quot;(230,200)&quot; to=&quot;(230,220)&quot;/&gt;
+    &lt;wire from=&quot;(230,240)&quot; to=&quot;(230,260)&quot;/&gt;
+    &lt;wire from=&quot;(410,420)&quot; to=&quot;(410,450)&quot;/&gt;
+    &lt;wire from=&quot;(10,10)&quot; to=&quot;(10,100)&quot;/&gt;
+    &lt;wire from=&quot;(180,440)&quot; to=&quot;(220,440)&quot;/&gt;
+    &lt;wire from=&quot;(240,540)&quot; to=&quot;(280,540)&quot;/&gt;
+    &lt;wire from=&quot;(240,400)&quot; to=&quot;(280,400)&quot;/&gt;
+    &lt;wire from=&quot;(240,560)&quot; to=&quot;(280,560)&quot;/&gt;
+    &lt;wire from=&quot;(180,560)&quot; to=&quot;(220,560)&quot;/&gt;
+    &lt;wire from=&quot;(430,10)&quot; to=&quot;(430,100)&quot;/&gt;
+    &lt;wire from=&quot;(10,10)&quot; to=&quot;(430,10)&quot;/&gt;
+    &lt;wire from=&quot;(120,390)&quot; to=&quot;(120,420)&quot;/&gt;
+    &lt;wire from=&quot;(60,400)&quot; to=&quot;(220,400)&quot;/&gt;
+    &lt;wire from=&quot;(120,480)&quot; to=&quot;(280,480)&quot;/&gt;
+    &lt;wire from=&quot;(730,100)&quot; to=&quot;(730,140)&quot;/&gt;
+    &lt;wire from=&quot;(10,100)&quot; to=&quot;(10,140)&quot;/&gt;
+    &lt;wire from=&quot;(260,440)&quot; to=&quot;(280,440)&quot;/&gt;
+    &lt;wire from=&quot;(350,50)&quot; to=&quot;(370,50)&quot;/&gt;
+    &lt;wire from=&quot;(90,50)&quot; to=&quot;(110,50)&quot;/&gt;
+    &lt;wire from=&quot;(10,140)&quot; to=&quot;(730,140)&quot;/&gt;
+    &lt;wire from=&quot;(10,320)&quot; to=&quot;(730,320)&quot;/&gt;
+    &lt;wire from=&quot;(180,390)&quot; to=&quot;(180,440)&quot;/&gt;
+    &lt;wire from=&quot;(70,220)&quot; to=&quot;(150,220)&quot;/&gt;
+    &lt;wire from=&quot;(150,200)&quot; to=&quot;(230,200)&quot;/&gt;
+    &lt;wire from=&quot;(230,220)&quot; to=&quot;(310,220)&quot;/&gt;
+    &lt;wire from=&quot;(310,200)&quot; to=&quot;(390,200)&quot;/&gt;
+    &lt;wire from=&quot;(270,300)&quot; to=&quot;(350,300)&quot;/&gt;
+    &lt;wire from=&quot;(10,140)&quot; to=&quot;(10,320)&quot;/&gt;
+    &lt;wire from=&quot;(330,420)&quot; to=&quot;(410,420)&quot;/&gt;
+    &lt;wire from=&quot;(330,480)&quot; to=&quot;(410,480)&quot;/&gt;
+    &lt;wire from=&quot;(330,540)&quot; to=&quot;(410,540)&quot;/&gt;
+    &lt;wire from=&quot;(730,140)&quot; to=&quot;(730,320)&quot;/&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(46,29)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;输入引脚&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(90,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;tristate&quot; val=&quot;false&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;A&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(250,430)&quot; name=&quot;OR Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;30&quot;/&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;2&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(630,126)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;武汉纺织大学数字逻辑课程组&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(570,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;east&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;F&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(370,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;C&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(330,480)&quot; name=&quot;AND Gate&quot;&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;3&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(50,181)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;A&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog bold 16&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(240,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;B&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(220,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;tristate&quot; val=&quot;false&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;B&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(60,390)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;south&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;A&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(203,89)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;请勿增加、删除引脚，用隧道标签构建电路&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(110,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;A&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(51,300)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;F&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog bold 16&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(330,540)&quot; name=&quot;AND Gate&quot;&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;3&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(240,400)&quot; name=&quot;NOT Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;20&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(120,390)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;south&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;B&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(469,29)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;输出引脚&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(180,390)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;south&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;C&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(720,480)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;F&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(50,260)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;C&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog bold 16&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(240,560)&quot; name=&quot;NOT Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;20&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(207,124)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;请勿更改电路封装外观&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(50,220)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;B&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog bold 16&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(610,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;west&quot;/&gt;
+      &lt;a name=&quot;output&quot; val=&quot;true&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;F&quot;/&gt;
+      &lt;a name=&quot;labelloc&quot; val=&quot;east&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(480,480)&quot; name=&quot;OR Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;70&quot;/&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;3&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(240,540)&quot; name=&quot;NOT Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;20&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(330,420)&quot; name=&quot;AND Gate&quot;&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;2&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(350,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;tristate&quot; val=&quot;false&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;C&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+  &lt;/circuit&gt;
+  &lt;circuit name=&quot;卡诺图&quot;&gt;
+    &lt;a name=&quot;circuit&quot; val=&quot;卡诺图&quot;/&gt;
+    &lt;a name=&quot;clabel&quot; val=&quot;Kmap&quot;/&gt;
+    &lt;a name=&quot;clabelup&quot; val=&quot;east&quot;/&gt;
+    &lt;a name=&quot;clabelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;wire from=&quot;(100,300)&quot; to=&quot;(100,440)&quot;/&gt;
+    &lt;wire from=&quot;(220,320)&quot; to=&quot;(270,320)&quot;/&gt;
+    &lt;wire from=&quot;(620,50)&quot; to=&quot;(660,50)&quot;/&gt;
+    &lt;wire from=&quot;(40,240)&quot; to=&quot;(40,260)&quot;/&gt;
+    &lt;wire from=&quot;(10,100)&quot; to=&quot;(500,100)&quot;/&gt;
+    &lt;wire from=&quot;(100,300)&quot; to=&quot;(270,300)&quot;/&gt;
+    &lt;wire from=&quot;(500,10)&quot; to=&quot;(500,100)&quot;/&gt;
+    &lt;wire from=&quot;(500,10)&quot; to=&quot;(730,10)&quot;/&gt;
+    &lt;wire from=&quot;(160,280)&quot; to=&quot;(160,440)&quot;/&gt;
+    &lt;wire from=&quot;(420,50)&quot; to=&quot;(440,50)&quot;/&gt;
+    &lt;wire from=&quot;(160,240)&quot; to=&quot;(160,280)&quot;/&gt;
+    &lt;wire from=&quot;(200,50)&quot; to=&quot;(220,50)&quot;/&gt;
+    &lt;wire from=&quot;(40,260)&quot; to=&quot;(40,440)&quot;/&gt;
+    &lt;wire from=&quot;(100,240)&quot; to=&quot;(100,300)&quot;/&gt;
+    &lt;wire from=&quot;(160,280)&quot; to=&quot;(270,280)&quot;/&gt;
+    &lt;wire from=&quot;(730,10)&quot; to=&quot;(730,100)&quot;/&gt;
+    &lt;wire from=&quot;(220,240)&quot; to=&quot;(220,320)&quot;/&gt;
+    &lt;wire from=&quot;(10,10)&quot; to=&quot;(500,10)&quot;/&gt;
+    &lt;wire from=&quot;(10,10)&quot; to=&quot;(10,100)&quot;/&gt;
+    &lt;wire from=&quot;(40,260)&quot; to=&quot;(270,260)&quot;/&gt;
+    &lt;wire from=&quot;(500,100)&quot; to=&quot;(730,100)&quot;/&gt;
+    &lt;wire from=&quot;(350,270)&quot; to=&quot;(390,270)&quot;/&gt;
+    &lt;wire from=&quot;(350,310)&quot; to=&quot;(390,310)&quot;/&gt;
+    &lt;wire from=&quot;(730,100)&quot; to=&quot;(730,140)&quot;/&gt;
+    &lt;wire from=&quot;(290,300)&quot; to=&quot;(320,300)&quot;/&gt;
+    &lt;wire from=&quot;(290,320)&quot; to=&quot;(320,320)&quot;/&gt;
+    &lt;wire from=&quot;(290,260)&quot; to=&quot;(320,260)&quot;/&gt;
+    &lt;wire from=&quot;(290,280)&quot; to=&quot;(320,280)&quot;/&gt;
+    &lt;wire from=&quot;(10,100)&quot; to=&quot;(10,140)&quot;/&gt;
+    &lt;wire from=&quot;(310,50)&quot; to=&quot;(330,50)&quot;/&gt;
+    &lt;wire from=&quot;(440,290)&quot; to=&quot;(590,290)&quot;/&gt;
+    &lt;wire from=&quot;(90,50)&quot; to=&quot;(110,50)&quot;/&gt;
+    &lt;wire from=&quot;(10,140)&quot; to=&quot;(730,140)&quot;/&gt;
+    &lt;wire from=&quot;(220,320)&quot; to=&quot;(220,440)&quot;/&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(330,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;C&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(590,290)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;F&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(420,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;tristate&quot; val=&quot;false&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;D&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(350,310)&quot; name=&quot;OR Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;30&quot;/&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;2&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(290,320)&quot; name=&quot;NOT Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;20&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(40,240)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;south&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;A&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(110,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;A&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(290,280)&quot; name=&quot;NOT Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;20&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(290,300)&quot; name=&quot;NOT Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;20&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(160,240)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;south&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;C&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(220,240)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;south&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;D&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(630,126)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;武汉纺织大学数字逻辑课程组&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(90,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;tristate&quot; val=&quot;false&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;A&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(440,290)&quot; name=&quot;AND Gate&quot;&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;2&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(200,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;tristate&quot; val=&quot;false&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;B&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(220,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;B&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(310,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;tristate&quot; val=&quot;false&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;C&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(440,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;label&quot; val=&quot;D&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(46,29)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;输入引脚&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(197,124)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;请勿更改电路封装外观&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(290,260)&quot; name=&quot;NOT Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;20&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(660,50)&quot; name=&quot;Pin&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;west&quot;/&gt;
+      &lt;a name=&quot;output&quot; val=&quot;true&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;F&quot;/&gt;
+      &lt;a name=&quot;labelloc&quot; val=&quot;north&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(100,240)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;south&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;B&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;1&quot; loc=&quot;(350,270)&quot; name=&quot;OR Gate&quot;&gt;
+      &lt;a name=&quot;size&quot; val=&quot;30&quot;/&gt;
+      &lt;a name=&quot;inputs&quot; val=&quot;2&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(539,29)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;输出引脚&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;0&quot; loc=&quot;(620,50)&quot; name=&quot;Tunnel&quot;&gt;
+      &lt;a name=&quot;facing&quot; val=&quot;east&quot;/&gt;
+      &lt;a name=&quot;label&quot; val=&quot;F&quot;/&gt;
+      &lt;a name=&quot;labelfont&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+    &lt;comp lib=&quot;6&quot; loc=&quot;(203,89)&quot; name=&quot;Text&quot;&gt;
+      &lt;a name=&quot;text&quot; val=&quot;请勿增加、删除引脚，用隧道标签构建电路&quot;/&gt;
+      &lt;a name=&quot;font&quot; val=&quot;Dialog plain 12&quot;/&gt;
+    &lt;/comp&gt;
+  &lt;/circuit&gt;
+&lt;/project&gt;
+</code></pre>
+
+                                
+                                    <div>
+    <button style="background-color: transparent;border: 0px solid transparent;" type="button" data-toggle="collapse" data-target="#navbarTComent" aria-expanded="false">
+        <svg t="1733415937042" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="4360" width="32" height="32">
+            <path
+                d="M379.733333 913.066667h-8.533333c-21.333333-4.266667-38.4-17.066667-46.933333-34.133334l-29.866667-72.533333H226.133333c-76.8 0-140.8-64-140.8-140.8V251.733333C85.333333 170.666667 149.333333 110.933333 226.133333 110.933333h571.733334C874.666667 110.933333 938.666667 170.666667 938.666667 251.733333v413.866667c0 76.8-64 140.8-140.8 140.8h-307.2l-64 85.333333c-8.533333 12.8-25.6 21.333333-46.933334 21.333334zM226.133333 174.933333c-42.666667 0-76.8 34.133333-76.8 76.8v413.866667c0 42.666667 34.133333 76.8 76.8 76.8h110.933334l42.666666 102.4 76.8-102.4h337.066667c42.666667 0 76.8-34.133333 76.8-76.8V251.733333c0-42.666667-34.133333-76.8-76.8-76.8H226.133333z"
+                fill="#ffffff" p-id="4361"></path>
+            <path d="M285.866667 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4362"></path>
+            <path d="M512 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4363"></path>
+            <path d="M738.133333 469.333333m-51.2 0a51.2 51.2 0 1 0 102.4 0 51.2 51.2 0 1 0-102.4 0Z" fill="#ffffff"
+                p-id="4364"></path>
+        </svg>
+    </button>
+    <nav style="padding: 5px;">
+        <div class="collapse" id="navbarTComent">
+            <div class="navbar-nav mr-auto" style="text-align: center">
+                <div id="tcomment"></div>
+                <script src="https://fastly.jsdelivr.net/npm/twikoo@1.6.40/dist/twikoo.min.js"></script>
+                <script>
+                    twikoo.init({
+                        envId: 'https://twikooapi.panheadgg.top/',
+                        el: '#tcomment',
+                        // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数
+                        // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+                    })
+                </script>
+            </div>
+        </div>
+    </nav>
+</div>
+                                
+                            </div>
+                    </article>
+
+                </div>
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">温故而知新</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/PanheadGG" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        © 2024-2025 PanheadGG. All rights reserved. 
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Edited by <a href="https://blog.panheadgg.top/" target="_blank">PanheadGG</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a href="https://blog.panheadgg.top/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+            </div>
+    </div>
+</body>
+
+</html>
