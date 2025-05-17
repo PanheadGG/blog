@@ -1,0 +1,25 @@
+.vpower {
+    display: none;
+}
+
+.wl-power{
+    display: none;
+}
+
+.tk-footer {
+    display: none;
+}
+
+.more {
+    display: none;
+}
+[open] .more {
+    display: block;
+}
+[open] summary a.more-btn {
+    font-size: 0;
+}
+[open] summary a.more-btn::before {
+    content: '收起';
+    font-size: 16px;
+}
