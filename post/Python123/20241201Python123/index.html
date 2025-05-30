@@ -1,0 +1,692 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon.ico">
+  <link rel="icon" href="/favicon.ico">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="PanheadGG">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1代码112345678910111213141516171819202122232425262728#include &lt;iostream&gt;using namespace std;char * trim(char * str);int main()&#123;    char s[1024];     &#x2F;&#x2F; 定义存储字符串的一维字符数组    &#x2F;&#x2F; 输入一行字符，可以包含空格    &#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python123实验11 指针 字符串1 非官方答案">
+<meta property="og:url" content="https://blog.pgigi.com/post/Python123/20241201Python123/index.html">
+<meta property="og:site_name" content="PanheadGG&#39;s Blog">
+<meta property="og:description" content="1代码112345678910111213141516171819202122232425262728#include &lt;iostream&gt;using namespace std;char * trim(char * str);int main()&#123;    char s[1024];     &#x2F;&#x2F; 定义存储字符串的一维字符数组    &#x2F;&#x2F; 输入一行字符，可以包含空格    &#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-12-01T08:17:05.000Z">
+<meta property="article:modified_time" content="2025-05-16T17:24:10.630Z">
+<meta property="article:author" content="PanheadGG">
+<meta property="article:tag" content="Python123">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Python123实验11 指针 字符串1 非官方答案 - PanheadGG&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"blog.pgigi.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"noJdT7gzeNzOEiM1ivkrkDsI-gzGzoHsz","app_key":"4973PIE0EvzZtDXSXeKz7q7u","server_url":"https://nojdt7gz.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>PanheadGG</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/post/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://img.picui.cn/free/2025/05/16/682720b972aed.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Python123实验11 指针 字符串1 非官方答案"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        PanheadGG
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-12-01 16:17" pubdate>
+          2024年12月1日
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          16 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Python123实验11 指针 字符串1 非官方答案</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><h3 id="代码1"><a href="#代码1" class="headerlink" title="代码1"></a>代码1</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">char</span> * <span class="hljs-title">trim</span><span class="hljs-params">(<span class="hljs-type">char</span> * str)</span></span>;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">char</span> s[<span class="hljs-number">1024</span>];     <span class="hljs-comment">// 定义存储字符串的一维字符数组</span><br>    <span class="hljs-comment">// 输入一行字符，可以包含空格</span><br>    <span class="hljs-comment">// 输入的字符串存入s中，最多读取个字符，后面自动加上&#x27;\0&#x27;</span><br>    cin.<span class="hljs-built_in">getline</span>(s,<span class="hljs-number">1024</span>);<br>    cout &lt;&lt; <span class="hljs-built_in">trim</span>(s) &lt;&lt; endl;     <span class="hljs-comment">// 输出去掉首尾空格后的字符串</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">//请在此添加函数trim()的实现</span><br><span class="hljs-function"><span class="hljs-type">char</span> * <span class="hljs-title">trim</span><span class="hljs-params">(<span class="hljs-type">char</span> *str)</span> </span>&#123;<br>    <span class="hljs-type">int</span> start = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> end = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span> (str[end] != <span class="hljs-string">&#x27;\0&#x27;</span>) end++;<br>    end--;<br>    <span class="hljs-keyword">while</span> (str[start] == <span class="hljs-string">&#x27; &#x27;</span> &amp;&amp; str[start] != <span class="hljs-string">&#x27;\0&#x27;</span>) start++;<br>    <span class="hljs-keyword">while</span> (end &gt;= start &amp;&amp; str[end] == <span class="hljs-string">&#x27; &#x27;</span>) end--;<br>    <span class="hljs-type">int</span> index = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = start; i &lt;= end; i++) &#123;<br>        str[index++] = str[i];<br>    &#125;<br>    str[index] = <span class="hljs-string">&#x27;\0&#x27;</span>;<br>    <span class="hljs-keyword">return</span> str;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="代码2"><a href="#代码2" class="headerlink" title="代码2"></a>代码2</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">char</span> * <span class="hljs-title">trim</span><span class="hljs-params">(<span class="hljs-type">char</span> * str)</span></span>;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">char</span> s[<span class="hljs-number">1024</span>];     <span class="hljs-comment">// 定义存储字符串的一维字符数组</span><br>    <span class="hljs-comment">// 输入一行字符，可以包含空格</span><br>    <span class="hljs-comment">// 输入的字符串存入s中，最多读取个字符，后面自动加上&#x27;\0&#x27;</span><br>    cin.<span class="hljs-built_in">getline</span>(s,<span class="hljs-number">1024</span>);<br>    cout &lt;&lt; <span class="hljs-built_in">trim</span>(s) &lt;&lt; endl;     <span class="hljs-comment">// 输出去掉首尾空格后的字符串</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">//请在此添加函数trim()的实现</span><br><span class="hljs-function"><span class="hljs-type">char</span> * <span class="hljs-title">trim</span><span class="hljs-params">(<span class="hljs-type">char</span> *str)</span> </span>&#123;<br>    <span class="hljs-type">int</span> startPtr=<span class="hljs-number">0</span>,endPtr=<span class="hljs-number">1023</span>;<br>    <span class="hljs-type">bool</span> foundStart=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">1024</span>;i++)&#123;<br>        <span class="hljs-keyword">if</span>(str[i]==<span class="hljs-string">&#x27; &#x27;</span>&amp;&amp;foundStart==<span class="hljs-number">0</span>) startPtr++;<br>        <span class="hljs-keyword">else</span> foundStart=<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span>(str[i]==<span class="hljs-string">&#x27;\0&#x27;</span>)&#123;<br>            endPtr=i;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=endPtr<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;<br>        <span class="hljs-keyword">if</span>(str[i]==<span class="hljs-string">&#x27; &#x27;</span>) endPtr--;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;=endPtr-startPtr;i++)&#123;<br>        str[i] = str[i+startPtr];<br>    &#125;<br>    str[endPtr-startPtr<span class="hljs-number">+1</span>] = <span class="hljs-string">&#x27;\0&#x27;</span>;<br>    <span class="hljs-keyword">return</span> str;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="2"><a href="#2" class="headerlink" title="2"></a>2</h1><h3 id="代码1-1"><a href="#代码1-1" class="headerlink" title="代码1"></a>代码1</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">extractNum</span><span class="hljs-params">(<span class="hljs-type">char</span> * str)</span></span>;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">char</span> s[<span class="hljs-number">1024</span>];<br>    cin.<span class="hljs-built_in">getline</span>(s,<span class="hljs-number">1024</span>);     <span class="hljs-comment">// 输入一行字符</span><br>    <span class="hljs-built_in">extractNum</span>(s);     <span class="hljs-comment">// 调用extractNum函数，选出数字</span><br>    cout&lt;&lt;s&lt;&lt;endl;     <span class="hljs-comment">// 输出选出的数字</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">// 函数extractNum：选出str指向的字符串中的数字，并写回str</span><br><span class="hljs-comment">// 参数：str-指向字符串</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">extractNum</span><span class="hljs-params">(<span class="hljs-type">char</span> * str)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">// 请在此添加代码，实现函数extractNum</span><br>    <span class="hljs-comment">/********** Begin *********/</span><br>    <span class="hljs-type">char</span> result[<span class="hljs-number">1024</span>];<br>    <span class="hljs-type">int</span> index = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">bool</span> hasNegative = <span class="hljs-literal">false</span>;<br><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; str[i] != <span class="hljs-string">&#x27;\0&#x27;</span>; i++) &#123;<br>        <span class="hljs-keyword">if</span> (str[i] == <span class="hljs-string">&#x27;-&#x27;</span> &amp;&amp; !hasNegative) &#123;<br>            hasNegative = <span class="hljs-literal">true</span>;<br>            result[index++] = <span class="hljs-string">&#x27;-&#x27;</span>;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (str[i] &gt;= <span class="hljs-string">&#x27;0&#x27;</span> &amp;&amp; str[i] &lt;= <span class="hljs-string">&#x27;9&#x27;</span>) &#123;<br>            result[index++] = str[i];<br>        &#125;<br>    &#125;<br>    result[index] = <span class="hljs-string">&#x27;\0&#x27;</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; result[i] != <span class="hljs-string">&#x27;\0&#x27;</span>; i++) &#123;<br>        str[i] = result[i];<br>    &#125;<br>    str[index] = <span class="hljs-string">&#x27;\0&#x27;</span>;<br>    <br>    <span class="hljs-comment">/********** End **********/</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="代码2-1"><a href="#代码2-1" class="headerlink" title="代码2"></a>代码2</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">extractNum</span><span class="hljs-params">(<span class="hljs-type">char</span> * str)</span></span>;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">char</span> s[<span class="hljs-number">1024</span>];<br>    cin.<span class="hljs-built_in">getline</span>(s,<span class="hljs-number">1024</span>);     <span class="hljs-comment">// 输入一行字符</span><br>    <span class="hljs-built_in">extractNum</span>(s);     <span class="hljs-comment">// 调用extractNum函数，选出数字</span><br>    cout&lt;&lt;s&lt;&lt;endl;     <span class="hljs-comment">// 输出选出的数字</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">// 函数extractNum：选出str指向的字符串中的数字，并写回str</span><br><span class="hljs-comment">// 参数：str-指向字符串</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">extractNum</span><span class="hljs-params">(<span class="hljs-type">char</span> * str)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">// 请在此添加代码，实现函数extractNum</span><br>    <span class="hljs-comment">/********** Begin *********/</span><br>    <span class="hljs-type">bool</span> foundFuHao=<span class="hljs-number">0</span>,hasFuHao=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">1024</span>;i++)&#123;<br>        <span class="hljs-keyword">if</span>(str[i]==<span class="hljs-string">&#x27;-&#x27;</span>&amp;&amp;foundFuHao==<span class="hljs-number">0</span>)&#123;<br>            foundFuHao=<span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(str[i]&gt;=<span class="hljs-string">&#x27;0&#x27;</span>&amp;&amp;str[i]&lt;=<span class="hljs-string">&#x27;9&#x27;</span>)&#123;<br>            <span class="hljs-keyword">if</span>(foundFuHao) hasFuHao=<span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">else</span> hasFuHao=<span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(hasFuHao) str[<span class="hljs-number">0</span>]=<span class="hljs-string">&#x27;-&#x27;</span>;<br>    <span class="hljs-type">int</span> ptr = (<span class="hljs-type">int</span>)hasFuHao;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=(<span class="hljs-type">int</span>)hasFuHao;i&lt;<span class="hljs-number">1024</span>;i++)&#123;<br>        <span class="hljs-keyword">if</span>(str[i]&gt;=<span class="hljs-string">&#x27;0&#x27;</span>&amp;&amp;str[i]&lt;=<span class="hljs-string">&#x27;9&#x27;</span>)&#123;<br>            str[ptr]=str[i];<br>            ptr++;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(str[i]==<span class="hljs-string">&#x27;\0&#x27;</span>) <span class="hljs-keyword">break</span>;<br>    &#125;<br>    str[ptr]=<span class="hljs-string">&#x27;\0&#x27;</span>;<br>    <br>    <span class="hljs-comment">/********** End **********/</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="3"><a href="#3" class="headerlink" title="3"></a>3</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">toUp</span><span class="hljs-params">(<span class="hljs-type">char</span> * str)</span></span>;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">char</span> s[<span class="hljs-number">1024</span>];<br>    cin.<span class="hljs-built_in">getline</span>(s,<span class="hljs-number">1024</span>);     <span class="hljs-comment">// 输入一行字符</span><br>    <span class="hljs-built_in">toUp</span>(s);     <span class="hljs-comment">// 调用toUp函数，转换成大写字母</span><br>    cout&lt;&lt;s&lt;&lt;endl;     <span class="hljs-comment">// 输出变更后的新字符串</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">// 函数toUp：将str指向的字符串中的小写字母变成对应的大写字母</span><br><span class="hljs-comment">// 参数：str-指向字符串</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">toUp</span><span class="hljs-params">(<span class="hljs-type">char</span> * str)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">// 请在此添加代码，实现函数toUp</span><br>    <span class="hljs-comment">/********** Begin *********/</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">1024</span>;i++)&#123;<br>        <span class="hljs-keyword">if</span>(str[i]&gt;=<span class="hljs-string">&#x27;a&#x27;</span>&amp;&amp;str[i]&lt;=<span class="hljs-string">&#x27;z&#x27;</span>)<br>            str[i]-=<span class="hljs-number">32</span>;<br>    &#125;<br>    <br>    <span class="hljs-comment">/********** End **********/</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="4"><a href="#4" class="headerlink" title="4"></a>4</h1><h3 id="代码1-2"><a href="#代码1-2" class="headerlink" title="代码1"></a>代码1</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 包含字符串函数库</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">frequency</span><span class="hljs-params">(<span class="hljs-type">char</span> * substr, <span class="hljs-type">char</span> * str)</span></span>;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">char</span> sub[<span class="hljs-number">128</span>],str[<span class="hljs-number">1024</span>];<br>    cin.<span class="hljs-built_in">getline</span>(str,<span class="hljs-number">1024</span>);   <span class="hljs-comment">// 输入长串</span><br>    cin.<span class="hljs-built_in">getline</span>(sub,<span class="hljs-number">128</span>);     <span class="hljs-comment">// 输入子串</span><br><br>    <span class="hljs-type">int</span> n = <span class="hljs-built_in">frequency</span>(sub,str);     <span class="hljs-comment">// 调用frequency函数，计算子串在长串中出现的次数</span><br>    cout&lt;&lt;n&lt;&lt;endl;     <span class="hljs-comment">// 输出次数</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">// 函数frequency：计算子串在长串中出现的次数</span><br><span class="hljs-comment">// 参数：substr-指向子串，str-指向长串</span><br><span class="hljs-comment">// 返回值：出现的次数</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">frequency</span><span class="hljs-params">(<span class="hljs-type">char</span> *substr, <span class="hljs-type">char</span> *str)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">char</span> *ptr = str;<br><br>    <span class="hljs-keyword">while</span> ((ptr = <span class="hljs-built_in">strstr</span>(ptr, substr))!= <span class="hljs-literal">NULL</span>) &#123;<br>        count++;<br>        ptr += <span class="hljs-built_in">strlen</span>(substr);<br>    &#125;<br>    <span class="hljs-keyword">return</span> count;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="代码2-2"><a href="#代码2-2" class="headerlink" title="代码2"></a>代码2</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 包含字符串函数库</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">frequency</span><span class="hljs-params">(<span class="hljs-type">char</span> * substr, <span class="hljs-type">char</span> * str)</span></span>;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">char</span> sub[<span class="hljs-number">128</span>],str[<span class="hljs-number">1024</span>];<br>    cin.<span class="hljs-built_in">getline</span>(str,<span class="hljs-number">1024</span>);   <span class="hljs-comment">// 输入长串</span><br>    cin.<span class="hljs-built_in">getline</span>(sub,<span class="hljs-number">128</span>);     <span class="hljs-comment">// 输入子串</span><br><br>    <span class="hljs-type">int</span> n = <span class="hljs-built_in">frequency</span>(sub,str);     <span class="hljs-comment">// 调用frequency函数，计算子串在长串中出现的次数</span><br>    cout&lt;&lt;n&lt;&lt;endl;     <span class="hljs-comment">// 输出次数</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">// 函数frequency：计算子串在长串中出现的次数</span><br><span class="hljs-comment">// 参数：substr-指向子串，str-指向长串</span><br><span class="hljs-comment">// 返回值：出现的次数</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">frequency</span><span class="hljs-params">(<span class="hljs-type">char</span> *substr, <span class="hljs-type">char</span> *str)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> count = <span class="hljs-number">0</span>, matchTime=<span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> substrlen = <span class="hljs-built_in">strlen</span>(substr);<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;=<span class="hljs-built_in">strlen</span>(str)-substrlen;i++)&#123;<br>        matchTime=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>,k=i;j&lt;substrlen;j++,k++)&#123;<br>            <span class="hljs-keyword">if</span>(substr[j]==str[k]) matchTime++;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(matchTime==substrlen) count++;<br>    &#125;<br>    <span class="hljs-keyword">return</span> count;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="5"><a href="#5" class="headerlink" title="5"></a>5</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">strmncpy</span><span class="hljs-params">(<span class="hljs-type">char</span> *s, <span class="hljs-type">int</span> m, <span class="hljs-type">int</span> n, <span class="hljs-type">char</span> *t)</span></span>;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">char</span> s[<span class="hljs-number">128</span>],t[<span class="hljs-number">128</span>];<br>    <span class="hljs-type">int</span> m,n;<br>    cin&gt;&gt;s;     <span class="hljs-comment">// 输入源串</span><br>    cin&gt;&gt;m&gt;&gt;n;     <span class="hljs-comment">// 输入m和n</span><br>    <span class="hljs-built_in">strmncpy</span>(s, m, n, t);     <span class="hljs-comment">// 字符串复制</span><br>    cout &lt;&lt; t &lt;&lt;endl;     <span class="hljs-comment">// 输出复制结果</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">// 函数strmncpy：字符串的部分复制，将s指向字符串从第m个字符开始的n个字符复制的t中</span><br><span class="hljs-comment">// 参数：s-指向源字符串，t-指向目标字符串，m-起始位置，n-字符个数</span><br><span class="hljs-comment">// 返回值：无</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">strmncpy</span><span class="hljs-params">(<span class="hljs-type">char</span> *s, <span class="hljs-type">int</span> m, <span class="hljs-type">int</span> n, <span class="hljs-type">char</span> *t)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">// 请在此添加代码，实现函数strmncpy</span><br>    <span class="hljs-comment">/********** Begin *********/</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>        t[i] = s[i+m];<br>    &#125;<br>    t[n] = <span class="hljs-string">&#x27;\0&#x27;</span>;<br>    <br>    <span class="hljs-comment">/********** End **********/</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="6"><a href="#6" class="headerlink" title="6"></a>6</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Sum</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">int</span> *arr,<span class="hljs-type">int</span> len)</span></span>;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> ary[<span class="hljs-number">20</span>],i,n;<br>    cin&gt;&gt;n;<br>    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;n;i++)<br>    cin&gt;&gt;ary[i];<br>    <span class="hljs-comment">//请在此处添加Sum函数的调用语句</span><br>    <span class="hljs-built_in">Sum</span>(ary,n);<br>&#125;<br><br><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Sum</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">int</span> *arr,<span class="hljs-type">int</span> len)</span></span><br><span class="hljs-function"></span>&#123;   <span class="hljs-comment">//请在此处添加函数功能的实现代码</span><br>	<span class="hljs-type">int</span> max=<span class="hljs-number">0</span>,sum=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;len;i++)&#123;<br>        max = arr[i]&gt;max?arr[i]:max;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;len;i++)&#123;<br>        <span class="hljs-keyword">if</span>(arr[i]==max) <span class="hljs-keyword">continue</span>;;<br>        sum+=arr[i];<br>    &#125;<br>    cout&lt;&lt;sum;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="7"><a href="#7" class="headerlink" title="7"></a>7</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">int</span> arr[<span class="hljs-number">10</span>];<br><span class="hljs-function"><span class="hljs-type">int</span>* <span class="hljs-title">Read</span><span class="hljs-params">(<span class="hljs-type">int</span> *len)</span></span>;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">print_arry</span><span class="hljs-params">(<span class="hljs-type">int</span> *p,<span class="hljs-type">int</span> n)</span></span>;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> n;<br><br>    <span class="hljs-type">int</span> *p_ary;<br>    p_ary=<span class="hljs-built_in">Read</span>(&amp;n);<br><br>    <span class="hljs-built_in">print_arry</span>(p_ary,n);<br>&#125;<br><span class="hljs-comment">//请在下面写出两个函数的实现代码</span><br><span class="hljs-function"><span class="hljs-type">int</span>* <span class="hljs-title">Read</span><span class="hljs-params">(<span class="hljs-type">int</span> *len)</span></span>&#123;<br>    cin&gt;&gt;*len;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;*len;i++) cin&gt;&gt;arr[i];<br>    <span class="hljs-keyword">return</span> arr;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">print_arry</span><span class="hljs-params">(<span class="hljs-type">int</span> *p,<span class="hljs-type">int</span> n)</span></span>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>        cout&lt;&lt;p[i]&lt;&lt;<span class="hljs-string">&quot; &quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="8"><a href="#8" class="headerlink" title="8"></a>8</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-comment">// 函数rotateLeft：矩阵循环左移</span><br><span class="hljs-comment">// 参数：a-100*100的二维数组，用来存储n行n列的数组（n&lt;100)，存储在其~n-1行和~n-1列，</span><br><span class="hljs-comment">// m-循环左移的位数(0&lt;m&lt;n)</span><br><span class="hljs-comment">// 返回值：无，循环左移的结果写入原二维数组中</span><br><span class="hljs-comment">// 说明：传递多维数组时，形式参数中，除了第一维外，其它维的大小必须给出</span><br><span class="hljs-comment">// 方便编译器计算每个数组元素的地址</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">rotateLeft</span><span class="hljs-params">(<span class="hljs-type">int</span> a[][<span class="hljs-number">100</span>],<span class="hljs-type">int</span> n,<span class="hljs-type">int</span> m)</span></span>;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> a[<span class="hljs-number">100</span>][<span class="hljs-number">100</span>];     <span class="hljs-comment">// 定义存储二维数组的空间</span><br>    <span class="hljs-type">int</span> n, m;<br>    cin &gt;&gt; n &gt;&gt; m;     <span class="hljs-comment">// 输入n和m</span><br><br>    <span class="hljs-comment">// 输入n*n的矩阵，存储在数组a的~n-1行和~n-1列</span><br>    <span class="hljs-type">int</span> i, j;<br>    <span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>        <span class="hljs-keyword">for</span>(j = <span class="hljs-number">0</span>; j &lt; n; j++)<br>            cin &gt;&gt; a[i][j];<br><br>    <span class="hljs-comment">// 循环左移</span><br>    <span class="hljs-comment">// 说明：传递多维数组时，实在参数只需要给出数组名就可以了</span><br>    <span class="hljs-built_in">rotateLeft</span>(a,n,m);<br><br>    <span class="hljs-comment">// 输出循环右移的结果</span><br>    <span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>    &#123;<br>        <span class="hljs-keyword">for</span>(j = <span class="hljs-number">0</span>; j &lt; n; j++)<br>            cout &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; a[i][j];<br>        cout &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">rotateLeft</span><span class="hljs-params">(<span class="hljs-type">int</span> a[][<span class="hljs-number">100</span>],<span class="hljs-type">int</span> n,<span class="hljs-type">int</span> m)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">// 请在此添加代码，实现函数rotateLeft</span><br>    <span class="hljs-type">int</span> tmp;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;m;i++)&#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;n;j++)&#123;<br>            tmp=a[j][<span class="hljs-number">0</span>];<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> k=<span class="hljs-number">0</span>;k&lt;n<span class="hljs-number">-1</span>;k++)&#123;<br>                a[j][k]=a[j][k<span class="hljs-number">+1</span>];<br>            &#125;<br>            a[j][n<span class="hljs-number">-1</span>]=tmp;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Python123/" class="print-no-link">#Python123</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Python123实验11 指针 字符串1 非官方答案</div>
+      <div>https://blog.pgigi.com/post/Python123/20241201Python123/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>PanheadGG</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年12月1日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-cc-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-cc-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://cdnjs.cloudflare.com/ajax/libs/waline/2.15.8/waline.css')
+      Fluid.utils.createScript('https://cdnjs.cloudflare.com/ajax/libs/waline/2.15.8/waline.js', function() {
+        var options = Object.assign(
+          {"serverURL":"waline.panheadgg.top","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://unpkg.com/@waline/emojis@1.2.0/bilibili","https://unpkg.com/@waline/emojis@1.2.0/qq"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div class="footer-info"> <a>© 2024-2025 PanheadGG. All rights reserved.</a> </div> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/custom.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

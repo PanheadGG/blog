@@ -1,0 +1,692 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon.ico">
+  <link rel="icon" href="/favicon.ico">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="PanheadGG">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="单选题1.12002.132003.1214303034.*#@@5.121025252 1123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354&#x2F;* 设计并测试一个矩形类（Rectangle），属性为矩形的左下与右上角的坐标，矩形水平放置。操作为计算矩形">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python123实验14 类和对象1 非官方答案">
+<meta property="og:url" content="https://blog.pgigi.com/post/Python123/20241212Python123/index.html">
+<meta property="og:site_name" content="PanheadGG&#39;s Blog">
+<meta property="og:description" content="单选题1.12002.132003.1214303034.*#@@5.121025252 1123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354&#x2F;* 设计并测试一个矩形类（Rectangle），属性为矩形的左下与右上角的坐标，矩形水平放置。操作为计算矩形">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-12-12T09:46:19.000Z">
+<meta property="article:modified_time" content="2025-05-16T17:24:34.712Z">
+<meta property="article:author" content="PanheadGG">
+<meta property="article:tag" content="Python123">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Python123实验14 类和对象1 非官方答案 - PanheadGG&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"blog.pgigi.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"noJdT7gzeNzOEiM1ivkrkDsI-gzGzoHsz","app_key":"4973PIE0EvzZtDXSXeKz7q7u","server_url":"https://nojdt7gz.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>PanheadGG</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/post/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://img.picui.cn/free/2025/05/16/682720b972aed.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Python123实验14 类和对象1 非官方答案"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        PanheadGG
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-12-12 17:46" pubdate>
+          2024年12月12日
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          14 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Python123实验14 类和对象1 非官方答案</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="单选题"><a href="#单选题" class="headerlink" title="单选题"></a>单选题</h1><p>1.<code>1200</code><br>2.<code>13200</code><br>3.<code>121430303</code><br>4.<code>*#@@</code><br>5.<code>121025252</code></p>
+<h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">/* 设计并测试一个矩形类（Rectangle），属性为矩形的左下与右上角的坐标，</span><br><span class="hljs-comment">矩形水平放置。操作为计算矩形周长与面积。测试包括用成员函数和普通函数。</span><br><span class="hljs-comment">解：这里的矩形的4边分别与x轴y轴平行，为最简单的情况。注意参数有缺省值</span><br><span class="hljs-comment">的函数的声明和定义格式。</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cmath&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Rectangle</span> <br>&#123;<br>    <span class="hljs-type">double</span> left,bottom ;<br>    <span class="hljs-type">double</span> right,top  ;<br>        <span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">Rectangle</span>(<span class="hljs-type">double</span> l=<span class="hljs-number">0</span>, <span class="hljs-type">double</span> b=<span class="hljs-number">0</span>, <span class="hljs-type">double</span> r=<span class="hljs-number">0</span>, <span class="hljs-type">double</span> t=<span class="hljs-number">0</span>)&#123;<br>        left = l;<br>        bottom = b;<br>        right = r;<br>        top = t;<br>    &#125;<br>    ~ <span class="hljs-built_in">Rectangle</span>()&#123;&#125;;  <span class="hljs-comment">//析构函数，在此函数体为空</span><br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Assign</span><span class="hljs-params">(<span class="hljs-type">double</span> l,<span class="hljs-type">double</span> b,<span class="hljs-type">double</span> r,<span class="hljs-type">double</span> t)</span></span>&#123;<br>        left = l;<br>        bottom = b;<br>        right = r;<br>        top = t;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">double</span> <span class="hljs-title">getLeft</span><span class="hljs-params">()</span></span>&#123; <span class="hljs-keyword">return</span> left;&#125; <span class="hljs-comment">// 以下四个函数皆为内联成员函数，返回各个点的坐标信息</span><br>    <span class="hljs-function"><span class="hljs-type">double</span> <span class="hljs-title">getRight</span><span class="hljs-params">()</span></span>&#123; <span class="hljs-keyword">return</span> right;&#125;<br>    <span class="hljs-function"><span class="hljs-type">double</span> <span class="hljs-title">getTop</span><span class="hljs-params">()</span></span>&#123;<span class="hljs-keyword">return</span> top;&#125;<br>    <span class="hljs-function"><span class="hljs-type">double</span> <span class="hljs-title">getBottom</span><span class="hljs-params">()</span></span>&#123;<span class="hljs-keyword">return</span> bottom;&#125;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Show</span><span class="hljs-params">()</span></span>&#123;<br>        cout&lt;&lt;<span class="hljs-string">&quot;left-bottom point is (&quot;</span>&lt;&lt;left&lt;&lt;<span class="hljs-string">&quot;,&quot;</span>&lt;&lt;bottom&lt;&lt;<span class="hljs-string">&quot;)\n&quot;</span>;<br>        cout&lt;&lt;<span class="hljs-string">&quot;right-top point is (&quot;</span>&lt;&lt;right&lt;&lt;<span class="hljs-string">&quot;,&quot;</span>&lt;&lt;top&lt;&lt;<span class="hljs-string">&quot;)\n&quot;</span>;<br>    &#125;  <span class="hljs-comment">//显示坐标信息</span><br>    <span class="hljs-function"><span class="hljs-type">double</span> <span class="hljs-title">Area</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">abs</span>((top-bottom)*(right-left));<br>    &#125; <span class="hljs-comment">//计算面积</span><br>    <span class="hljs-function"><span class="hljs-type">double</span> <span class="hljs-title">Perimeter</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">return</span> (<span class="hljs-built_in">abs</span>(top-bottom)+<span class="hljs-built_in">abs</span>(right-left))*<span class="hljs-number">2</span>;<br>    &#125;  <span class="hljs-comment">//计算周长</span><br>&#125;;<br><br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-type">double</span> x1,y1,x2,y2;<br>	cin&gt;&gt;x1&gt;&gt;y1&gt;&gt;x2&gt;&gt;y2;<br>	Rectangle rect;<br>	rect.<span class="hljs-built_in">Assign</span>(x1,y1,x2,y2);<br>	rect.<span class="hljs-built_in">Show</span>();<br>	cout&lt;&lt;<span class="hljs-string">&quot;面积&quot;</span>&lt;&lt;rect.<span class="hljs-built_in">Area</span>()&lt;&lt;<span class="hljs-string">&#x27;\t&#x27;</span>&lt;&lt;<span class="hljs-string">&quot;周长&quot;</span>&lt;&lt;rect.<span class="hljs-built_in">Perimeter</span>()&lt;&lt;endl;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="2"><a href="#2" class="headerlink" title="2"></a>2</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cmath&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> PI 3.14159265</span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Circle</span><br>&#123;<br>    <span class="hljs-type">int</span> radius;<br>    <span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">Circle</span>()&#123;&#125;<br>    <span class="hljs-built_in">Circle</span>(<span class="hljs-type">int</span> r)&#123;<br>        radius = r;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">SetR</span><span class="hljs-params">(<span class="hljs-type">int</span> r)</span></span>&#123;<br>        radius = r;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">GetR</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">return</span> radius;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">double</span> <span class="hljs-title">GetCircumference</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>*PI*radius;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">double</span> <span class="hljs-title">GetAreaCircle</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">return</span> PI*radius*radius;<br>    &#125;<br>&#125;;<br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-type">int</span> r;<br>    cin&gt;&gt;r;<br>	<span class="hljs-function">Circle <span class="hljs-title">cl1</span><span class="hljs-params">(r)</span>,cl2,cl3</span>=cl1;<br>	cout&lt;&lt;<span class="hljs-string">&quot;圆半径:&quot;</span>&lt;&lt;cl<span class="hljs-number">3.</span><span class="hljs-built_in">GetR</span>()&lt;&lt;<span class="hljs-string">&#x27;\t&#x27;</span>&lt;&lt;<span class="hljs-string">&quot;圆周长:&quot;</span>&lt;&lt;cl<span class="hljs-number">3.</span><span class="hljs-built_in">GetCircumference</span>()<br>		&lt;&lt;<span class="hljs-string">&#x27;\t&#x27;</span>&lt;&lt;<span class="hljs-string">&quot;圆面积:&quot;</span>&lt;&lt;cl<span class="hljs-number">3.</span><span class="hljs-built_in">GetAreaCircle</span>()&lt;&lt;endl;<br>	cin&gt;&gt;r;<br>	cl<span class="hljs-number">2.</span><span class="hljs-built_in">SetR</span>(r);<br>	cout&lt;&lt;<span class="hljs-string">&quot;圆半径:&quot;</span>&lt;&lt;cl<span class="hljs-number">2.</span><span class="hljs-built_in">GetR</span>()&lt;&lt;<span class="hljs-string">&#x27;\t&#x27;</span>&lt;&lt;<span class="hljs-string">&quot;圆周长:&quot;</span>&lt;&lt;cl<span class="hljs-number">2.</span><span class="hljs-built_in">GetCircumference</span>()<br>		&lt;&lt;<span class="hljs-string">&#x27;\t&#x27;</span>&lt;&lt;<span class="hljs-string">&quot;圆面积:&quot;</span>&lt;&lt;cl<span class="hljs-number">2.</span><span class="hljs-built_in">GetAreaCircle</span>()&lt;&lt;endl;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="3"><a href="#3" class="headerlink" title="3"></a>3</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstdlib&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">dog</span><br><br>&#123;<br>    <span class="hljs-type">int</span> age,weight;<br>    <span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">dog</span>()&#123;<br>        age = <span class="hljs-number">1</span>;<br>        weight = <span class="hljs-number">5</span>;<br>    &#125;<br>    <span class="hljs-built_in">dog</span>(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> w)&#123;<br>        age = a;<br>        weight = w;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">getage</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">return</span> age;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">getweight</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">return</span> weight;<br>    &#125;<br>&#125;;<br><br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123; dog d;<br>  cout&lt;&lt;<span class="hljs-string">&quot;age=&quot;</span>&lt;&lt;d.<span class="hljs-built_in">getage</span>()&lt;&lt;<span class="hljs-string">&quot;,weight=&quot;</span>&lt;&lt;d.<span class="hljs-built_in">getweight</span>()&lt;&lt;endl;<br>  <span class="hljs-type">int</span> nage,nweight;<br>  cin&gt;&gt;nage&gt;&gt;nweight;<br>  <span class="hljs-function">dog <span class="hljs-title">dog2</span><span class="hljs-params">(nage,nweight)</span></span>;<br>  cout&lt;&lt;<span class="hljs-string">&quot;age=&quot;</span>&lt;&lt;dog<span class="hljs-number">2.</span><span class="hljs-built_in">getage</span>()&lt;&lt;<span class="hljs-string">&quot;,weight=&quot;</span>&lt;&lt;dog<span class="hljs-number">2.</span><span class="hljs-built_in">getweight</span>()&lt;&lt;endl;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="4"><a href="#4" class="headerlink" title="4"></a>4</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">DataType</span><br>    <br>&#123;<br>    <span class="hljs-type">int</span> _type;<br>    <span class="hljs-type">int</span> _int;<br>    <span class="hljs-type">char</span> _char;<br>    <span class="hljs-type">float</span> _float;<br>    <span class="hljs-type">double</span> _double;<br>    <span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">DataType</span>()&#123;&#125;<br>    <span class="hljs-built_in">DataType</span>(<span class="hljs-type">int</span> i)&#123;<br>        _int = i;<br>        _type = <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-built_in">DataType</span>(<span class="hljs-type">char</span> c)&#123;<br>        _char = c;<br>        _type = <span class="hljs-number">2</span>;<br>    &#125;<br>    <span class="hljs-built_in">DataType</span>(<span class="hljs-type">float</span> f)&#123;<br>        _float = f;<br>        _type = <span class="hljs-number">3</span>;<br>    &#125;<br>    <span class="hljs-built_in">DataType</span>(<span class="hljs-type">double</span> d)&#123;<br>        _double = d;<br>        _type = <span class="hljs-number">4</span>;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Show</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">switch</span> (_type)<br>        &#123;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:<br>            cout&lt;&lt;<span class="hljs-string">&quot;int &quot;</span>&lt;&lt;_int;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:<br>            cout&lt;&lt;<span class="hljs-string">&quot;char &quot;</span>&lt;&lt;_char;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:<br>            cout&lt;&lt;<span class="hljs-string">&quot;float &quot;</span>&lt;&lt;_float;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:<br>            cout&lt;&lt;<span class="hljs-string">&quot;double &quot;</span>&lt;&lt;_double;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>        cout&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>    &#125;<br>&#125;;<br>    <br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function">    </span>&#123;   <span class="hljs-type">int</span> i;<br>        <span class="hljs-type">char</span> c;<br>        <span class="hljs-type">float</span> f;<br>        <span class="hljs-type">double</span> d;<br>        cin&gt;&gt;i;<br>    	<span class="hljs-function">DataType <span class="hljs-title">a</span><span class="hljs-params">(i)</span></span>;<br>    	a.<span class="hljs-built_in">Show</span>();<br>    	cin&gt;&gt;c;<br>    	<span class="hljs-function">DataType <span class="hljs-title">b1</span><span class="hljs-params">(c)</span></span>;<br>    	b<span class="hljs-number">1.</span><span class="hljs-built_in">Show</span>();<br>    	cin&gt;&gt;f;<br>    	<span class="hljs-function">DataType <span class="hljs-title">b2</span><span class="hljs-params">(f)</span></span>;<br>    	b<span class="hljs-number">2.</span><span class="hljs-built_in">Show</span>();<br>    	cin&gt;&gt;d;<br>    	<span class="hljs-function">DataType <span class="hljs-title">b3</span><span class="hljs-params">(d)</span></span>;<br>    	b<span class="hljs-number">3.</span><span class="hljs-built_in">Show</span>();<br>    	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="5"><a href="#5" class="headerlink" title="5"></a>5</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Tree</span><br><br>&#123;<br>    <span class="hljs-type">int</span> _age;<br>    <span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">Tree</span>()&#123;<br>        _age = <span class="hljs-number">0</span>;<br>        cout&lt;&lt;<span class="hljs-string">&quot;creat a tree,age=0\n&quot;</span>;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">age</span><span class="hljs-params">()</span></span>&#123;<br>        cout&lt;&lt;<span class="hljs-string">&quot;age=&quot;</span>&lt;&lt;_age&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">grow</span><span class="hljs-params">(<span class="hljs-type">int</span> year)</span></span>&#123;<br>        _age += year;<br>    &#125;<br>&#125;;<br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  Tree t;<br>  <span class="hljs-type">int</span> year;<br>  t.<span class="hljs-built_in">age</span>();<br><br>  cin&gt;&gt;year;<br>  t.<span class="hljs-built_in">grow</span>(year);<br>  t.<span class="hljs-built_in">age</span>();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="6"><a href="#6" class="headerlink" title="6"></a>6</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iomanip&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">enum</span> <span class="hljs-title class_">MT</span>&#123;Jan=<span class="hljs-number">1</span>,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec&#125;;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">int</span> YR;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Timedate</span>&#123;<br><span class="hljs-keyword">private</span>:<br>	YR year;<br>	MT month;<br>	<span class="hljs-type">int</span> date;<br>	<span class="hljs-type">int</span> hh;<br>	<span class="hljs-type">int</span> mm;<br>	<span class="hljs-type">int</span> ss;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-built_in">Timedate</span>()&#123;year=<span class="hljs-number">2000</span>;month=Jan;date=<span class="hljs-number">1</span>;hh=<span class="hljs-number">0</span>;mm=<span class="hljs-number">0</span>;ss=<span class="hljs-number">0</span>;&#125;<br>	<span class="hljs-built_in">Timedate</span>(YR a, MT b, <span class="hljs-type">int</span> c)&#123;<br>		year=a;<br>		month=b;<br>		date=c;<br>		hh=<span class="hljs-number">12</span>;mm=<span class="hljs-number">30</span>;ss=<span class="hljs-number">0</span>;<br>	&#125;<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">getdate</span><span class="hljs-params">(YR &amp;,MT &amp;,<span class="hljs-type">int</span> &amp;)</span></span>;<span class="hljs-comment">//使用引用一次取得3个数值</span><br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">gettime</span><span class="hljs-params">(<span class="hljs-type">int</span> &amp;,<span class="hljs-type">int</span> &amp;,<span class="hljs-type">int</span> &amp;)</span></span>;<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">putdate</span><span class="hljs-params">(YR ,MT ,<span class="hljs-type">int</span> )</span></span>;<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">puttime</span><span class="hljs-params">(<span class="hljs-type">int</span> ,<span class="hljs-type">int</span> ,<span class="hljs-type">int</span> )</span></span>;<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">list</span><span class="hljs-params">()</span></span>;<br>&#125;;<br><br><span class="hljs-comment">//点击在此输入一行或多行代码</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Timedate::putdate</span><span class="hljs-params">(YR y,MT m,<span class="hljs-type">int</span> d)</span></span>&#123;<br>    year = y;<br>    month = m;<br>    date = d;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Timedate::puttime</span><span class="hljs-params">(<span class="hljs-type">int</span> h,<span class="hljs-type">int</span> m,<span class="hljs-type">int</span> s)</span></span>&#123;<br>    hh = h;<br>    mm = m;<br>    ss = s;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Timedate::list</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-type">const</span> <span class="hljs-type">char</span>* monthArr[] = &#123;<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;Jan&quot;</span>,<span class="hljs-string">&quot;Feb&quot;</span>,<span class="hljs-string">&quot;Mar&quot;</span>,<span class="hljs-string">&quot;Apr&quot;</span>,<span class="hljs-string">&quot;May&quot;</span>,<span class="hljs-string">&quot;Jun&quot;</span>,<span class="hljs-string">&quot;Jul&quot;</span>,<span class="hljs-string">&quot;Aug&quot;</span>,<span class="hljs-string">&quot;Sep&quot;</span>,<span class="hljs-string">&quot;Oct&quot;</span>,<span class="hljs-string">&quot;Nov&quot;</span>,<span class="hljs-string">&quot;Dec&quot;</span>&#125;;<br>    cout&lt;&lt;<span class="hljs-string">&quot;year/month/date :&quot;</span>&lt;&lt;year&lt;&lt;<span class="hljs-string">&quot;/&quot;</span>&lt;&lt;monthArr[month]&lt;&lt;<span class="hljs-string">&quot;/&quot;</span>&lt;&lt;date&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>    cout&lt;&lt;<span class="hljs-string">&quot;hour:minite:second :&quot;</span>&lt;&lt;hh&lt;&lt;<span class="hljs-string">&quot;:&quot;</span>&lt;&lt;mm&lt;&lt;<span class="hljs-string">&quot;:&quot;</span>&lt;&lt;ss&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>&#125;<br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-type">int</span> argc, <span class="hljs-type">char</span>* argv[])</span></span>&#123;<br>    <span class="hljs-type">int</span> y,d,month,h,m,s;<br>	<span class="hljs-function">Timedate <span class="hljs-title">A</span><span class="hljs-params">(<span class="hljs-number">2004</span>,Mar,<span class="hljs-number">3</span>)</span>,B</span>;<br>	A.<span class="hljs-built_in">list</span>();<br>	B.<span class="hljs-built_in">list</span>();<br><br>	cin&gt;&gt;y&gt;&gt;month&gt;&gt;d; <span class="hljs-comment">//输入年月日，设置日期</span><br>	B.<span class="hljs-built_in">putdate</span>(y,(MT)month,d);<br><br>	cin&gt;&gt;h&gt;&gt;m&gt;&gt;s;        <span class="hljs-comment">//输入时分秒，设置时间</span><br>	B.<span class="hljs-built_in">puttime</span>(h,m,s);<br>	B.<span class="hljs-built_in">list</span>();<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="7"><a href="#7" class="headerlink" title="7"></a>7</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span><br><span class="hljs-comment">//点击在此输入一行或多行代码</span><br>&#123;<br>    <span class="hljs-type">int</span> age,weight;<br>    <span class="hljs-type">char</span> sex;<br>    <span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">Dog</span>(<span class="hljs-type">int</span> a=<span class="hljs-number">1</span>,<span class="hljs-type">int</span> w=<span class="hljs-number">10</span>,<span class="hljs-type">char</span> s=<span class="hljs-string">&#x27;M&#x27;</span>)&#123;<br>        age = a;<br>        weight = w;<br>        sex = s;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">grow</span><span class="hljs-params">(<span class="hljs-type">int</span> year)</span></span>&#123;<br>        age += year;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">show</span><span class="hljs-params">()</span></span>&#123;<br>        cout&lt;&lt;age&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;weight&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;sex&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>    &#125;<br>&#125;;<br><br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> age,weight;<br>    <span class="hljs-type">char</span> sex;<br>    Dog d1;<br>    cin&gt;&gt;age;<br>    <span class="hljs-function">Dog <span class="hljs-title">d2</span><span class="hljs-params">(age)</span></span>;<br><br>    cin&gt;&gt;age&gt;&gt;weight;<br>    <span class="hljs-function">Dog <span class="hljs-title">d3</span><span class="hljs-params">(age,weight)</span></span>;<br><br>    cin&gt;&gt;age&gt;&gt;weight&gt;&gt;sex;<br>    <span class="hljs-function">Dog <span class="hljs-title">d4</span><span class="hljs-params">(age,weight,sex)</span></span>;<br><br>    <span class="hljs-function">Dog <span class="hljs-title">d5</span><span class="hljs-params">(d2)</span></span>;<span class="hljs-comment">// d5和当前d2一致</span><br><br>    d<span class="hljs-number">2.</span><span class="hljs-built_in">grow</span>(<span class="hljs-number">3</span>);<span class="hljs-comment">//d2增重3斤</span><br><br>    d<span class="hljs-number">1.</span><span class="hljs-built_in">show</span>();<span class="hljs-comment">//输出：1,10,M</span><br><br>    d<span class="hljs-number">2.</span><span class="hljs-built_in">show</span>();<br>    d<span class="hljs-number">3.</span><span class="hljs-built_in">show</span>();<br>    d<span class="hljs-number">4.</span><span class="hljs-built_in">show</span>();<br>    d<span class="hljs-number">5.</span><span class="hljs-built_in">show</span>();<br><br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="8"><a href="#8" class="headerlink" title="8"></a>8</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span><br><span class="hljs-comment">//点击在此输入一行或多行代码</span><br>&#123;<br>    <span class="hljs-type">int</span> num;<br>    <span class="hljs-type">double</span> score;<br>    <span class="hljs-type">char</span> sex;<br>    <span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">Student</span>(<span class="hljs-type">int</span> n=<span class="hljs-number">0</span>,<span class="hljs-type">char</span> c=<span class="hljs-string">&#x27;U&#x27;</span>,<span class="hljs-type">double</span> s=<span class="hljs-number">0.0</span>)&#123;<br>        num = n;<br>        sex = c;<br>        score = s;<br>    &#125;<br>    <span class="hljs-built_in">Student</span>(<span class="hljs-type">const</span> Student &amp;stu)&#123;<br>        num = stu.num;<br>        sex = stu.sex;<br>        score = stu.score;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">setScore</span><span class="hljs-params">(<span class="hljs-type">double</span> s)</span></span>&#123;<br>        score = s;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">show</span><span class="hljs-params">()</span></span>&#123;<br>        cout&lt;&lt;num&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;sex&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;score&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>    &#125;<br>&#125;;<br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> num;<br>    <span class="hljs-type">double</span> score;<br>    <span class="hljs-type">char</span> sex;<br>    cin&gt;&gt;num&gt;&gt;sex&gt;&gt;score;<br><br>    Student t1;<span class="hljs-comment">//t1:学号0、 性别‘U’、成绩 0.0</span><br><br>    <span class="hljs-function">Student <span class="hljs-title">t2</span><span class="hljs-params">(num,sex,score)</span></span>;<span class="hljs-comment">//t2:年龄 num岁、 性别sex、成绩score分</span><br><br>    <span class="hljs-function">Student <span class="hljs-title">t3</span><span class="hljs-params">(t2)</span></span>;<span class="hljs-comment">// 复制构造t3，t3和当前t2一致</span><br><br>    t<span class="hljs-number">1.</span><span class="hljs-built_in">show</span>();<br><br>    t<span class="hljs-number">2.</span><span class="hljs-built_in">show</span>();<br><br>    t<span class="hljs-number">3.</span><span class="hljs-built_in">show</span>();<br><br>    t<span class="hljs-number">3.</span><span class="hljs-built_in">setScore</span>(<span class="hljs-number">70.5</span>);<span class="hljs-comment">//t3重新设置成绩为70.5</span><br><br>    t<span class="hljs-number">3.</span><span class="hljs-built_in">show</span>();<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="9"><a href="#9" class="headerlink" title="9"></a>9</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">employee</span> <span class="hljs-comment">//定义employee类</span><br><span class="hljs-comment">//点击在此输入一行或多行代码</span><br>&#123;<br>    <span class="hljs-type">int</span> EmpNo;<br>    <span class="hljs-type">int</span> grade;<br>    <span class="hljs-type">int</span> accumPay;<br>    <span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">employee</span>(<span class="hljs-type">int</span> e=<span class="hljs-number">1001</span>,<span class="hljs-type">int</span> g=<span class="hljs-number">1</span>,<span class="hljs-type">int</span> a=<span class="hljs-number">3000</span>)&#123;<br>        EmpNo = e;<br>        grade = g;<br>        accumPay = a;<br>    &#125;<br>    <span class="hljs-built_in">employee</span>(<span class="hljs-type">const</span> employee &amp;emp)&#123;<br>        EmpNo = emp.EmpNo<span class="hljs-number">+1</span>;<br>        grade = emp.grade;<br>        accumPay = emp.accumPay;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">promote</span><span class="hljs-params">(<span class="hljs-type">int</span> g)</span></span>&#123;<br>        grade+=g;<br>        accumPay += <span class="hljs-number">1500</span>*g;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span></span>&#123;<br>        cout&lt;&lt;EmpNo&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;grade&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;accumPay&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>    &#125;<br>&#125;;<br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> EmpNo;<br>    <span class="hljs-type">int</span> grade;<br>    <span class="hljs-type">int</span> accumPay;<br>    cin&gt;&gt;EmpNo&gt;&gt;grade&gt;&gt;accumPay;<br>    employee t1;         <span class="hljs-comment">//t1:工号1000、 级别 1、工资 3000</span><br><br>    <span class="hljs-function">employee <span class="hljs-title">t2</span><span class="hljs-params">(EmpNo,grade,accumPay)</span></span>;<span class="hljs-comment">//t2:工号EmpNo、 级别 grade、工资 accumPay</span><br><br>    <span class="hljs-function">employee <span class="hljs-title">t3</span><span class="hljs-params">(t2)</span></span>;<span class="hljs-comment">// t3工号是t2工号加1，其他数据与当前t2一致</span><br><br>    t<span class="hljs-number">1.</span><span class="hljs-built_in">print</span>();<br>    t<span class="hljs-number">2.</span><span class="hljs-built_in">print</span>();<br>    t<span class="hljs-number">3.</span><span class="hljs-built_in">print</span>();<br>    t<span class="hljs-number">3.</span><span class="hljs-built_in">promote</span>(<span class="hljs-number">2</span>);<span class="hljs-comment">//t3升2级，工资共涨3000（每级涨1500）</span><br>    t<span class="hljs-number">3.</span><span class="hljs-built_in">print</span>();<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Python123/" class="print-no-link">#Python123</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Python123实验14 类和对象1 非官方答案</div>
+      <div>https://blog.pgigi.com/post/Python123/20241212Python123/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>PanheadGG</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年12月12日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-cc-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-cc-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://cdnjs.cloudflare.com/ajax/libs/waline/2.15.8/waline.css')
+      Fluid.utils.createScript('https://cdnjs.cloudflare.com/ajax/libs/waline/2.15.8/waline.js', function() {
+        var options = Object.assign(
+          {"serverURL":"waline.panheadgg.top","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://unpkg.com/@waline/emojis@1.2.0/bilibili","https://unpkg.com/@waline/emojis@1.2.0/qq"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div class="footer-info"> <a>© 2024-2025 PanheadGG. All rights reserved.</a> </div> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/custom.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
